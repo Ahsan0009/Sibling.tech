@@ -20,8 +20,8 @@ export const LatestBlogsSection: React.FC<LatestBlogsSectionProps> = ({ onNaviga
       const nonFeatured = published.filter((b) => !b.isFeatured);
       setLatestBlogs([...featured, ...nonFeatured].slice(0, 3));
     };
-    window.addEventListener('websoul_blogs_updated', handleUpdate);
-    return () => window.removeEventListener('websoul_blogs_updated', handleUpdate);
+    window.addEventListener('sibling_blogs_updated', handleUpdate);
+    return () => window.removeEventListener('sibling_blogs_updated', handleUpdate);
   }, []);
 
   if (latestBlogs.length === 0) {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { BlogPost } from '../../types/blog';
-import { BlogStorageService } from '../../services/blogStorage';
+import { BlogStorageService, formatBlogAuthor } from '../../services/blogStorage';
 import { BlogCard } from './BlogCard';
 
 interface BlogListPageProps {
@@ -34,8 +34,8 @@ export const BlogListPage: React.FC<BlogListPageProps> = ({ onNavigate }) => {
       const updated = (e as CustomEvent<BlogPost[]>).detail || [];
       setBlogs(updated.filter((b) => b.isPublished));
     };
-    window.addEventListener('websoul_blogs_updated', handleUpdate);
-    return () => window.removeEventListener('websoul_blogs_updated', handleUpdate);
+    window.addEventListener('sibling_blogs_updated', handleUpdate);
+    return () => window.removeEventListener('sibling_blogs_updated', handleUpdate);
   }, []);
 
   const filteredBlogs = useMemo(() => {
@@ -204,7 +204,7 @@ export const BlogListPage: React.FC<BlogListPageProps> = ({ onNavigate }) => {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-[#0B192C] dark:text-white font-mono-tech">
-                      {featuredBlog.author}
+                      {formatBlogAuthor(featuredBlog.author)}
                     </div>
                     <div className="text-[11px] text-slate-500 dark:text-slate-400 font-mono-tech">
                       {featuredBlog.authorRole || 'Author'}

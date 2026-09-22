@@ -8,7 +8,7 @@
 [![Cloudinary](https://img.shields.io/badge/Cloudinary-Image_CDN-3448C5?logo=cloudinary&logoColor=white)](https://cloudinary.com/)
 [![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?logo=vercel&logoColor=white)](https://vercel.com/)
 
-**Sibling.tech** (formerly WebSoul) is a web development and digital engineering agency platform engineered with React 19, TypeScript, Vite, and Tailwind CSS v4. It showcases client case studies, custom service offerings, and interactive client conversion funnels, backed by an integrated, Firestore-powered **Blog CMS & Protected Admin Panel**.
+**Sibling.tech** is a web development and digital engineering agency platform engineered with React 19, TypeScript, Vite, and Tailwind CSS v4. It showcases client case studies, custom service offerings, and interactive client conversion funnels, backed by an integrated, Firestore-powered **Blog CMS & Protected Admin Panel**.
 
 ---
 
@@ -53,7 +53,6 @@ sibling/
 │       └── verify.ts                   # Token validation endpoint
 ├── public/                             # Public Static Assets
 │   ├── projects/                       # Case study screenshots and media
-│   ├── websoul_logo/                   # Historical brand assets
 │   ├── favicon.png                     # Browser tab icon (Sibling Tech)
 │   ├── sibling-tech.png                # Primary ST emblem asset (200x200 RGBA)
 │   ├── robots.txt                      # Search crawler configuration
@@ -151,7 +150,7 @@ Create a `.env` or `.env.local` file in the root directory if customizing third-
 ```env
 # Cloudinary (Optional - for custom image presets)
 VITE_CLOUDINARY_CLOUD_NAME=your_cloud_name
-VITE_CLOUDINARY_UPLOAD_PRESET=websoul_blogs
+VITE_CLOUDINARY_UPLOAD_PRESET=sibling_blogs
 
 # EmailJS (Optional - defaults provided in code)
 VITE_EMAILJS_SERVICE_ID=your_service_id
@@ -187,11 +186,11 @@ npm run preview
 ## Deployment
 
 This project is pre-configured for deployment on **Vercel**:
-- [vercel.json](file:///home/hamza/Projects/sibling/vercel.json) redirects apex traffic (`websoul.tech`) to `www.websoul.tech` and maps all SPA routes to `/index.html`.
+- [vercel.json](file:///home/hamza/Projects/sibling/vercel.json) redirects apex traffic (`sibling.tech` and legacy `websoul.tech`) to `www.sibling.tech` and maps all SPA routes to `/index.html`.
 - Serverless endpoints in `api/auth/*.ts` are automatically detected and deployed as Vercel serverless functions.
 
 ---
 
 ## License
 
-Private repository. All rights reserved by **Sibling.tech** (WebSoul).
+Private repository. All rights reserved by **Sibling.tech**.
