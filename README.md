@@ -53,7 +53,6 @@ sibling/
 │       └── verify.ts                   # Token validation endpoint
 ├── public/                             # Public Static Assets
 │   ├── projects/                       # Case study screenshots and media
-│   ├── websoul_logo/                   # Historical brand assets
 │   ├── favicon.png                     # Browser tab icon (Sibling Tech)
 │   ├── sibling-tech.png                # Primary ST emblem asset (200x200 RGBA)
 │   ├── robots.txt                      # Search crawler configuration
