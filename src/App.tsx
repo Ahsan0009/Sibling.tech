@@ -887,9 +887,13 @@ export function ThemeToggle({
       title={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
     >
       {darkMode ? (
-        <img src="/websoul_logo/favicondark.png" alt="Dark Mode" className="w-5 h-5 object-cover" />
+        <svg className="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
       ) : (
-        <img src="/favicon.png" alt="Light Mode" className="w-5 h-5 object-cover" />
+        <svg className="w-5 h-5 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
       )}
     </button>
   );
@@ -1015,84 +1019,84 @@ function ServiceIcon({ type }: { type: ServiceItem['icon'] }) {
   );
 }
 
+
 // ==========================================
-// 5. NAVIGATION COMPONENT
-// ==========================================
-// ==========================================
-// LOGO COMPONENTS WITH MATCHED DIMENSIONS & CROSS-FADE
+// LOGO COMPONENTS WITH SIBLING TECH BRANDING
 // ==========================================
 export function HeaderLogo({ darkMode }: { darkMode?: boolean }) {
   return (
-    <div className="relative h-5 sm:h-6 aspect-[4.85/1] flex items-center justify-center overflow-hidden">
-      <img
-        src="/websoul_logo/header_logo-removebg-preview.png"
-        alt="Web Soul Logo"
-        className={`absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-300 ease-in-out ${darkMode ? 'opacity-0 pointer-events-none' : 'opacity-100'
-          }`}
-      />
-      <img
-        src="/websoul_logo/dark_mode/header_logo.png"
-        alt="Web Soul Logo"
-        className={`absolute inset-0 w-full h-full object-contain object-center scale-[1.117] transition-opacity duration-300 ease-in-out ${darkMode ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          }`}
-      />
+    <div className="flex items-center gap-2 sm:gap-2.5">
+      <div className="h-6 w-6 sm:h-7 sm:w-7 aspect-square rounded-lg bg-[#0B192C] dark:bg-slate-900 flex items-center justify-center p-0.5 border border-slate-700/40 shadow-sm shrink-0">
+        <img
+          src="/sibling-tech.png"
+          alt="Sibling Tech Logo"
+          className="w-full h-full object-contain"
+        />
+      </div>
+      <span className="font-bold text-sm sm:text-base text-[#0B192C] dark:text-white tracking-tight font-mono-tech">
+        Sibling<span className="text-blue-600 dark:text-sky-400">.tech</span>
+      </span>
     </div>
   );
 }
 
 export function MobileHeaderLogo({ darkMode }: { darkMode?: boolean }) {
   return (
-    <div className="relative h-6 sm:h-7 aspect-[4.85/1] flex items-center justify-center overflow-hidden">
-      <img
-        src="/websoul_logo/header_logo-removebg-preview.png"
-        alt="Web Soul Logo"
-        className={`absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-300 ease-in-out ${darkMode ? 'opacity-0 pointer-events-none' : 'opacity-100'
-          }`}
-      />
-      <img
-        src="/websoul_logo/dark_mode/header_logo.png"
-        alt="Web Soul Logo"
-        className={`absolute inset-0 w-full h-full object-contain object-center scale-[1.117] transition-opacity duration-300 ease-in-out ${darkMode ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          }`}
-      />
+    <div className="flex items-center gap-2">
+      <div className="h-7 w-7 aspect-square rounded-lg bg-[#0B192C] dark:bg-slate-900 flex items-center justify-center p-0.5 border border-slate-700/40 shrink-0">
+        <img
+          src="/sibling-tech.png"
+          alt="Sibling Tech Logo"
+          className="w-full h-full object-contain"
+        />
+      </div>
+      <span className="font-bold text-base text-[#0B192C] dark:text-white tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        Sibling<span className="text-blue-600 dark:text-sky-400">.tech</span>
+      </span>
     </div>
   );
 }
 
 export function FooterLogo({ darkMode }: { darkMode?: boolean }) {
   return (
-    <div className="relative h-14 sm:h-16 aspect-[1.38/1] flex items-center justify-center overflow-hidden">
-      <img
-        src="/websoul_logo/footer_logo-removebg-preview.png"
-        alt="Web Soul Logo"
-        className={`absolute inset-0 w-full h-full object-contain object-center scale-[1.524] translate-y-[2.5%] transition-opacity duration-300 ease-in-out ${darkMode ? 'opacity-0 pointer-events-none' : 'opacity-100'
-          }`}
-      />
-      <img
-        src="/websoul_logo/dark_mode/footer_logo.png"
-        alt="Web Soul Logo"
-        className={`absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-300 ease-in-out ${darkMode ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          }`}
-      />
+    <div className="flex items-center gap-3">
+      <div className="h-10 w-10 sm:h-12 sm:w-12 aspect-square rounded-xl bg-[#0B192C] dark:bg-slate-900 flex items-center justify-center p-1.5 border border-slate-700/40 shadow-inner shrink-0">
+        <img
+          src="/sibling-tech.png"
+          alt="Sibling Tech Logo"
+          className="w-full h-full object-contain"
+        />
+      </div>
+      <div className="flex flex-col">
+        <span className="font-bold text-lg sm:text-xl text-[#0B192C] dark:text-white leading-none tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          Sibling<span className="text-blue-600 dark:text-sky-400">.tech</span>
+        </span>
+        <span className="text-[10px] font-mono-tech text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-widest">
+          Web Engineering
+        </span>
+      </div>
     </div>
   );
 }
 
 export function IntroLogo({ darkMode }: { darkMode?: boolean }) {
   return (
-    <div className="relative h-12 sm:h-16 md:h-20 aspect-[4.85/1] flex items-center justify-center overflow-hidden">
-      <img
-        src="/websoul_logo/header_logo-removebg-preview.png"
-        alt="Web Soul Logo"
-        className={`absolute inset-0 w-full h-full object-contain object-center transition-opacity duration-300 ease-in-out ${darkMode ? 'opacity-0 pointer-events-none' : 'opacity-100'
-          }`}
-      />
-      <img
-        src="/websoul_logo/dark_mode/header_logo.png"
-        alt="Web Soul Logo"
-        className={`absolute inset-0 w-full h-full object-contain object-center scale-[1.117] transition-opacity duration-300 ease-in-out ${darkMode ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          }`}
-      />
+    <div className="flex items-center gap-3.5 sm:gap-4">
+      <div className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 aspect-square rounded-2xl bg-[#0B192C] dark:bg-slate-900 flex items-center justify-center p-2.5 sm:p-3 border border-slate-700/40 shadow-xl shrink-0">
+        <img
+          src="/sibling-tech.png"
+          alt="Sibling Tech Logo"
+          className="w-full h-full object-contain"
+        />
+      </div>
+      <div className="text-left">
+        <div className="font-bold text-2xl sm:text-3xl md:text-4xl text-[#0B192C] dark:text-white leading-none tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          Sibling<span className="text-blue-600 dark:text-sky-400">.tech</span>
+        </div>
+        <div className="text-xs sm:text-sm font-mono-tech text-slate-500 dark:text-slate-400 mt-1 tracking-wider uppercase">
+          Digital Engineering Agency
+        </div>
+      </div>
     </div>
   );
 }
@@ -1195,7 +1199,7 @@ export function Nav({
               navigate('home');
             }}
             className="flex items-center gap-3 cursor-pointer group text-left"
-            aria-label="Web Soul Home"
+            aria-label="Sibling Tech Home"
           >
             <div className="h-8 sm:h-9 px-2.5 sm:px-3 py-1 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700/80 rounded-xl flex items-center shadow-sm border border-slate-200 dark:border-slate-700 transition-all duration-200 group-hover:scale-105 group-hover:shadow-[0_4px_20px_rgba(11,25,44,0.1)]">
               <HeaderLogo darkMode={darkMode} />
