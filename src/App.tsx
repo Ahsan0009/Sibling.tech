@@ -652,7 +652,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: "maintenance",
     title: "Maintenance & Support",
-    description: "Keep your web products secure, updated, and lightning fast. Dedicated monthly maintenance, security patches, and priority hotfixes.",
+    description: "Keep your digital products and systems secure, updated, and reliable. Dedicated monthly maintenance, security patches, and priority hotfixes.",
     items: [
       "Monthly content updates",
       "Security monitoring",
@@ -667,27 +667,27 @@ export const PROCESS_STEPS: ProcessStep[] = [
   {
     number: "01",
     title: "Discover",
-    description: "Deep-dive into your goals, users, and competitive landscape."
+    description: "Deep-dive into your goals, users, workflows, and competitive landscape."
   },
   {
     number: "02",
     title: "Design",
-    description: "Wireframes and high-fidelity Figma prototypes with your feedback."
+    description: "Wireframes, system maps, and high-fidelity Figma prototypes shaped by your goals."
   },
   {
     number: "03",
     title: "Build",
-    description: "Clean, performant code — tested on every browser and device."
+    description: "Clean, performant websites, apps, automations, and integrations tested for real-world use."
   },
   {
     number: "04",
     title: "Launch",
-    description: "Staged deployment with load testing and rollback safety net."
+    description: "Staged rollout with testing, monitoring, and a clear path to launch safely."
   },
   {
     number: "05",
     title: "Grow",
-    description: "Analytics, A/B testing, and continuous improvement post-launch."
+    description: "Analytics, optimization, automation improvements, and ongoing support after launch."
   }
 ];
 
@@ -1148,7 +1148,7 @@ export function FooterLogo({ darkMode }: { darkMode?: boolean }) {
           Sibling<span className="text-blue-600 dark:text-sky-400">.tech</span>
         </span>
         <span className="text-[10px] font-mono-tech text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-widest">
-          Web Engineering
+          Digital Solutions
         </span>
       </div>
     </div>
@@ -1241,9 +1241,9 @@ export function Nav({
   const serviceDropdownItems = [
     { id: 'ai-automation',  label: 'AI Automation',              desc: 'Intelligent workflow & process automation' },
     { id: 'ai-chatbots',   label: 'AI Chatbots & Agentic AI',   desc: 'Custom LLM agents and autonomous bots' },
-    { id: 'web-design',    label: 'Website Design & Dev',        desc: 'Custom UI/UX built from scratch' },
+    { id: 'web-design',    label: 'Website Design & Dev',        desc: 'Custom digital experiences built from scratch' },
     { id: 'ecommerce',     label: 'E-commerce Development',      desc: 'High-converting headless stores' },
-    { id: 'webapp',        label: 'Web App Development',         desc: 'Scalable full-stack SaaS & tools' },
+    { id: 'webapp',        label: 'Web Apps & Digital Products', desc: 'Scalable full-stack SaaS and business tools' },
     { id: 'maintenance',   label: 'Maintenance & Support',       desc: 'Security patches & priority support' },
   ];
 
@@ -1567,7 +1567,7 @@ export function Footer({ navigate, darkMode }: { navigate: (page: Page, id?: num
               </div>
             </div>
             <p className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 leading-relaxed">
-              Building ultra-performant, high-converting digital products for startups and growing businesses. Hand-crafted code, zero bloat.
+              Building high-performance websites, intelligent automations, and digital products for startups and growing businesses. Thoughtful strategy, hand-crafted code, zero bloat.
             </p>
           </div>
 
@@ -1702,12 +1702,12 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] sm:leading-[1.05] tracking-tight mb-4 sm:mb-6 text-[#0B192C] dark:text-slate-100"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
-                We build fast, modern websites that turn{' '}
-                <span className="gradient-text">visitors into customers.</span>
+                We build digital solutions that{' '}
+                <span className="gradient-text">move businesses forward.</span>
               </h1>
 
               <p className="text-base sm:text-lg text-[#475569] dark:text-slate-400 max-w-lg mb-6 sm:mb-8 leading-relaxed font-normal">
-                Web development and design for startups and businesses that want to grow. No templates, no shortcuts — just hand-crafted code that performs.
+                Web development, AI automation, and digital solutions for startups and businesses that want to grow. No templates, no shortcuts — just thoughtful systems that perform.
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto flex-wrap">
@@ -1886,7 +1886,7 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                 <div className="aspect-video overflow-hidden relative">
                   <img
                     src={project.image}
-                    alt={`${project.title} - Custom ${project.category} Web Development Case Study`}
+                    alt={`${project.title} - Custom ${project.category} Digital Solutions Case Study`}
                     loading="lazy"
                     decoding="async"
                     width="800"
@@ -1968,10 +1968,10 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                 Services
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0B192C] dark:text-white mb-3 sm:mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                End-to-end web engineering.
+                End-to-end digital solutions.
               </h2>
               <p className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 leading-relaxed">
-                Everything you need to build, launch, and scale modern web platforms. Hand-crafted code designed to convert.
+                From websites and web apps to AI automation, integrations, and ongoing support, we build the digital systems your business needs to launch and grow.
               </p>
             </div>
           </Reveal>
@@ -2087,7 +2087,7 @@ export function WorkPage({ navigate }: { navigate: (page: Page, id?: number) => 
           Portfolio
         </span>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B192C] dark:text-white mb-3 sm:mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-          Web Development Portfolio & Case Studies
+          Digital Solutions Portfolio & Case Studies
         </h1>
         <p className="text-base sm:text-lg text-[#475569] dark:text-slate-400 max-w-xl">
           47 projects shipped. Here are the ones that mattered most.
@@ -2124,7 +2124,7 @@ export function WorkPage({ navigate }: { navigate: (page: Page, id?: number) => 
               <div className="aspect-video overflow-hidden relative">
                 <img
                   src={project.image}
-                  alt={`${project.title} - Custom ${project.category} Web Engineering Case Study`}
+                  alt={`${project.title} - Custom ${project.category} Digital Solutions Case Study`}
                   loading="lazy"
                   decoding="async"
                   width="800"
@@ -2372,10 +2372,10 @@ export function ServicesPage({ navigate }: { navigate: (page: Page, id?: number)
             What We Do
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B192C] dark:text-white mb-3 sm:mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Custom Web Development & Engineering Services
+            Web Development & Digital Solutions
           </h1>
           <p className="text-xs sm:text-base text-[#475569] dark:text-slate-400">
-            From bespoke custom design to complex full-stack web applications.
+            From high-converting websites and web apps to AI automation, intelligent agents, integrations, and ongoing support.
           </p>
         </div>
       </Reveal>
@@ -2479,7 +2479,7 @@ export const ABOUT_HIGHLIGHTS: AboutHighlight[] = [
     number: "01",
     badge: "01 — Custom Built",
     title: "Built Around Your Business",
-    description: "No generic solutions. Every website is designed and developed around your goals, brand and audience.",
+    description: "No generic solutions. Every digital product, system, and experience is shaped around your goals, brand, audience, and workflow.",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
@@ -2562,7 +2562,7 @@ export function AboutSection({
           )}
 
           <p className="text-base sm:text-lg text-[#475569] dark:text-slate-300 leading-relaxed font-normal">
-            Sibling is a web development studio focused on building modern, high-performance digital experiences for startups and growing businesses. We combine thoughtful design, clean engineering and strategic thinking to create websites that don't just look good — they work hard for your business.
+            Sibling is a digital solutions agency helping startups and growing businesses build better ways to attract customers, operate efficiently, and scale. We combine thoughtful design, clean engineering, automation, AI, and strategic thinking to create digital products that work hard for your business.
           </p>
         </div>
       </Reveal>
@@ -2578,18 +2578,18 @@ export function AboutSection({
                   className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0B192C] dark:text-white mb-4 sm:mb-6 tracking-tight"
                   style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
-                  More Than Just a Website.
+                  More Than Just a Digital Presence.
                 </h3>
 
                 <div className="space-y-4 sm:space-y-4.5 text-xs sm:text-sm text-[#475569] dark:text-slate-400 leading-relaxed">
                   <p>
-                    Your website is often the first real interaction someone has with your business. That's why we don't believe in generic templates, rushed builds or unnecessary complexity.
+                    Your digital presence and internal systems shape how people discover, trust, and experience your business. That's why we don't believe in generic templates, rushed builds, or unnecessary complexity.
                   </p>
                   <p>
-                    At Sibling, every project starts with understanding your business, your audience and your goals. From strategy and design to development and performance optimization, we focus on creating digital experiences that are fast, intuitive and built to support real growth.
+                    At Sibling, every project starts with understanding your business, your audience, and your goals. From strategy and design to development, automation, AI, and integrations, we create digital solutions that are fast, intuitive, and built to support real growth.
                   </p>
                   <p>
-                    Whether you're launching something new, improving an outdated website or building a more powerful digital presence, we create solutions designed around what your business actually needs.
+                    Whether you're launching a new website, streamlining operations, connecting your tools, or building a more powerful digital product, we create solutions designed around what your business actually needs.
                   </p>
                 </div>
               </div>
@@ -2663,7 +2663,7 @@ export function AboutSection({
               className="text-base sm:text-xl md:text-2xl font-bold text-[#0B192C] dark:text-slate-100 leading-snug tracking-tight"
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
-              "We don't just build websites. We build the digital foundation your business can grow on."
+              "We don't just build websites. We build the digital systems and solutions your business can grow on."
             </p>
           </div>
         </div>
@@ -2714,10 +2714,10 @@ export function AboutPage({ navigate }: { navigate: (page: Page, id?: number) =>
             Let's Collaborate
           </span>
           <h3 className="text-2xl sm:text-3xl font-bold text-[#0B192C] dark:text-white mb-3 sm:mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Ready to build a high-performance web presence?
+            Ready to build a stronger digital foundation?
           </h3>
           <p className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed">
-            Whether you're starting from scratch or re-engineering an existing platform, let's create a digital solution tailored to your goals.
+            Whether you're starting from scratch or improving an existing platform or process, let's create a digital solution tailored to your goals.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <ButtonPrimary onClick={() => navigate('contact')} className="w-full sm:w-auto px-7 py-3.5 text-sm sm:text-base">
@@ -2745,7 +2745,7 @@ export function PricingPage({ navigate }: { navigate: (page: Page, id?: number) 
             Transparent Pricing
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B192C] dark:text-white mb-3 sm:mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Transparent Web Development Pricing & Investment Tiers
+            Transparent Digital Solutions Pricing & Investment Tiers
           </h1>
           <p className="text-xs sm:text-base text-[#475569] dark:text-slate-400">
             No surprise invoices, hidden fees, or recurring license traps. Just clear scope and fixed delivery.
@@ -3154,6 +3154,9 @@ export function ContactPage() {
                         <option value="Landing Page">Landing Page</option>
                         <option value="E-commerce Store">E-commerce Store</option>
                         <option value="Web Application">Web Application</option>
+                        <option value="AI Automation">AI Automation</option>
+                        <option value="AI Chatbot or Agent">AI Chatbot or Agent</option>
+                        <option value="Integration or API">Integration or API</option>
                         <option value="Redesign & Rebuild">Redesign & Rebuild</option>
                         <option value="Maintenance & Support">Maintenance & Support</option>
                         <option value="Other">Other</option>
@@ -3284,20 +3287,20 @@ export interface FAQItem {
 
 export const FAQS: FAQItem[] = [
   {
-    question: "What custom web development services does Sibling offer?",
-    answer: "Sibling provides end-to-end custom web development services including React and Next.js web application development, headless e-commerce storefronts, custom UI/UX design, database architecture, API engineering, and ongoing maintenance."
+    question: "What digital solutions does Sibling offer?",
+    answer: "Sibling provides websites, web applications, AI automation, intelligent chatbots, headless e-commerce storefronts, custom UI/UX design, database architecture, API integrations, and ongoing maintenance."
   },
   {
-    question: "Which technologies and frameworks do you use for web development?",
-    answer: "We specialize in modern, high-performance web stacks including Next.js, React.js, TypeScript, Tailwind CSS, Node.js, PostgreSQL, MongoDB, Stripe, Sanity CMS, and Vercel cloud infrastructure."
+    question: "Which technologies and platforms do you use?",
+    answer: "We work with modern web stacks, AI services, automation platforms, and cloud infrastructure including Next.js, React.js, TypeScript, Tailwind CSS, Node.js, PostgreSQL, MongoDB, n8n, Make, Zapier, Supabase, Stripe, Sanity CMS, and Vercel."
   },
   {
-    question: "How long does a custom web development project take?",
-    answer: "Project timelines range from 2 to 3 weeks for high-converting landing pages and business websites, to 4 to 8 weeks for custom SaaS web applications and full-stack e-commerce platforms."
+    question: "How long does a digital solution project take?",
+    answer: "Timelines depend on the solution. A focused website or automation can take 2 to 3 weeks, while custom SaaS applications, integrations, and full-stack e-commerce platforms typically take 4 to 8 weeks."
   },
   {
-    question: "Are all Sibling websites optimized for SEO and mobile performance?",
-    answer: "Yes, every digital product we engineer is mobile-first responsive, optimized for Core Web Vitals (sub-1-second load times), and pre-configured with technical SEO best practices, schema markup, and canonical URLs."
+    question: "How do you ensure quality across your digital solutions?",
+    answer: "We build responsive, performant, maintainable solutions with clear testing, technical SEO where relevant, reliable integrations, and an emphasis on security and long-term usability."
   },
   {
     question: "How can I request a project estimate or hire Sibling?",
@@ -3544,10 +3547,10 @@ export function FAQSection() {
             Frequently Asked Questions
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0B192C] dark:text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Frequently Asked Questions About Our Web Engineering
+            Frequently Asked Questions About Our Digital Solutions
           </h2>
           <p className="text-xs sm:text-base text-[#475569] dark:text-slate-400 mt-2">
-            Everything you need to know about our web development services, tech stack, and process.
+            Everything you need to know about our services, technology, and process.
           </p>
         </div>
       </Reveal>
@@ -3606,14 +3609,14 @@ export function NotFoundPage({ navigate }: { navigate: (page: Page) => void }) {
         Page Not Found
       </h1>
       <p className="text-sm sm:text-base text-[#475569] dark:text-slate-400 max-w-md mb-8 leading-relaxed">
-        The page you are looking for does not exist or has been moved. Explore our web development services or return home.
+        The page you are looking for does not exist or has been moved. Explore our digital solutions or return home.
       </p>
       <div className="flex flex-wrap gap-4 justify-center">
         <ButtonPrimary onClick={() => navigate('home')}>
           Return to Homepage
         </ButtonPrimary>
         <ButtonSecondary onClick={() => navigate('services')}>
-          Explore Web Development Services
+          Explore Digital Solutions
         </ButtonSecondary>
       </div>
     </div>
@@ -3693,47 +3696,47 @@ export default function App() {
 
   // Dynamic SEO Metadata, Open Graph, Twitter Cards, Canonical Tags & JSON-LD Head Manager
   useEffect(() => {
-    let title = 'Sibling — Custom Web Development & Design Agency for Growing Businesses';
-    let description = 'Sibling is a premier web development company crafting high-performing React & Next.js websites, custom web applications, e-commerce storefronts, and digital products.';
+    let title = 'Sibling — Web Development & Digital Solutions Agency';
+    let description = 'Sibling builds websites, web applications, AI automations, integrations, and digital products for growing businesses.';
     let canonical = 'https://www.sibling.tech/';
     let breadcrumbName = 'Home';
 
     if (currentPage === 'work') {
-      title = 'Web Development Portfolio & Case Studies | Sibling';
-      description = 'Explore custom web development projects, SaaS analytics platforms, and e-commerce storefronts engineered by Sibling.';
+      title = 'Digital Solutions Portfolio & Case Studies | Sibling';
+      description = 'Explore websites, web apps, automation systems, SaaS platforms, and e-commerce experiences engineered by Sibling.';
       canonical = 'https://www.sibling.tech/work';
       breadcrumbName = 'Portfolio & Case Studies';
     } else if (currentPage === 'project') {
       const project = PROJECTS.find((p) => p.id === projectId);
       if (project) {
-        title = `${project.title} Case Study | Sibling Web Development`;
+        title = `${project.title} Case Study | Sibling Digital Solutions`;
         description = `${project.title}: ${project.tagline}. ${project.result}. Custom ${project.category} built by Sibling agency.`;
         canonical = `https://www.sibling.tech/project/${projectId}`;
         breadcrumbName = `${project.title} Case Study`;
       }
     } else if (currentPage === 'services') {
-      title = 'Web Development & Software Engineering Services | Sibling';
-      description = 'Professional web development services including custom React/Next.js web applications, headless e-commerce platforms, UI/UX design, and full-stack engineering.';
+      title = 'Web Development & Digital Solutions Services | Sibling';
+      description = 'Websites, web applications, AI automation, intelligent agents, integrations, e-commerce, UI/UX design, and ongoing support.';
       canonical = 'https://www.sibling.tech/services';
-      breadcrumbName = 'Web Development Services';
+      breadcrumbName = 'Digital Solutions Services';
     } else if (currentPage === 'about') {
-      title = 'About Sibling — Custom Web Development & Engineering Team';
-      description = 'Learn about Sibling, our web development philosophy, engineering capabilities, and dedicated team building fast, high-converting digital products.';
+      title = 'About Sibling — Web Development & Digital Solutions';
+      description = 'Learn about Sibling and our approach to building websites, digital products, AI automations, and business systems.';
       canonical = 'https://www.sibling.tech/about';
       breadcrumbName = 'About Sibling';
     } else if (currentPage === 'pricing') {
-      title = 'Web Development Pricing & Flexible Investment Tiers | Sibling';
-      description = 'Transparent web development pricing packages for custom website design, e-commerce storefronts, and full-stack SaaS web applications.';
+      title = 'Digital Solutions Pricing & Flexible Investment Tiers | Sibling';
+      description = 'Transparent pricing for custom websites, web apps, automation, integrations, e-commerce, and digital products.';
       canonical = 'https://www.sibling.tech/pricing';
       breadcrumbName = 'Pricing Tiers';
     } else if (currentPage === 'contact') {
-      title = 'Contact Sibling — Hire Web Development & Engineering Experts';
-      description = 'Get in touch with Sibling to discuss your web development project, custom React/Next.js application, or e-commerce platform.';
+      title = 'Contact Sibling — Web Development & Digital Solutions';
+      description = 'Get in touch with Sibling to discuss your website, web app, automation, integration, AI, or digital product project.';
       canonical = 'https://www.sibling.tech/contact';
       breadcrumbName = 'Contact Us';
     } else if (currentPage === 'blog') {
-      title = 'Sibling Blog — Web Development, Next.js & SEO Engineering Guides';
-      description = 'Read technical insights, performance optimization guides, and web development strategies from the Sibling engineering team.';
+      title = 'Sibling Blog — Digital Products, Automation & Web Guides';
+      description = 'Read practical insights on digital products, automation, web development, performance, and growing a stronger online business.';
       canonical = 'https://www.sibling.tech/blog';
       breadcrumbName = 'Blog';
     } else if (currentPage === 'blog-detail') {
@@ -3746,7 +3749,7 @@ export default function App() {
       breadcrumbName = 'Admin';
     } else if (currentPage === '404') {
       title = '404 Page Not Found | Sibling';
-      description = 'The requested page could not be found. Return to Sibling web development homepage or explore our services.';
+      description = 'The requested page could not be found. Return to the Sibling digital solutions homepage or explore our services.';
       canonical = 'https://www.sibling.tech/404';
       breadcrumbName = '404 Page Not Found';
     }
@@ -3830,7 +3833,7 @@ export default function App() {
       const serviceSchema = {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "Web Development & Software Engineering",
+        "serviceType": "Web Development & Digital Solutions",
         "provider": {
           "@type": "Organization",
           "name": "Sibling",
@@ -3839,7 +3842,7 @@ export default function App() {
         "areaServed": "Global",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Web Engineering Services",
+          "name": "Digital Solutions Services",
           "itemListElement": SERVICES.map((service) => ({
             "@type": "Offer",
             "itemOffered": {
