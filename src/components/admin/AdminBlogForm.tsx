@@ -23,7 +23,7 @@ const PRESET_INTERNAL_LINKS: InternalLink[] = [
   { label: 'Web Development Services', url: '/services' },
   { label: 'Client Case Studies & Work', url: '/work' },
   { label: 'Transparent Pricing Packages', url: '/pricing' },
-  { label: 'About WebSoul Agency', url: '/about' },
+  { label: 'About Sibling Agency', url: '/about' },
   { label: 'Request a Free Quote / Contact', url: '/contact' }
 ];
 
@@ -34,7 +34,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
     featuredImage: '',
     imageAlt: '',
     category: 'Web Development',
-    author: 'Saad (WebSoul Lead)',
+    author: 'Sibling',
     publishDate: new Date().toISOString().split('T')[0],
     excerpt: '',
     content: '',
@@ -98,7 +98,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
       ...prev,
       title: newTitle,
       slug: isAutoSlug ? generateSlug(newTitle) : prev.slug,
-      seoTitle: prev.seoTitle || (newTitle ? `${newTitle} | WebSoul` : '')
+      seoTitle: prev.seoTitle || (newTitle ? `${newTitle} | Sibling` : '')
     }));
   };
 
@@ -403,7 +403,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
                 />
               </div>
               <p className="text-[11px] text-slate-400 font-mono-tech mt-1">
-                Final URL: https://www.websoul.tech/blog/{formData.slug || 'your-slug-here'}
+                Final URL: https://www.sibling.tech/blog/{formData.slug || 'your-slug-here'}
               </p>
             </div>
           </div>
@@ -574,7 +574,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
                 type="text"
                 value={formData.seoTitle}
                 onChange={(e) => setFormData({ ...formData, seoTitle: e.target.value })}
-                placeholder="e.g. 10 Signs Your Business Needs a New Website in 2026 | WebSoul"
+                placeholder="e.g. 10 Signs Your Business Needs a New Website in 2026 | Sibling"
                 className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs sm:text-sm text-[#0B192C] dark:text-white focus:outline-none focus:border-blue-500 font-mono-tech"
               />
             </div>
@@ -604,7 +604,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
                 Google Search Result Snippet Preview
               </span>
               <div className="text-xs text-emerald-700 dark:text-emerald-400 font-mono-tech truncate">
-                https://www.websoul.tech › blog › {formData.slug || 'slug'}
+                https://www.sibling.tech › blog › {formData.slug || 'slug'}
               </div>
               <div className="text-base text-blue-700 dark:text-blue-400 font-medium hover:underline cursor-pointer truncate mt-0.5" style={{ fontFamily: 'Arial, sans-serif' }}>
                 {formData.seoTitle || formData.title || 'Your Article SEO Title'}
@@ -927,7 +927,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
             {/* Quick Presets */}
             <div>
               <span className="text-[11px] font-mono-tech text-slate-400 block mb-2">
-                Quick WebSoul Presets:
+                Quick Sibling Presets:
               </span>
               <div className="flex flex-wrap gap-1.5">
                 {PRESET_INTERNAL_LINKS.map((preset) => (

@@ -135,7 +135,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
                   {user?.name || 'Saad (Admin)'}
                 </div>
                 <div className="text-[10px] text-slate-400 truncate font-mono-tech">
-                  {user?.email || 'websoul.tech859@gmail.com'}
+                  {user?.email || 'sibling.tech859@gmail.com'}
                 </div>
               </div>
             </div>
@@ -298,8 +298,8 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
 
         {/* Footer */}
         <footer className="px-8 py-4 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1424] text-xs text-slate-400 font-mono-tech flex items-center justify-between">
-          <span>WebSoul Content Management System • v2.0</span>
-          <span>Authenticated as Saad (websoul.tech859@gmail.com)</span>
+          <span>Sibling Content Management System • v2.0</span>
+          <span>Authenticated as Saad ({user?.email || 'sibling.tech859@gmail.com'})</span>
         </footer>
       </main>
     </div>

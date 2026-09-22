@@ -1,5 +1,6 @@
 import React from 'react';
 import { BlogPost } from '../../types/blog';
+import { formatBlogAuthor } from '../../services/blogStorage';
 
 interface BlogCardProps {
   blog: BlogPost;
@@ -95,7 +96,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ blog, onReadMore, featured =
                 />
               </div>
               <span className="text-xs font-medium text-[#334155] dark:text-slate-300 truncate font-mono-tech">
-                {blog.author}
+                {formatBlogAuthor(blog.author)}
               </span>
             </div>
 
