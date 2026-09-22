@@ -66,7 +66,7 @@ export interface ServiceItem {
   title: string;
   description: string;
   items: string[];
-  icon: 'monitor' | 'document' | 'grid' | 'radial' | 'arrows';
+  icon: 'monitor' | 'document' | 'grid' | 'radial' | 'arrows' | 'brain' | 'bot';
 }
 
 export interface ProcessStep {
@@ -501,6 +501,30 @@ export const TECH_STACK: TechStackItem[] = [
 
 export const SERVICES: ServiceItem[] = [
   {
+    id: "ai-automation",
+    title: "AI Automation",
+    description: "End-to-end workflow automation powered by AI. We eliminate repetitive manual tasks, connect your tools, and build intelligent pipelines that operate 24/7 without human intervention.",
+    items: [
+      "Workflow & process automation",
+      "AI-powered data pipelines",
+      "API & tool integrations",
+      "Auto-reporting & scheduling"
+    ],
+    icon: "brain"
+  },
+  {
+    id: "ai-chatbots",
+    title: "AI Chatbots & Agentic AI",
+    description: "Custom AI agents and intelligent chatbots that do more than answer questions — they take action. From customer support to autonomous multi-step task execution.",
+    items: [
+      "Custom LLM-powered chatbots",
+      "Agentic AI with tool use",
+      "RAG & knowledge-base bots",
+      "Multi-agent orchestration"
+    ],
+    icon: "bot"
+  },
+  {
     id: "web-design",
     title: "Website Design & Development",
     description: "Custom UI/UX design and engineering built from scratch. Blazing speed, flawless mobile responsiveness, and pixel-perfect design system implementation.",
@@ -919,6 +943,29 @@ export function ButtonSecondary({
 
 // Service Icons SVG Helper
 function ServiceIcon({ type }: { type: ServiceItem['icon'] }) {
+  if (type === 'brain') {
+    return (
+      <svg className="w-6 h-6 text-[#0B192C] dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9.5 2a2.5 2.5 0 0 1 2.45 2H14a3 3 0 0 1 3 3v1a3 3 0 0 1-3 3h-1v2h1a3 3 0 0 1 3 3v1a3 3 0 0 1-3 3h-2.05A2.5 2.5 0 0 1 7 20.5v-.09A3 3 0 0 1 5 18V6a3 3 0 0 1 2-2.83V3a1 1 0 0 1 1-1z" />
+        <path d="M9.5 2a2.5 2.5 0 0 0-2.45 2H5a3 3 0 0 0-3 3v1a3 3 0 0 0 3 3h1v2H5a3 3 0 0 0-3 3v1a3 3 0 0 0 3 3h2.05A2.5 2.5 0 0 0 10 20.5" />
+        <line x1="12" y1="8" x2="12" y2="10" />
+        <line x1="12" y1="14" x2="12" y2="16" />
+        <path d="M8 12h8" />
+      </svg>
+    );
+  }
+  if (type === 'bot') {
+    return (
+      <svg className="w-6 h-6 text-[#0B192C] dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" fill="currentColor" fillOpacity="0.08" />
+        <path d="M12 11V6" />
+        <circle cx="12" cy="4" r="2" />
+        <line x1="8" y1="16" x2="8" y2="16" strokeWidth="3" strokeLinecap="round" />
+        <line x1="16" y1="16" x2="16" y2="16" strokeWidth="3" strokeLinecap="round" />
+        <path d="M7 19h10" />
+      </svg>
+    );
+  }
   if (type === 'monitor') {
     return (
       <svg className="w-6 h-6 text-[#0B192C] dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -1066,6 +1113,9 @@ export function Nav({
 }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -1100,11 +1150,19 @@ export function Nav({
 
   const navLinks: { page: Page; label: string }[] = [
     { page: 'work', label: 'Work' },
-    { page: 'services', label: 'Services' },
     { page: 'about', label: 'About' },
     { page: 'pricing', label: 'Pricing' },
     { page: 'blog', label: 'Blog' },
     { page: 'contact', label: 'Contact' },
+  ];
+
+  const serviceDropdownItems = [
+    { id: 'ai-automation',  label: 'AI Automation',              desc: 'Intelligent workflow & process automation' },
+    { id: 'ai-chatbots',   label: 'AI Chatbots & Agentic AI',   desc: 'Custom LLM agents and autonomous bots' },
+    { id: 'web-design',    label: 'Website Design & Dev',        desc: 'Custom UI/UX built from scratch' },
+    { id: 'ecommerce',     label: 'E-commerce Development',      desc: 'High-converting headless stores' },
+    { id: 'webapp',        label: 'Web App Development',         desc: 'Scalable full-stack SaaS & tools' },
+    { id: 'maintenance',   label: 'Maintenance & Support',       desc: 'Security patches & priority support' },
   ];
 
 
@@ -1146,16 +1204,101 @@ export function Nav({
 
           {/* Desktop Links */}
           <nav className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-6">
-            {navLinks.map((link) => {
+            {/* Work */}
+            {navLinks.slice(0, 1).map((link) => {
               const isActive = currentPage === link.page;
               return (
                 <button
                   key={link.page}
                   onClick={() => navigate(link.page)}
-                  className={`text-xs lg:text-sm transition-colors cursor-pointer link-underline ${isActive
+                  className={`text-xs lg:text-sm transition-colors cursor-pointer link-underline ${isActive ? 'text-[#0B192C] dark:text-white font-semibold' : 'text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white'}`}
+                >
+                  {link.label}
+                </button>
+              );
+            })}
+
+            {/* Services dropdown */}
+            <div
+              ref={servicesRef}
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button
+                onClick={() => navigate('services')}
+                className={`text-xs lg:text-sm transition-colors cursor-pointer link-underline ${
+                  currentPage === 'services'
                     ? 'text-[#0B192C] dark:text-white font-semibold'
                     : 'text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white'
+                }`}
+              >
+                Services
+              </button>
+
+              {/* Dropdown panel */}
+              <div
+                className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 rounded-2xl shadow-xl border transition-all duration-200 origin-top z-50 ${
+                  servicesOpen
+                    ? 'opacity-100 scale-100 pointer-events-auto'
+                    : 'opacity-0 scale-95 pointer-events-none'
+                } ${
+                  darkMode
+                    ? 'bg-slate-900 border-slate-700/80'
+                    : 'bg-white border-slate-200'
+                }`}
+                style={{ backdropFilter: 'blur(12px)' }}
+              >
+                <div className="p-2">
+                  {serviceDropdownItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => { navigate('services'); setServicesOpen(false); }}
+                      className={`w-full text-left px-3 py-2.5 rounded-xl group transition-all duration-150 flex items-start gap-3 ${
+                        darkMode ? 'hover:bg-slate-800' : 'hover:bg-slate-50'
+                      }`}
+                    >
+                      <span className={`mt-0.5 w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5 ${
+                        darkMode ? 'bg-blue-400' : 'bg-[#0B192C]'
+                      }`} />
+                      <div>
+                        <div className={`text-xs font-semibold ${
+                          darkMode ? 'text-slate-100 group-hover:text-white' : 'text-[#0B192C] group-hover:text-[#1E3A8A]'
+                        }`}>{item.label}</div>
+                        <div className={`text-[10px] leading-snug mt-0.5 ${
+                          darkMode ? 'text-slate-400' : 'text-slate-500'
+                        }`}>{item.desc}</div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+
+                <div className={`px-4 py-2.5 border-t ${
+                  darkMode ? 'border-slate-700/60' : 'border-slate-100'
+                }`}>
+                  <button
+                    onClick={() => { navigate('services'); setServicesOpen(false); }}
+                    className={`text-[11px] font-medium flex items-center gap-1.5 transition-colors ${
+                      darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-[#0B192C] hover:text-[#1E3A8A]'
                     }`}
+                  >
+                    View all services
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Remaining links (About, Pricing, Blog, Contact) */}
+            {navLinks.slice(1).map((link) => {
+              const isActive = currentPage === link.page;
+              return (
+                <button
+                  key={link.page}
+                  onClick={() => navigate(link.page)}
+                  className={`text-xs lg:text-sm transition-colors cursor-pointer link-underline ${isActive ? 'text-[#0B192C] dark:text-white font-semibold' : 'text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white'}`}
                 >
                   {link.label}
                 </button>
@@ -1227,25 +1370,70 @@ export function Nav({
       >
         <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 flex flex-col justify-between h-full min-h-max">
           <div className="flex flex-col gap-2">
-            {navLinks.map((link) => {
+            {/* Work */}
+            {navLinks.slice(0, 1).map((link) => {
               const isActive = currentPage === link.page;
               return (
                 <button
                   key={link.page}
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    navigate(link.page);
-                  }}
-                  className={`text-lg sm:text-xl font-medium text-left px-4 py-3.5 rounded-xl transition-all cursor-pointer flex items-center justify-between min-h-[48px] ${isActive
-                    ? 'bg-slate-100 dark:bg-slate-800/90 text-[#0B192C] dark:text-white font-semibold shadow-xs'
-                    : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#0B192C] dark:hover:text-white'
-                    }`}
+                  onClick={() => { setMobileMenuOpen(false); navigate(link.page); }}
+                  className={`text-lg sm:text-xl font-medium text-left px-4 py-3.5 rounded-xl transition-all cursor-pointer flex items-center justify-between min-h-[48px] ${isActive ? 'bg-slate-100 dark:bg-slate-800/90 text-[#0B192C] dark:text-white font-semibold shadow-xs' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#0B192C] dark:hover:text-white'}`}
                   style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   <span>{link.label}</span>
-                  {isActive && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#0B192C] dark:bg-sky-400" />
-                  )}
+                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#0B192C] dark:bg-sky-400" />}
+                </button>
+              );
+            })}
+
+            {/* Mobile Services accordion */}
+            <div>
+              <button
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                className={`w-full text-lg sm:text-xl font-medium text-left px-4 py-3.5 rounded-xl transition-all cursor-pointer flex items-center justify-between min-h-[48px] ${
+                  currentPage === 'services'
+                    ? 'bg-slate-100 dark:bg-slate-800/90 text-[#0B192C] dark:text-white font-semibold shadow-xs'
+                    : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#0B192C] dark:hover:text-white'
+                }`}
+                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+              >
+                <span>Services</span>
+                <svg
+                  className={`w-5 h-5 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`}
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div className={`overflow-hidden transition-all duration-300 ${mobileServicesOpen ? 'max-h-96 mt-1' : 'max-h-0'}`}>
+                <div className="ml-4 flex flex-col gap-1 pb-1">
+                  {serviceDropdownItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => { setMobileMenuOpen(false); navigate('services'); }}
+                      className="text-left px-4 py-2.5 rounded-xl text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#0B192C] dark:hover:text-white transition-all cursor-pointer"
+                      style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* About, Pricing, Blog, Contact */}
+            {navLinks.slice(1).map((link) => {
+              const isActive = currentPage === link.page;
+              return (
+                <button
+                  key={link.page}
+                  onClick={() => { setMobileMenuOpen(false); navigate(link.page); }}
+                  className={`text-lg sm:text-xl font-medium text-left px-4 py-3.5 rounded-xl transition-all cursor-pointer flex items-center justify-between min-h-[48px] ${isActive ? 'bg-slate-100 dark:bg-slate-800/90 text-[#0B192C] dark:text-white font-semibold shadow-xs' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#0B192C] dark:hover:text-white'}`}
+                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                >
+                  <span>{link.label}</span>
+                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#0B192C] dark:bg-sky-400" />}
                 </button>
               );
             })}
