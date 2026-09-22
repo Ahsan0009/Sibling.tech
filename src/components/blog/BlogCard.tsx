@@ -87,16 +87,13 @@ export const BlogCard: React.FC<BlogCardProps> = ({ blog, onReadMore, featured =
         <div className="pt-4 border-t border-slate-100 dark:border-slate-700/60 mt-auto">
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-2.5 min-w-0">
-              <img
-                src="/favicon.png"
-                alt="WebSoul"
-                className="w-7 h-7 rounded-full object-cover border border-slate-200 block dark:hidden"
-              />
-              <img
-                src="/websoul_logo/favicondark.png"
-                alt="WebSoul"
-                className="w-7 h-7 rounded-full object-cover border border-slate-700/60 hidden dark:block"
-              />
+              <div className="w-7 h-7 rounded-full bg-[#0B192C] dark:bg-slate-900 border border-slate-200 dark:border-slate-700/60 p-0.5 flex items-center justify-center shrink-0">
+                <img
+                  src="/sibling-tech.png"
+                  alt="Sibling Tech"
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <span className="text-xs font-medium text-[#334155] dark:text-slate-300 truncate font-mono-tech">
                 {blog.author}
               </span>

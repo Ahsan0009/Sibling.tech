@@ -124,7 +124,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
         name: 'WebSoul',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.websoul.tech/websoul_logo/header_logo-removebg-preview.png'
+          url: 'https://www.websoul.tech/sibling-tech.png'
         }
       },
       keywords: [blog.focusKeyword, blog.category, ...(blog.tags || [])].filter(Boolean).join(', ')
@@ -284,16 +284,13 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
 
         {/* Author Details & Date */}
         <div className="flex items-center gap-4 py-4 border-y border-slate-200 dark:border-slate-800">
-          <img
-            src="/favicon.png"
-            alt="WebSoul"
-            className="w-12 h-12 rounded-full object-cover border-2 border-slate-200 block dark:hidden"
-          />
-          <img
-            src="/websoul_logo/favicondark.png"
-            alt="WebSoul"
-            className="w-12 h-12 rounded-full object-cover border-2 border-slate-700 hidden dark:block"
-          />
+          <div className="w-12 h-12 rounded-full bg-[#0B192C] dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 p-1 flex items-center justify-center shrink-0">
+            <img
+              src="/sibling-tech.png"
+              alt="Sibling Tech"
+              className="w-full h-full object-contain"
+            />
+          </div>
           <div>
             <div className="text-sm font-bold text-[#0B192C] dark:text-white font-mono-tech">
               {blog.author}
@@ -386,16 +383,13 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
 
       {/* Author Bio Box */}
       <div className="mt-10 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-[#F8FAFC] dark:bg-slate-900/60 flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
-        <img
-          src="/favicon.png"
-          alt="WebSoul"
-          className="w-16 h-16 rounded-full object-cover border-2 border-slate-200 block dark:hidden shrink-0"
-        />
-        <img
-          src="/websoul_logo/favicondark.png"
-          alt="WebSoul"
-          className="w-16 h-16 rounded-full object-cover border-2 border-slate-700 hidden dark:block shrink-0"
-        />
+        <div className="w-16 h-16 rounded-full bg-[#0B192C] dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 p-1.5 flex items-center justify-center shrink-0">
+          <img
+            src="/sibling-tech.png"
+            alt="Sibling Tech"
+            className="w-full h-full object-contain"
+          />
+        </div>
         <div>
           <h4 className="text-base font-bold text-[#0B192C] dark:text-white mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Written by {blog.author}
