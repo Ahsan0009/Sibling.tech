@@ -22,7 +22,7 @@ const DEFAULT_CATEGORIES = [
 const PRESET_INTERNAL_LINKS: InternalLink[] = [
   { label: 'Web Development Services', url: '/services' },
   { label: 'Client Case Studies & Work', url: '/work' },
-  { label: 'Transparent Pricing Packages', url: '/pricing' },
+  { label: 'AI Automation Services', url: '/services' },
   { label: 'About WebSoul Agency', url: '/about' },
   { label: 'Request a Free Quote / Contact', url: '/contact' }
 ];
@@ -957,7 +957,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
                   type="text"
                   value={customLinkUrl}
                   onChange={(e) => setCustomLinkUrl(e.target.value)}
-                  placeholder="URL (e.g. /pricing)"
+                  placeholder="URL (e.g. /services)"
                   className="flex-1 px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-xs font-mono-tech"
                 />
                 <button

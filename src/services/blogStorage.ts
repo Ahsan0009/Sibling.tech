@@ -44,10 +44,10 @@ export const INITIAL_BLOGS: Omit<BlogPost, 'createdAt' | 'updatedAt'>[] = [
     isPublished: true,
     isFeatured: true,
     tags: ['Web Development', 'Business Growth', 'UI/UX Design', 'Conversion Optimization'],
-    internalLinks: [
+        internalLinks: [
       { label: 'WebSoul Web Development Services', url: '/services' },
       { label: 'Client Case Studies & Portfolio', url: '/work' },
-      { label: 'Transparent Pricing Packages', url: '/pricing' },
+      { label: 'AI Automation Services', url: '/services' },
       { label: 'Request a Free Project Consultation', url: '/contact' }
     ],
     readingTimeMinutes: 5,
