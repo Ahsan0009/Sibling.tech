@@ -1,9 +1,9 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 // Admin credentials configured securely on server side
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'websoul.tech859@gmail.com';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'sibling.tech859@gmail.com';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'S@@d1234';
-const JWT_SECRET = process.env.JWT_SECRET || 'websoul_super_secret_jwt_key_2026';
+const JWT_SECRET = process.env.JWT_SECRET || 'sibling_super_secret_jwt_key_2026';
 
 function createToken(email: string): string {
   const header = Buffer.from(JSON.stringify({ alg: 'HS256', typ: 'JWT' })).toString('base64url');
@@ -52,7 +52,12 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     const normalizedEmail = String(email).trim().toLowerCase();
-    if (normalizedEmail !== ADMIN_EMAIL.toLowerCase() || String(password) !== ADMIN_PASSWORD) {
+    const isAllowedEmail =
+      normalizedEmail === ADMIN_EMAIL.toLowerCase() ||
+      normalizedEmail === 'sibling.tech859@gmail.com' ||
+      normalizedEmail === 'websoul.tech859@gmail.com';
+
+    if (!isAllowedEmail || String(password) !== ADMIN_PASSWORD) {
       return res.status(401).json({ error: 'Invalid admin credentials. Please check email or password.' });
     }
 
@@ -65,7 +70,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
       expiresAt,
       user: {
         email: normalizedEmail,
-        name: 'Saad (WebSoul Admin)',
+        name: 'Saad (Sibling Admin)',
         role: 'Administrator'
       }
     });

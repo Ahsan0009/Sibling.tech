@@ -108,7 +108,7 @@ export interface TestimonialItem {
 export const TESTIMONIALS: TestimonialItem[] = [
   {
     id: 1,
-    quote: "Web Soul transformed our slow legacy app into a blazingly fast interface that our users actually enjoy using every single day. Load times dropped by 90%.",
+    quote: "Sibling transformed our slow legacy app into a blazingly fast interface that our users actually enjoy using every single day. Load times dropped by 90%.",
     author: "Maya Patel",
     role: "Head of Product at Orbit Analytics",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&auto=format",
@@ -117,7 +117,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
   },
   {
     id: 2,
-    quote: "The e-commerce platform engineered by WebSoul doubled our conversion rates within 30 days. Their code quality, design polish, and speed of delivery were truly world-class.",
+    quote: "The e-commerce platform engineered by Sibling doubled our conversion rates within 30 days. Their code quality, design polish, and speed of delivery were truly world-class.",
     author: "Marcus Vance",
     role: "Founder & CEO at Nexus Commerce",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&auto=format",
@@ -126,7 +126,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
   },
   {
     id: 3,
-    quote: "Working with WebSoul was effortless. They took our complex SaaS dashboard concept and delivered a pixel-perfect, highly responsive React application weeks ahead of deadline.",
+    quote: "Working with Sibling was effortless. They took our complex SaaS dashboard concept and delivered a pixel-perfect, highly responsive React application weeks ahead of deadline.",
     author: "Sophia Lin",
     role: "VP of Growth at Pulse AI",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&auto=format",
@@ -135,7 +135,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
   },
   {
     id: 4,
-    quote: "WebSoul's full-stack expertise helped us pass rigorous security audits while maintaining a silky-smooth 60fps user experience across all desktop and mobile browsers.",
+    quote: "Sibling's full-stack expertise helped us pass rigorous security audits while maintaining a silky-smooth 60fps user experience across all desktop and mobile browsers.",
     author: "David Reynolds",
     role: "CTO at FinEdge Solutions",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&auto=format",
@@ -220,7 +220,7 @@ export const PROJECTS: Project[] = [
       { label: "Organic Reach", before: "150/mo", after: "1,800/mo" },
       { label: "Reader Time", before: "1.2m", after: "4.5m" }
     ],
-    quote: "WebSoul delivered an incredibly sleek and blazing fast blog platform. Article load times are instant.",
+    quote: "Sibling delivered an incredibly sleek and blazing fast blog platform. Article load times are instant.",
     quoteAuthor: "Alex Rivera",
     quoteRole: "Content Lead & Creator"
   },
@@ -277,7 +277,7 @@ export const PROJECTS: Project[] = [
       { label: "Mobile Retention", before: "28%", after: "61%" },
       { label: "User Satisfaction", before: "3.2/5", after: "4.7/5" }
     ],
-    quote: "Web Soul transformed our slow legacy app into a blazingly fast interface that our users actually enjoy using every single day. Load times dropped by 90%.",
+    quote: "Sibling transformed our slow legacy app into a blazingly fast interface that our users actually enjoy using every single day. Load times dropped by 90%.",
     quoteAuthor: "Maya Patel",
     quoteRole: "Head of Product"
   },
@@ -353,7 +353,7 @@ export const PROJECTS: Project[] = [
       { label: "Investor Meetings", before: "2", after: "14" },
       { label: "Series A Funding", before: "$0", after: "$1.2M" }
     ],
-    quote: "Our pitch deck opened doors, but the website Web Soul built closed our seed round. Investors were blown away by the clarity and execution.",
+    quote: "Our pitch deck opened doors, but the website Sibling built closed our seed round. Investors were blown away by the clarity and execution.",
     quoteAuthor: "Nico Vance",
     quoteRole: "CEO"
   },
@@ -372,7 +372,7 @@ export const PROJECTS: Project[] = [
       { label: "Avg Project Size", before: "$8k", after: "$28k" },
       { label: "Awwwards Status", before: "None", after: "SOTD Nominee" }
     ],
-    quote: "Web Soul gave our agency the digital presence we deserved. It immediately elevated our brand perception and tripled our average deal size.",
+    quote: "Sibling gave our agency the digital presence we deserved. It immediately elevated our brand perception and tripled our average deal size.",
     quoteAuthor: "Priya Nair",
     quoteRole: "Creative Director"
   }
@@ -1546,10 +1546,10 @@ export function Footer({ navigate, darkMode }: { navigate: (page: Page, id?: num
                 </li>
                 <li>
                   <a
-                    href="mailto:contact@websoul.tech"
+                    href="mailto:contact@sibling.tech"
                     className="text-xs sm:text-sm text-[#0B192C] dark:text-blue-400 font-semibold hover:underline font-mono-tech cursor-pointer"
                   >
-                    contact@websoul.tech
+                    contact@sibling.tech
                   </a>
                 </li>
               </ul>
@@ -1560,10 +1560,10 @@ export function Footer({ navigate, darkMode }: { navigate: (page: Page, id?: num
         {/* Bottom Bar */}
         <div className="border-t border-slate-200 dark:border-slate-800 mt-10 sm:mt-12 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-center sm:text-left">
           <p className="text-xs font-mono-tech text-[#64748B] dark:text-slate-500">
-            copyright © 2026 Web Soul. All rights reserved.
+            copyright © 2023 Sibling. All rights reserved.
           </p>
           <p className="text-xs font-mono-tech text-[#64748B] dark:text-slate-500">
-            Designed & built by Web Soul
+            Designed & built by Sibling
           </p>
         </div>
       </div>
@@ -2468,7 +2468,7 @@ export function AboutSection({
         <div className="max-w-3xl mb-10 sm:mb-14 lg:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono-tech bg-[#0B192C]/5 dark:bg-blue-950/50 border border-[#0B192C]/15 dark:border-blue-500/30 text-[#0B192C] dark:text-blue-300 font-semibold mb-4 sm:mb-5">
             <span className="w-2 h-2 rounded-full bg-[#0B192C] dark:bg-blue-400 animate-pulse shrink-0" />
-            <span>About WebSoul</span>
+            <span>About Sibling</span>
           </div>
 
           {isStandalonePage ? (
@@ -2488,7 +2488,7 @@ export function AboutSection({
           )}
 
           <p className="text-base sm:text-lg text-[#475569] dark:text-slate-300 leading-relaxed font-normal">
-            WebSoul is a web development studio focused on building modern, high-performance digital experiences for startups and growing businesses. We combine thoughtful design, clean engineering and strategic thinking to create websites that don't just look good — they work hard for your business.
+            Sibling is a web development studio focused on building modern, high-performance digital experiences for startups and growing businesses. We combine thoughtful design, clean engineering and strategic thinking to create websites that don't just look good — they work hard for your business.
           </p>
         </div>
       </Reveal>
@@ -2512,7 +2512,7 @@ export function AboutSection({
                     Your website is often the first real interaction someone has with your business. That's why we don't believe in generic templates, rushed builds or unnecessary complexity.
                   </p>
                   <p>
-                    At WebSoul, every project starts with understanding your business, your audience and your goals. From strategy and design to development and performance optimization, we focus on creating digital experiences that are fast, intuitive and built to support real growth.
+                    At Sibling, every project starts with understanding your business, your audience and your goals. From strategy and design to development and performance optimization, we focus on creating digital experiences that are fast, intuitive and built to support real growth.
                   </p>
                   <p>
                     Whether you're launching something new, improving an outdated website or building a more powerful digital presence, we create solutions designed around what your business actually needs.
@@ -2565,7 +2565,7 @@ export function AboutSection({
                 </div>
 
                 <div className="pt-3.5 mt-3.5 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between text-[11px] font-mono-tech text-slate-400 dark:text-slate-500">
-                  <span>WebSoul Standard</span>
+                  <span>Sibling Standard</span>
                   <span className="group-hover:text-[#0B192C] dark:group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all">✓</span>
                 </div>
               </div>
@@ -2784,7 +2784,7 @@ export function ContactPage() {
   });
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('contact@websoul.tech');
+    navigator.clipboard.writeText('contact@sibling.tech');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -2821,7 +2821,7 @@ export function ContactPage() {
       });
     } catch (err) {
       console.error('EmailJS submit error:', err);
-      setErrorMessage('Unable to send message at this time. Please try again or reach out to contact@websoul.tech directly.');
+      setErrorMessage('Unable to send message at this time. Please try again or reach out to contact@sibling.tech directly.');
     } finally {
       setLoading(false);
     }
@@ -2862,8 +2862,8 @@ export function ContactPage() {
                     </div>
                     <div>
                       <div className="text-[11px] font-mono-tech font-semibold text-[#64748B] dark:text-slate-400 uppercase tracking-wider">Direct Email</div>
-                      <a href="mailto:contact@websoul.tech" className="text-xs sm:text-sm font-bold text-[#0B192C] dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors break-all">
-                        contact@websoul.tech
+                      <a href="mailto:contact@sibling.tech" className="text-xs sm:text-sm font-bold text-[#0B192C] dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors break-all">
+                        contact@sibling.tech
                       </a>
                     </div>
                   </div>
@@ -3210,8 +3210,8 @@ export interface FAQItem {
 
 export const FAQS: FAQItem[] = [
   {
-    question: "What custom web development services does WebSoul offer?",
-    answer: "WebSoul provides end-to-end custom web development services including React and Next.js web application development, headless e-commerce storefronts, custom UI/UX design, database architecture, API engineering, and ongoing maintenance."
+    question: "What custom web development services does Sibling offer?",
+    answer: "Sibling provides end-to-end custom web development services including React and Next.js web application development, headless e-commerce storefronts, custom UI/UX design, database architecture, API engineering, and ongoing maintenance."
   },
   {
     question: "Which technologies and frameworks do you use for web development?",
@@ -3222,12 +3222,12 @@ export const FAQS: FAQItem[] = [
     answer: "Project timelines range from 2 to 3 weeks for high-converting landing pages and business websites, to 4 to 8 weeks for custom SaaS web applications and full-stack e-commerce platforms."
   },
   {
-    question: "Are all WebSoul websites optimized for SEO and mobile performance?",
+    question: "Are all Sibling websites optimized for SEO and mobile performance?",
     answer: "Yes, every digital product we engineer is mobile-first responsive, optimized for Core Web Vitals (sub-1-second load times), and pre-configured with technical SEO best practices, schema markup, and canonical URLs."
   },
   {
-    question: "How can I request a project estimate or hire WebSoul?",
-    answer: "You can reach out directly via our contact form or email us at contact@websoul.tech. We review your requirements and provide a detailed proposal and fixed timeline within 24 hours."
+    question: "How can I request a project estimate or hire Sibling?",
+    answer: "You can reach out directly via our contact form or email us at contact@sibling.tech. We review your requirements and provide a detailed proposal and fixed timeline within 24 hours."
   }
 ];
 
@@ -3511,7 +3511,7 @@ export function FAQSection() {
 
 export function NotFoundPage({ navigate }: { navigate: (page: Page) => void }) {
   useEffect(() => {
-    document.title = '404 Page Not Found | WebSoul';
+    document.title = '404 Page Not Found | Sibling';
     let robots = document.querySelector('meta[name="robots"]');
     if (robots) {
       robots.setAttribute('content', 'noindex, follow');
@@ -3606,7 +3606,7 @@ export default function App() {
   const [editBlogId, setEditBlogId] = useState<string>(initialRoute.editBlogId || '');
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('websoul_theme');
+      const savedTheme = localStorage.getItem('sibling_theme') || localStorage.getItem('websoul_theme');
       if (savedTheme) {
         return savedTheme === 'dark';
       }
@@ -3619,61 +3619,61 @@ export default function App() {
 
   // Dynamic SEO Metadata, Open Graph, Twitter Cards, Canonical Tags & JSON-LD Head Manager
   useEffect(() => {
-    let title = 'WebSoul — Custom Web Development & Design Agency for Growing Businesses';
-    let description = 'WebSoul is a premier web development company crafting high-performing React & Next.js websites, custom web applications, e-commerce storefronts, and digital products.';
-    let canonical = 'https://www.websoul.tech/';
+    let title = 'Sibling — Custom Web Development & Design Agency for Growing Businesses';
+    let description = 'Sibling is a premier web development company crafting high-performing React & Next.js websites, custom web applications, e-commerce storefronts, and digital products.';
+    let canonical = 'https://www.sibling.tech/';
     let breadcrumbName = 'Home';
 
     if (currentPage === 'work') {
-      title = 'Web Development Portfolio & Case Studies | WebSoul';
-      description = 'Explore custom web development projects, SaaS analytics platforms, and e-commerce storefronts engineered by WebSoul.';
-      canonical = 'https://www.websoul.tech/work';
+      title = 'Web Development Portfolio & Case Studies | Sibling';
+      description = 'Explore custom web development projects, SaaS analytics platforms, and e-commerce storefronts engineered by Sibling.';
+      canonical = 'https://www.sibling.tech/work';
       breadcrumbName = 'Portfolio & Case Studies';
     } else if (currentPage === 'project') {
       const project = PROJECTS.find((p) => p.id === projectId);
       if (project) {
-        title = `${project.title} Case Study | WebSoul Web Development`;
-        description = `${project.title}: ${project.tagline}. ${project.result}. Custom ${project.category} built by WebSoul agency.`;
-        canonical = `https://www.websoul.tech/project/${projectId}`;
+        title = `${project.title} Case Study | Sibling Web Development`;
+        description = `${project.title}: ${project.tagline}. ${project.result}. Custom ${project.category} built by Sibling agency.`;
+        canonical = `https://www.sibling.tech/project/${projectId}`;
         breadcrumbName = `${project.title} Case Study`;
       }
     } else if (currentPage === 'services') {
-      title = 'Web Development & Software Engineering Services | WebSoul';
+      title = 'Web Development & Software Engineering Services | Sibling';
       description = 'Professional web development services including custom React/Next.js web applications, headless e-commerce platforms, UI/UX design, and full-stack engineering.';
-      canonical = 'https://www.websoul.tech/services';
+      canonical = 'https://www.sibling.tech/services';
       breadcrumbName = 'Web Development Services';
     } else if (currentPage === 'about') {
-      title = 'About WebSoul — Custom Web Development & Engineering Team';
-      description = 'Learn about WebSoul, our web development philosophy, engineering capabilities, and dedicated team building fast, high-converting digital products.';
-      canonical = 'https://www.websoul.tech/about';
-      breadcrumbName = 'About WebSoul';
+      title = 'About Sibling — Custom Web Development & Engineering Team';
+      description = 'Learn about Sibling, our web development philosophy, engineering capabilities, and dedicated team building fast, high-converting digital products.';
+      canonical = 'https://www.sibling.tech/about';
+      breadcrumbName = 'About Sibling';
     } else if (currentPage === 'pricing') {
-      title = 'Web Development Pricing & Flexible Investment Tiers | WebSoul';
+      title = 'Web Development Pricing & Flexible Investment Tiers | Sibling';
       description = 'Transparent web development pricing packages for custom website design, e-commerce storefronts, and full-stack SaaS web applications.';
-      canonical = 'https://www.websoul.tech/pricing';
+      canonical = 'https://www.sibling.tech/pricing';
       breadcrumbName = 'Pricing Tiers';
     } else if (currentPage === 'contact') {
-      title = 'Contact WebSoul — Hire Web Development & Engineering Experts';
-      description = 'Get in touch with WebSoul to discuss your web development project, custom React/Next.js application, or e-commerce platform.';
-      canonical = 'https://www.websoul.tech/contact';
+      title = 'Contact Sibling — Hire Web Development & Engineering Experts';
+      description = 'Get in touch with Sibling to discuss your web development project, custom React/Next.js application, or e-commerce platform.';
+      canonical = 'https://www.sibling.tech/contact';
       breadcrumbName = 'Contact Us';
     } else if (currentPage === 'blog') {
-      title = 'WebSoul Blog — Web Development, Next.js & SEO Engineering Guides';
-      description = 'Read technical insights, performance optimization guides, and web development strategies from the WebSoul engineering team.';
-      canonical = 'https://www.websoul.tech/blog';
+      title = 'Sibling Blog — Web Development, Next.js & SEO Engineering Guides';
+      description = 'Read technical insights, performance optimization guides, and web development strategies from the Sibling engineering team.';
+      canonical = 'https://www.sibling.tech/blog';
       breadcrumbName = 'Blog';
     } else if (currentPage === 'blog-detail') {
       // Handled dynamically inside BlogDetailPage component
       return;
     } else if (isAdminRoute) {
-      title = 'WebSoul Admin Dashboard';
-      description = 'Protected administrative panel for WebSoul.';
-      canonical = 'https://www.websoul.tech/admin';
+      title = 'Sibling Admin Dashboard';
+      description = 'Protected administrative panel for Sibling.';
+      canonical = 'https://www.sibling.tech/admin';
       breadcrumbName = 'Admin';
     } else if (currentPage === '404') {
-      title = '404 Page Not Found | WebSoul';
-      description = 'The requested page could not be found. Return to WebSoul web development homepage or explore our services.';
-      canonical = 'https://www.websoul.tech/404';
+      title = '404 Page Not Found | Sibling';
+      description = 'The requested page could not be found. Return to Sibling web development homepage or explore our services.';
+      canonical = 'https://www.sibling.tech/404';
       breadcrumbName = '404 Page Not Found';
     }
 
@@ -3727,7 +3727,7 @@ export default function App() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://www.websoul.tech/"
+            "item": "https://www.sibling.tech/"
           },
           {
             "@type": "ListItem",
@@ -3759,8 +3759,8 @@ export default function App() {
         "serviceType": "Web Development & Software Engineering",
         "provider": {
           "@type": "Organization",
-          "name": "WebSoul",
-          "url": "https://www.websoul.tech/"
+          "name": "Sibling",
+          "url": "https://www.sibling.tech/"
         },
         "areaServed": "Global",
         "hasOfferCatalog": {
@@ -3859,10 +3859,10 @@ export default function App() {
     const root = document.documentElement;
     if (darkMode) {
       root.classList.add('dark');
-      localStorage.setItem('websoul_theme', 'dark');
+      localStorage.setItem('sibling_theme', 'dark');
     } else {
       root.classList.remove('dark');
-      localStorage.setItem('websoul_theme', 'light');
+      localStorage.setItem('sibling_theme', 'light');
     }
   }, [darkMode]);
 

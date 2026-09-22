@@ -49,7 +49,7 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate, dark
               </svg>
             </div>
             <h1 className="text-2xl font-bold text-[#0B192C] dark:text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              WebSoul Admin
+              Sibling Admin
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-mono-tech">
               Protected Dashboard Authentication
@@ -75,7 +75,7 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate, dark
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="name@websoul.tech"
+                placeholder="name@sibling.tech"
                 className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-[#0B192C] dark:text-white text-xs sm:text-sm placeholder-slate-400 focus:outline-none focus:bg-white dark:focus:bg-slate-900 focus:border-[#0B192C] dark:focus:border-blue-500 transition-all font-normal"
               />
             </div>

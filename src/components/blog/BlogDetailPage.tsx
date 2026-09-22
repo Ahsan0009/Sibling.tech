@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BlogPost } from '../../types/blog';
-import { BlogStorageService } from '../../services/blogStorage';
+import { BlogStorageService, formatBlogAuthor } from '../../services/blogStorage';
 import { trackPageView } from '../../lib/analytics';
 
 interface BlogDetailPageProps {
@@ -46,10 +46,10 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
   useEffect(() => {
     if (!blog) return;
 
-    const pageTitle = blog.seoTitle || `${blog.title} | WebSoul Blog`;
+    const pageTitle = blog.seoTitle || `${blog.title} | Sibling Blog`;
     const pageDesc = blog.seoDescription || blog.excerpt;
-    const canonicalUrl = `https://www.websoul.tech/blog/${blog.slug}`;
-    const imageUrl = blog.featuredImage.startsWith('http') ? blog.featuredImage : `https://www.websoul.tech${blog.featuredImage}`;
+    const canonicalUrl = `https://www.sibling.tech/blog/${blog.slug}`;
+    const imageUrl = blog.featuredImage.startsWith('http') ? blog.featuredImage : `https://www.sibling.tech${blog.featuredImage}`;
 
     document.title = pageTitle;
 
@@ -116,15 +116,15 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
       dateModified: blog.updatedAt || blog.publishDate,
       author: {
         '@type': 'Person',
-        name: blog.author,
-        url: 'https://www.websoul.tech/about'
+        name: formatBlogAuthor(blog.author),
+        url: 'https://www.sibling.tech/about'
       },
       publisher: {
         '@type': 'Organization',
-        name: 'WebSoul',
+        name: 'Sibling',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.websoul.tech/sibling-tech.png'
+          url: 'https://www.sibling.tech/sibling-tech.png'
         }
       },
       keywords: [blog.focusKeyword, blog.category, ...(blog.tags || [])].filter(Boolean).join(', ')
@@ -148,13 +148,13 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://www.websoul.tech/'
+          item: 'https://www.sibling.tech/'
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Blog',
-          item: 'https://www.websoul.tech/blog'
+          item: 'https://www.sibling.tech/blog'
         },
         {
           '@type': 'ListItem',
@@ -293,7 +293,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
           </div>
           <div>
             <div className="text-sm font-bold text-[#0B192C] dark:text-white font-mono-tech">
-              {blog.author}
+              {formatBlogAuthor(blog.author)}
             </div>
             <div className="text-xs text-slate-500 dark:text-slate-400 font-mono-tech flex items-center gap-2">
               <span>{blog.authorRole || 'Senior Full-Stack Engineer'}</span>
@@ -345,7 +345,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
           <div className="flex items-center gap-2 mb-3">
             <span className="text-base">🔗</span>
             <h4 className="text-sm sm:text-base font-bold text-[#0B192C] dark:text-blue-300 font-mono-tech uppercase tracking-wide">
-              Related WebSoul Pages & Services
+              Related Sibling Pages & Services
             </h4>
           </div>
           <p className="text-xs sm:text-sm text-[#475569] dark:text-slate-300 mb-4">
@@ -392,10 +392,10 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ slug, onNavigate
         </div>
         <div>
           <h4 className="text-base font-bold text-[#0B192C] dark:text-white mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Written by {blog.author}
+            Written by {formatBlogAuthor(blog.author)}
           </h4>
           <p className="text-xs font-mono-tech text-blue-600 dark:text-blue-400 mb-2">
-            {blog.authorRole || 'Founder & Full-Stack Architect at WebSoul'}
+            {blog.authorRole || 'Founder & Full-Stack Architect at Sibling'}
           </p>
           <p className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 leading-relaxed">
             Engineering high-performance web products, React applications, and custom digital platforms with sub-second speeds and bulletproof technical SEO.
