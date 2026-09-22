@@ -496,6 +496,82 @@ export const TECH_STACK: TechStackItem[] = [
         <path d="M3.84 15.68l7.632 4.4a1.87 1.87 0 001.888 0l7.632-4.4-8.576 5.07a.936.936 0 01-.952 0L3.84 15.68z" fill="#FFCA28" />
       </svg>
     )
+  },
+  {
+    name: "n8n",
+    textColorClass: "text-[#EA4B71] dark:text-[#FF7898]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 4h4v4H7V4Zm6 6h4v4h-4v-4ZM3 16h4v4H3v-4Zm14 0h4v4h-4v-4Z" fill="#EA4B71" />
+        <path d="M11 6h2v6h-2V6Zm-4 6h6v2H7v-2Zm10 0h2v4h-2v-4Zm-10 2h2v2H7v-2Z" fill="#EA4B71" />
+      </svg>
+    )
+  },
+  {
+    name: "Make",
+    textColorClass: "text-[#6D28D9] dark:text-[#A78BFA]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 6h4.2l2.1 6L11.4 6h3.2l2.1 6L18.8 6H21l-3.2 12h-3.1l-1.7-5.8L11.3 18H8.1L3 6Z" fill="#6D28D9" />
+      </svg>
+    )
+  },
+  {
+    name: "Relay",
+    textColorClass: "text-[#111827] dark:text-white",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 5h7a5 5 0 0 1 0 10H8v4H4V5Zm4 4v2h3a1 1 0 1 0 0-2H8Z" fill="#111827" className="dark:fill-white" />
+        <path d="M15 9h5v4h-5V9Z" fill="#F97316" />
+      </svg>
+    )
+  },
+  {
+    name: "Zapier",
+    textColorClass: "text-[#FF4A00] dark:text-[#FF7A45]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 2h2v7.1l5.02-5.02 1.4 1.42L14.4 10.5h7.1v2h-7.1l5.02 5-1.4 1.42L13 13.9V21h-2v-7.1l-5.02 5.02-1.4-1.42 5.02-5H2v-2h7.6L4.58 5.5l1.4-1.42L11 9.1V2Z" fill="#FF4A00" />
+      </svg>
+    )
+  },
+  {
+    name: "Pipedream",
+    textColorClass: "text-[#7C3AED] dark:text-[#A78BFA]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 4h6v6H4V4Zm10 0h6v6h-6V4ZM4 14h6v6H4v-6Zm7-7h2v10h-2V7Zm2 3h1v4h-1v-4Zm-3 0h2v4h-2v-4Z" fill="#7C3AED" />
+      </svg>
+    )
+  },
+  {
+    name: "Docker",
+    textColorClass: "text-[#2496ED] dark:text-[#5BB7FF]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 13.5c.5-2.1 1.8-3.2 3.8-3.2h.7V8.5h3v1.8h1.2V8.5h3v1.8h1.2V8.5h3v1.8h.9c1.2 0 2.1.4 2.9 1.2-.7.4-1.3.9-1.7 1.6-.5-.3-1-.5-1.7-.5H5.8c-.7 0-1.3.3-1.8.9H2Z" fill="#2496ED" />
+        <path d="M3 15.2h17.8c-.8 3.8-3.5 5.8-8.1 5.8-4.8 0-8-2-9.7-5.8Z" fill="#2496ED" />
+      </svg>
+    )
+  },
+  {
+    name: "Supabase",
+    textColorClass: "text-[#16A34A] dark:text-[#4ADE80]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.4 2.8 4.1 13.5c-.8.9-.2 2.3 1 2.3h6.1l-.6 5.4c-.2 1.4 1.6 2 2.3.8l7-11.1c.6-1-.1-2.2-1.2-2.2h-5.4l1.4-4.5c.4-1.3-.5-2.3-1.3-1.4Z" fill="#3ECF8E" />
+      </svg>
+    )
+  },
+  {
+    name: "Angular",
+    textColorClass: "text-[#DD0031] dark:text-[#FF5277]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="m12 2 8.7 3.1-1.3 11.4L12 21l-7.4-4.5L3.3 5.1 12 2Z" fill="#DD0031" />
+        <path d="m12 4.7-5.1 11h1.9l1-2.5h4.4l1 2.5h1.9L12 4.7Zm0 3.8 1.5 3.2h-3l1.5-3.2Z" fill="white" />
+      </svg>
+    )
   }
 ];
 
@@ -1160,6 +1236,8 @@ export function Nav({
     { page: 'contact', label: 'Contact' },
   ];
 
+  const navLinkClass = (isActive: boolean) => `text-xs lg:text-sm transition-colors cursor-pointer link-underline ${isActive ? 'text-[#0B192C] dark:text-white font-semibold' : 'text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white'}`;
+
   const serviceDropdownItems = [
     { id: 'ai-automation',  label: 'AI Automation',              desc: 'Intelligent workflow & process automation' },
     { id: 'ai-chatbots',   label: 'AI Chatbots & Agentic AI',   desc: 'Custom LLM agents and autonomous bots' },
@@ -1215,7 +1293,7 @@ export function Nav({
                 <button
                   key={link.page}
                   onClick={() => navigate(link.page)}
-                  className={`text-xs lg:text-sm transition-colors cursor-pointer link-underline ${isActive ? 'text-[#0B192C] dark:text-white font-semibold' : 'text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white'}`}
+                  className={navLinkClass(isActive)}
                 >
                   {link.label}
                 </button>
@@ -1225,17 +1303,13 @@ export function Nav({
             {/* Services dropdown */}
             <div
               ref={servicesRef}
-              className="relative"
+              className="relative flex items-center"
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
               <button
                 onClick={() => navigate('services')}
-                className={`text-xs lg:text-sm transition-colors cursor-pointer link-underline ${
-                  currentPage === 'services'
-                    ? 'text-[#0B192C] dark:text-white font-semibold'
-                    : 'text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white'
-                }`}
+                className={navLinkClass(false)}
               >
                 Services
               </button>
@@ -1302,7 +1376,7 @@ export function Nav({
                 <button
                   key={link.page}
                   onClick={() => navigate(link.page)}
-                  className={`text-xs lg:text-sm transition-colors cursor-pointer link-underline ${isActive ? 'text-[#0B192C] dark:text-white font-semibold' : 'text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white'}`}
+                  className={navLinkClass(isActive)}
                 >
                   {link.label}
                 </button>
@@ -1756,7 +1830,7 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           <Reveal>
             <h3 className="text-xs uppercase tracking-widest mb-5 sm:mb-7 font-mono-tech text-[#0B192C] dark:text-slate-300 font-semibold text-center">
-              Tech stack I work with
+              Tech stack we work with
             </h3>
           </Reveal>
           <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-3.5">
