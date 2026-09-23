@@ -43,11 +43,12 @@ export const INITIAL_BLOGS: Omit<BlogPost, 'createdAt' | 'updatedAt'>[] = [
     focusKeyword: 'business website redesign',
     isPublished: true,
     isFeatured: true,
-    tags: ['Web Development', 'Business Growth', 'Next.js', 'Performance Optimization'],
+    tags: ['Web Development', 'Business Growth', 'UI/UX Design', 'Conversion Optimization'],
     internalLinks: [
       { label: 'Sibling Web Development Services', url: '/services' },
-      { label: 'View Our Client Work & Case Studies', url: '/work' },
-      { label: 'Request a Free Website Audit', url: '/contact' }
+      { label: 'Client Case Studies & Portfolio', url: '/work' },
+      { label: 'AI Automation Services', url: '/services' },
+      { label: 'Request a Free Project Consultation', url: '/contact' }
     ],
     readingTimeMinutes: 5,
   },

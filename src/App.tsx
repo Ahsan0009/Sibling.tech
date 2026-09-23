@@ -19,7 +19,6 @@ export type Page =
   | 'project'
   | 'services'
   | 'about'
-  | 'pricing'
   | 'contact'
   | '404'
   | 'blog'
@@ -72,18 +71,6 @@ export interface ProcessStep {
   number: string;
   title: string;
   description: string;
-}
-
-export interface PricingTier {
-  id: string;
-  name: string;
-  price: string;
-  period?: string;
-  subtitle: string;
-  badge?: string | null;
-  highlighted: boolean;
-  features: string[];
-  cta: string;
 }
 
 export interface CodeSnippet {
@@ -635,19 +622,6 @@ export const SERVICES: ServiceItem[] = [
     ],
     icon: "grid"
   },
-  // SEO & Performance
-  // {
-  //   id: "seo",
-  //   title: "SEO & Performance",
-  //   description: "Rank higher and load under 1 second. Comprehensive performance audits, automated schema markup, image compression, and Core Web Vitals optimization.",
-  //   items: [
-  //     "Core Web Vitals audit",
-  //     "Structured data markup",
-  //     "Image & bundle optimization",
-  //     "Monthly SEO reports"
-  //   ],
-  //   icon: "radial"
-  // },
   {
     id: "maintenance",
     title: "Maintenance & Support",
@@ -691,65 +665,6 @@ export const PROCESS_STEPS: ProcessStep[] = [
 ];
 
 export const FILTER_CATEGORIES = ['All', 'Web Design', 'Web App', 'E-commerce', 'Landing Page'];
-
-export const PRICING_TIERS: PricingTier[] = [
-  {
-    id: "starter",
-    name: "Starter",
-    price: "$1500-$2000",
-    period: "one-time",
-    subtitle: "Ideal for small businesses & targeted landing pages.",
-    badge: null,
-    highlighted: false,
-    features: [
-      "Up to 5 pages",
-      "Mobile-responsive design",
-      "Contact form integration",
-      "Basic SEO setup",
-      "1 revision round",
-      "2 weeks delivery"
-    ],
-    cta: "Get Started"
-  },
-  {
-    id: "growth",
-    name: "Growth",
-    price: "$2,500-$3000",
-    period: "one-time",
-    subtitle: "Complete digital overhaul for growing brands & startups.",
-    badge: "Most Popular",
-    highlighted: true,
-    features: [
-      "Up to 12 pages",
-      "Custom UI/UX design",
-      "CMS integration",
-      "Performance audit",
-      "Analytics dashboard",
-      "3 revision rounds",
-      "3 weeks delivery",
-      "30 days post-launch support"
-    ],
-    cta: "Get Started"
-  },
-  {
-    id: "custom",
-    name: "Custom",
-    price: "Let's talk",
-    period: "scoped to project",
-    subtitle: "Bespoke SaaS apps, full-stack tools & ongoing retainers.",
-    badge: null,
-    highlighted: false,
-    features: [
-      "Unlimited pages & features",
-      "Full-stack development",
-      "Custom integrations & APIs",
-      "Ongoing retainer options",
-      "Dedicated project manager",
-      "Priority support SLA"
-    ],
-    cta: "Get a Custom Quote"
-  }
-];
 
 export const CODE_SNIPPETS: CodeSnippet[] = [
   {
@@ -1204,7 +1119,6 @@ export function Nav({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -1216,7 +1130,6 @@ export function Nav({
     };
   }, [mobileMenuOpen]);
 
-  // Automatically close mobile menu when switching to desktop view
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -1227,10 +1140,10 @@ export function Nav({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Pricing removed — nav links updated
   const navLinks: { page: Page; label: string }[] = [
     { page: 'work', label: 'Work' },
     { page: 'about', label: 'About' },
-    { page: 'pricing', label: 'Pricing' },
     { page: 'blog', label: 'Blog' },
     { page: 'contact', label: 'Contact' },
   ];
@@ -1268,14 +1181,14 @@ export function Nav({
               : '1px solid transparent',
         }}
       >
-        <div className="max-w-7xl w-full mx-auto flex items-center justify-between">
+        <div className="max-w-7xl w-full mx-auto flex items-center justify-start gap-2 lg:gap-3">
           {/* Header Logo */}
           <button
             onClick={() => {
               setMobileMenuOpen(false);
               navigate('home');
             }}
-            className="flex items-center gap-3 cursor-pointer group text-left"
+            className="flex items-center gap-3 cursor-pointer group text-left shrink-0"
             aria-label="Sibling Tech Home"
           >
             <div className="h-8 sm:h-9 px-2.5 sm:px-3 py-1 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700/80 rounded-xl flex items-center shadow-sm border border-slate-200 dark:border-slate-700 transition-all duration-200 group-hover:scale-105 group-hover:shadow-[0_4px_20px_rgba(11,25,44,0.1)]">
@@ -1283,7 +1196,7 @@ export function Nav({
             </div>
           </button>
 
-          {/* Desktop Links */}
+          {/* Desktop Links — sit directly to the right of the logo */}
           <nav className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-6">
             {/* Work */}
             {navLinks.slice(0, 1).map((link) => {
@@ -1308,20 +1221,22 @@ export function Nav({
             >
               <button
                 onClick={() => navigate('services')}
-                className={navLinkClass(false)}
+                className={navLinkClass(currentPage === 'services')}
               >
                 Services
               </button>
 
-              {/* Dropdown panel */}
+              {/* Dropdown panel — opens left-aligned under "Services" */}
               <div
-                className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 rounded-2xl shadow-xl border transition-all duration-200 origin-top z-50 ${servicesOpen
-                  ? 'opacity-100 scale-100 pointer-events-auto'
-                  : 'opacity-0 scale-95 pointer-events-none'
-                  } ${darkMode
+                className={`absolute top-full left-0 mt-3 w-72 rounded-2xl shadow-xl border transition-all duration-200 origin-top z-50 ${
+                  servicesOpen
+                    ? 'opacity-100 scale-100 pointer-events-auto'
+                    : 'opacity-0 scale-95 pointer-events-none'
+                } ${
+                  darkMode
                     ? 'bg-slate-900 border-slate-700/80'
                     : 'bg-white border-slate-200'
-                  }`}
+                }`}
                 style={{ backdropFilter: 'blur(12px)' }}
               >
                 <div className="p-2">
@@ -1360,7 +1275,7 @@ export function Nav({
               </div>
             </div>
 
-            {/* Remaining links (About, Pricing, Blog, Contact) */}
+            {/* Remaining links (About, Blog, Contact) */}
             {navLinks.slice(1).map((link) => {
               const isActive = currentPage === link.page;
               return (
@@ -1373,18 +1288,11 @@ export function Nav({
                 </button>
               );
             })}
+          </nav>
 
+          {/* Right-side cluster: Theme toggle + CTA (desktop) */}
+          <div className="hidden md:flex items-center gap-3 lg:gap-4 ml-auto pl-4 border-l border-slate-200 dark:border-slate-700/60">
             <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-
-            <a
-              href="https://websoul.trafft.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden lg:inline-flex px-3.5 py-2 rounded-lg font-medium text-xs lg:text-sm text-[#0B192C] dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:border-[#0B192C]/40 dark:hover:border-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200 cursor-pointer items-center justify-center gap-1.5"
-              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-            >
-              Get an audit
-            </a>
 
             <a
               href="https://websoul.trafft.com"
@@ -1398,10 +1306,10 @@ export function Nav({
                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
-          </nav>
+          </div>
 
-          {/* Mobile Hamburger & Theme Toggle */}
-          <div className="flex items-center gap-2 md:hidden">
+          {/* Mobile: theme toggle + hamburger (right aligned) */}
+          <div className="flex items-center gap-2 md:hidden ml-auto">
             <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
             <button
@@ -1490,7 +1398,7 @@ export function Nav({
               </div>
             </div>
 
-            {/* About, Pricing, Blog, Contact */}
+            {/* About, Blog, Contact */}
             {navLinks.slice(1).map((link) => {
               const isActive = currentPage === link.page;
               return (
@@ -1521,16 +1429,6 @@ export function Nav({
                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
-            <a
-              href="https://websoul.trafft.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-3 px-6 rounded-xl font-medium text-sm text-[#0B192C] dark:text-slate-200 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/90 border border-slate-200 dark:border-slate-700 transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
-              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-            >
-              Get an audit
-            </a>
           </div>
         </div>
       </div>
@@ -1542,6 +1440,9 @@ export function Nav({
 // 6. FOOTER COMPONENT
 // ==========================================
 export function Footer({ navigate, darkMode }: { navigate: (page: Page, id?: number) => void; darkMode?: boolean }) {
+  // Pricing removed from footer navigation
+  const footerLinks: Page[] = ['work', 'services', 'about', 'blog', 'contact'];
+
   return (
     <footer className="border-t border-slate-200 dark:border-slate-800 mt-16 sm:mt-20 py-10 sm:py-12 bg-[#F8FAFC] dark:bg-slate-900/60 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
@@ -1569,7 +1470,7 @@ export function Footer({ navigate, darkMode }: { navigate: (page: Page, id?: num
                 Navigate
               </h4>
               <ul className="space-y-2.5 sm:space-y-3">
-                {(['work', 'services', 'about', 'pricing', 'blog', 'contact'] as Page[]).map((p) => (
+                {footerLinks.map((p) => (
                   <li key={p}>
                     <button
                       onClick={() => navigate(p)}
@@ -1684,7 +1585,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
     <div className="min-h-screen bg-white dark:bg-[#0F172A] transition-colors duration-300">
       {/* HERO SECTION */}
       <section className="min-h-[calc(100vh-4rem)] flex items-center overflow-hidden relative pt-16">
-        {/* Backgrounds */}
         <div className="hero-mesh absolute inset-0 pointer-events-none" />
         <div
           className="absolute inset-0 pointer-events-none"
@@ -1711,7 +1611,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            {/* Left Column */}
             <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono-tech bg-[#0B192C]/5 dark:bg-blue-950/50 border border-[#0B192C]/15 dark:border-blue-500/30 text-[#0B192C] dark:text-blue-300 font-semibold mb-5 sm:mb-6 max-w-full">
                 <span className="w-2 h-2 rounded-full bg-[#0B192C] dark:bg-blue-400 animate-pulse shrink-0" />
@@ -1741,16 +1640,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                   <span>Book a Free Meeting</span>
                   <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
                 </a>
-                <a
-                  href="https://websoul.trafft.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-xl font-medium text-sm sm:text-base text-[#0B192C] dark:text-slate-200 bg-white dark:bg-slate-800/90 border border-slate-300 dark:border-slate-700 hover:border-[#0B192C]/40 dark:hover:border-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700/60 shadow-xs hover:shadow-sm hover:-translate-y-0.5 transition-all duration-200 cursor-pointer w-full sm:w-auto text-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-400"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                >
-                  <span>Get an App Audit — $399</span>
-                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-                </a>
                 <button
                   type="button"
                   onClick={() => navigate('work')}
@@ -1762,7 +1651,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                 </button>
               </div>
 
-              {/* Stat Mini Cards for Mobile & Tablet (below lg) */}
               <div className="grid grid-cols-3 gap-2.5 sm:gap-4 mt-8 lg:hidden">
                 <div className="bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-xs rounded-xl p-2.5 sm:p-3 text-center">
                   <div className="text-[10px] sm:text-xs text-[#64748B] dark:text-slate-400 mb-0.5 font-mono-tech">Avg. load</div>
@@ -1779,10 +1667,8 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
               </div>
             </div>
 
-            {/* Right Column: Code Editor Mockup (Desktop lg+) */}
             <div className="lg:col-span-5 hidden lg:block">
               <div className="bg-[#0B192C] dark:bg-[#09101E] rounded-xl border border-[#0B192C]/20 dark:border-slate-800 shadow-2xl overflow-hidden">
-                {/* Header */}
                 <div className="px-4 py-3 bg-white/5 border-b border-white/10 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <span className="w-3 h-3 rounded-full bg-[#FF5F56]" />
@@ -1794,7 +1680,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                   </span>
                 </div>
 
-                {/* Code Area */}
                 <div className="p-5 min-h-[220px] font-mono-tech text-xs leading-relaxed overflow-x-auto bg-[#07111E]">
                   {currentSnippet.lines.map((line, lIdx) => (
                     <div key={lIdx} className="whitespace-pre">
@@ -1813,7 +1698,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                   ))}
                 </div>
 
-                {/* Bottom Indicators */}
                 <div className="px-4 py-2.5 border-t border-white/10 flex items-center justify-center gap-2 bg-[#0B192C] dark:bg-[#09101E]">
                   {CODE_SNIPPETS.map((_, i) => (
                     <span
@@ -1825,7 +1709,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                 </div>
               </div>
 
-              {/* Stat Mini Cards for Desktop */}
               <div className="flex items-center justify-between gap-4 mt-6">
                 <div className="bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-sm rounded-xl p-3 flex-1 text-center">
                   <div className="text-xs text-[#64748B] dark:text-slate-400 mb-1 font-mono-tech">Avg. load time</div>
@@ -1971,7 +1854,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
           ))}
         </div>
 
-        {/* Mobile button */}
         <div className="mt-8 text-center sm:hidden">
           <ButtonSecondary onClick={() => navigate('work')} className="w-full justify-center text-center">
             View All Work →
@@ -2113,7 +1995,6 @@ export function WorkPage({ navigate }: { navigate: (page: Page, id?: number) => 
           47 projects shipped. Here are the ones that mattered most.
         </p>
 
-        {/* Filter Pills */}
         <div className="flex flex-wrap gap-2 sm:gap-3 my-6 sm:my-8">
           {FILTER_CATEGORIES.map((cat) => {
             const isActive = activeCategory === cat;
@@ -2133,7 +2014,6 @@ export function WorkPage({ navigate }: { navigate: (page: Page, id?: number) => 
         </div>
       </Reveal>
 
-      {/* Projects Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {filteredProjects.map((project, idx) => (
           <Reveal key={project.id} delay={idx * 80}>
@@ -2262,7 +2142,6 @@ export function ProjectDetailPage({
           {project.tagline}
         </p>
 
-        {/* Featured Image */}
         <div className="aspect-video rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 mb-8 sm:mb-12 shadow-lg">
           <img
             src={project.image}
@@ -2275,7 +2154,6 @@ export function ProjectDetailPage({
           />
         </div>
 
-        {/* Challenge & Solution Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
           <div className="bg-[#F8FAFC] dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl p-5 sm:p-6">
             <h3 className="text-lg sm:text-xl font-bold text-[#0B192C] dark:text-white mb-2.5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -2295,7 +2173,6 @@ export function ProjectDetailPage({
           </div>
         </div>
 
-        {/* Tech Stack Used */}
         <div className="mb-8 sm:mb-12">
           <h4 className="text-xs font-mono-tech uppercase tracking-widest text-[#0B192C] dark:text-slate-300 font-semibold mb-3 sm:mb-4">
             Tech Stack Used
@@ -2312,7 +2189,6 @@ export function ProjectDetailPage({
           </div>
         </div>
 
-        {/* Results Row */}
         <div className="mb-8 sm:mb-12">
           <h3 className="text-lg sm:text-xl font-bold text-[#0B192C] dark:text-white mb-4 sm:mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Key Impact & Results
@@ -2340,7 +2216,6 @@ export function ProjectDetailPage({
           </div>
         </div>
 
-        {/* Client Quote */}
         <div className="rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-slate-200 dark:border-slate-700 border-l-4 border-l-[#0B192C] dark:border-l-blue-500 bg-[#F8FAFC] dark:bg-slate-800/60 mb-12 sm:mb-16">
           <p className="text-base sm:text-lg italic text-[#0B192C] dark:text-slate-100 mb-3 sm:mb-4 leading-relaxed">
             "{project.quote}"
@@ -2353,7 +2228,6 @@ export function ProjectDetailPage({
           </div>
         </div>
 
-        {/* Prev / Next Pagination */}
         <div className="border-t border-slate-200 dark:border-slate-800 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 mb-12 sm:mb-16">
           <button
             onClick={() => navigate('project', prevProjectId)}
@@ -2369,7 +2243,6 @@ export function ProjectDetailPage({
           </button>
         </div>
 
-        {/* Final CTA */}
         <div className="text-center">
           <ButtonPrimary onClick={() => navigate('contact')} className="px-8 py-4 text-base mx-auto">
             Start a Project →
@@ -2400,7 +2273,6 @@ export function ServicesPage({ navigate }: { navigate: (page: Page, id?: number)
         </div>
       </Reveal>
 
-      {/* Services Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
         {SERVICES.map((service, idx) => (
           <Reveal key={service.id} delay={idx * 80}>
@@ -2429,7 +2301,6 @@ export function ServicesPage({ navigate }: { navigate: (page: Page, id?: number)
         ))}
       </div>
 
-      {/* Process Vertical Timeline */}
       <Reveal>
         <div className="max-w-3xl mx-auto mt-16 sm:mt-24">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#0B192C] dark:text-white text-center mb-10 sm:mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -2439,7 +2310,6 @@ export function ServicesPage({ navigate }: { navigate: (page: Page, id?: number)
           <div className="space-y-8 sm:space-y-10 relative">
             {PROCESS_STEPS.map((step, index) => (
               <div key={step.number} className="flex gap-4 sm:gap-6 relative">
-                {/* Timeline connector line */}
                 {index < PROCESS_STEPS.length - 1 && (
                   <div className="absolute top-10 sm:top-12 left-5 sm:left-6 bottom-[-32px] sm:bottom-[-40px] w-0.5 bg-slate-200 dark:bg-slate-700 transform -translate-x-1/2" />
                 )}
@@ -2462,10 +2332,8 @@ export function ServicesPage({ navigate }: { navigate: (page: Page, id?: number)
         </div>
       </Reveal>
 
-      {/* FAQ SECTION */}
       <FAQSection />
 
-      {/* Final CTA */}
       <Reveal className="text-center mt-16 sm:mt-20">
         <div className="bg-[#F8FAFC] dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 sm:p-10 max-w-3xl mx-auto shadow-xs">
           <h3 className="text-xl sm:text-2xl font-bold text-[#0B192C] dark:text-white mb-2 sm:mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -2553,11 +2421,9 @@ export function AboutSection({
 }) {
   return (
     <section className={`transition-colors duration-300 relative ${isStandalonePage ? '' : 'py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12'}`}>
-      {/* Subtle Background Ambience */}
       <div className="absolute top-1/4 -right-20 w-80 h-80 bg-blue-500/5 dark:bg-blue-400/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-indigo-500/5 dark:bg-indigo-400/5 rounded-full blur-3xl pointer-events-none" />
 
-      {/* 1. Section Header: Eyebrow, Main Heading & Supporting Intro */}
       <Reveal>
         <div className="max-w-3xl mb-10 sm:mb-14 lg:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono-tech bg-[#0B192C]/5 dark:bg-blue-950/50 border border-[#0B192C]/15 dark:border-blue-500/30 text-[#0B192C] dark:text-blue-300 font-semibold mb-4 sm:mb-5">
@@ -2587,9 +2453,7 @@ export function AboutSection({
         </div>
       </Reveal>
 
-      {/* 2. Main Content Grid (Two-column on Desktop, Natural on Tablet, Stacked on Mobile) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-stretch">
-        {/* Left Side — About Narrative */}
         <div className="lg:col-span-5 flex flex-col justify-between">
           <Reveal delay={80}>
             <div className="bg-[#F8FAFC] dark:bg-slate-900/60 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-9 border border-slate-200/90 dark:border-slate-800 h-full flex flex-col justify-between shadow-xs">
@@ -2628,12 +2492,10 @@ export function AboutSection({
           </Reveal>
         </div>
 
-        {/* Right Side — 4 Key Highlights */}
         <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
           {ABOUT_HIGHLIGHTS.map((highlight, idx) => (
             <Reveal key={highlight.number} delay={100 + idx * 70} className="h-full">
               <div className="rounded-2xl p-5 sm:p-6 border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-800/90 hover:border-[#0B192C]/30 dark:hover:border-blue-500/40 shadow-xs hover:shadow-md card-hover transition-all duration-300 flex flex-col justify-between h-full group relative overflow-hidden">
-                {/* Subtle Hover Bar Glow */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#0B192C] dark:via-blue-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div>
@@ -2668,7 +2530,6 @@ export function AboutSection({
         </div>
       </div>
 
-      {/* 3. Final Trust Statement */}
       <Reveal delay={220}>
         <div className="mt-10 sm:mt-14 lg:mt-16 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-200/90 dark:border-slate-800 bg-gradient-to-br from-[#F8FAFC] via-white to-slate-100/80 dark:from-slate-900/90 dark:via-slate-800/80 dark:to-slate-900/90 shadow-xs text-center relative overflow-hidden">
           <div className="absolute -right-10 -top-10 w-40 h-40 bg-blue-500/5 dark:bg-blue-400/10 rounded-full blur-2xl pointer-events-none" />
@@ -2697,7 +2558,6 @@ export function AboutPage({ navigate }: { navigate: (page: Page, id?: number) =>
     <div className="pt-24 sm:pt-32 pb-16 sm:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 bg-white dark:bg-[#0F172A] transition-colors duration-300">
       <AboutSection navigate={navigate} isStandalonePage={true} />
 
-      {/* Core Tech Stack Section */}
       <Reveal delay={150}>
         <div className="mt-16 sm:mt-20 pt-12 sm:pt-16 border-t border-slate-200 dark:border-slate-800">
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
@@ -2727,7 +2587,6 @@ export function AboutPage({ navigate }: { navigate: (page: Page, id?: number) =>
         </div>
       </Reveal>
 
-      {/* Bottom CTA Banner */}
       <Reveal delay={200}>
         <div className="mt-16 sm:mt-20 text-center bg-[#F8FAFC] dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 sm:p-12 max-w-4xl mx-auto shadow-xs">
           <span className="text-xs font-mono-tech uppercase tracking-widest text-[#0B192C] dark:text-blue-400 font-semibold block mb-2">
@@ -2754,115 +2613,10 @@ export function AboutPage({ navigate }: { navigate: (page: Page, id?: number) =>
 }
 
 // ==========================================
-// 12. PRICING PAGE
+// 12. CONTACT PAGE
 // ==========================================
-export function PricingPage({ navigate }: { navigate: (page: Page, id?: number) => void }) {
-  return (
-    <div className="pt-24 sm:pt-32 pb-16 sm:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 bg-white dark:bg-[#0F172A] transition-colors duration-300">
-      <Reveal>
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs font-mono-tech uppercase tracking-widest text-[#0B192C] dark:text-blue-400 font-semibold block mb-2">
-            Transparent Pricing
-          </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B192C] dark:text-white mb-3 sm:mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Transparent Digital Solutions Pricing & Investment Tiers
-          </h1>
-          <p className="text-xs sm:text-base text-[#475569] dark:text-slate-400">
-            No surprise invoices, hidden fees, or recurring license traps. Just clear scope and fixed delivery.
-          </p>
-        </div>
-      </Reveal>
-
-      {/* Pricing Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto my-12 sm:my-16 items-stretch">
-        {PRICING_TIERS.map((tier, idx) => (
-          <Reveal key={tier.id} delay={idx * 100} className="h-full flex">
-            <div
-              className={`rounded-2xl p-6 sm:p-8 flex flex-col justify-between w-full relative transition-all duration-300 ${tier.highlighted
-                ? 'border-2 border-[#0B192C] dark:border-blue-500 bg-gradient-to-b from-[#F8FAFC] to-white dark:from-slate-800 dark:to-slate-900 shadow-xl dark:shadow-blue-950/20 lg:-translate-y-2'
-                : 'border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 card-hover shadow-xs'
-                }`}
-            >
-              {/* Badge for highlighted card */}
-              {tier.badge && (
-                <div className="absolute -top-3.5 left-1/2 transform -translate-x-1/2 px-3.5 py-1 rounded-full bg-[#0B192C] dark:bg-blue-600 text-xs font-mono-tech font-bold text-white shadow-md whitespace-nowrap">
-                  {tier.badge}
-                </div>
-              )}
-
-              <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#0B192C] dark:text-white mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                  {tier.name}
-                </h3>
-                <div className="mb-2">
-                  <span
-                    className="text-3xl sm:text-4xl font-bold text-[#0B192C] dark:text-white"
-                    style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                  >
-                    {tier.price}
-                  </span>
-                  {tier.period && (
-                    <span className="text-xs font-normal font-mono-tech text-[#64748B] dark:text-slate-400 ml-2">
-                      {tier.period}
-                    </span>
-                  )}
-                </div>
-                <p className="text-xs text-[#475569] dark:text-slate-400 mb-6">
-                  {tier.subtitle}
-                </p>
-
-                <ul className="space-y-2.5 sm:space-y-3 pt-5 sm:pt-6 border-t border-slate-200 dark:border-slate-700 mb-6 sm:mb-8">
-                  {tier.features.map((feature, fIdx) => (
-                    <li key={fIdx} className="flex items-center gap-2.5 sm:gap-3 text-xs text-[#334155] dark:text-slate-300 font-mono-tech font-medium">
-                      <span className="text-[#0B192C] dark:text-blue-400 font-bold shrink-0">✓</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                {tier.highlighted ? (
-                  <ButtonPrimary onClick={() => navigate('contact')} className="w-full text-center py-3.5 justify-center">
-                    {tier.cta}
-                  </ButtonPrimary>
-                ) : (
-                  <ButtonSecondary onClick={() => navigate('contact')} className="w-full text-center py-3.5 justify-center">
-                    {tier.cta}
-                  </ButtonSecondary>
-                )}
-              </div>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-
-      {/* Info Card */}
-      <Reveal>
-        <div className="max-w-3xl mx-auto bg-[#F8FAFC] dark:bg-slate-800/60 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 text-center flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 shadow-xs">
-          <div className="text-left">
-            <h4 className="text-base sm:text-lg font-bold text-[#0B192C] dark:text-white mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              Not sure which plan fits your project?
-            </h4>
-            <p className="text-xs text-[#475569] dark:text-slate-400">
-              We can customize a scope that aligns perfectly with your timeline and budget goals.
-            </p>
-          </div>
-          <button
-            onClick={() => navigate('contact')}
-            className="text-xs sm:text-sm font-mono-tech text-[#0B192C] dark:text-blue-400 font-semibold hover:underline shrink-0 cursor-pointer"
-          >
-            Schedule a Consultation →
-          </button>
-        </div>
-      </Reveal>
-    </div>
-  );
-}
-
-// ==========================================
-// 13. CONTACT PAGE
-// ==========================================
+// NOTE: Pricing / Budget field has been REMOVED.
+// "AI Automation" and "AI Chatbot / Agentic AI" have been ADDED to the Project Type dropdown.
 export function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -2872,7 +2626,6 @@ export function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    budget: 'Under $2,500',
     projectType: 'Website',
     message: '',
   });
@@ -2894,10 +2647,11 @@ export function ContactPage() {
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_dsjtgs7';
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'bicQOLaodBsBqDqKy';
 
+    // NOTE: `budget` has been removed from template params.
+    // Make sure your EmailJS template no longer references {{budget}}.
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
-      budget: formData.budget,
       project_type: formData.projectType,
       message: formData.message,
     };
@@ -2909,7 +2663,6 @@ export function ContactPage() {
       setFormData({
         name: '',
         email: '',
-        budget: 'Under $2,500',
         projectType: 'Website',
         message: '',
       });
@@ -2924,7 +2677,6 @@ export function ContactPage() {
   return (
     <div className="pt-24 sm:pt-32 pb-16 sm:pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 bg-white dark:bg-[#0F172A] transition-colors duration-300">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-        {/* Left Column: Direct Contact & Info */}
         <Reveal className="lg:col-span-5">
           <div className="flex flex-col justify-between h-full">
             <div>
@@ -2944,9 +2696,7 @@ export function ContactPage() {
                 Have a new project, refactor need, or enterprise inquiry? Fill out the form or reach out directly. We respond within 24 hours with a clear roadmap.
               </p>
 
-              {/* Direct Info Cards Grid */}
               <div className="space-y-4 mb-8 sm:mb-10">
-                {/* Email Item */}
                 <div className="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-[#F8FAFC] dark:bg-slate-800/50 flex items-center justify-between gap-3 group hover:border-[#0B192C]/30 dark:hover:border-blue-500/40 transition-all">
                   <div className="flex items-center gap-3.5">
                     <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/90 dark:border-slate-700 flex items-center justify-center text-[#0B192C] dark:text-blue-400 shrink-0 shadow-2xs">
@@ -2971,7 +2721,6 @@ export function ContactPage() {
                   </button>
                 </div>
 
-                {/* Location Item */}
                 <div className="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-[#F8FAFC] dark:bg-slate-800/50 flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/90 dark:border-slate-700 flex items-center justify-center text-[#0B192C] dark:text-blue-400 shrink-0 shadow-2xs">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2987,7 +2736,6 @@ export function ContactPage() {
                   </div>
                 </div>
 
-                {/* Social Networks Item */}
                 <div className="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-[#F8FAFC] dark:bg-slate-800/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div className="flex items-center gap-3.5">
                     <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/90 dark:border-slate-700 flex items-center justify-center text-[#0B192C] dark:text-blue-400 shrink-0 shadow-2xs">
@@ -3017,7 +2765,6 @@ export function ContactPage() {
                 </div>
               </div>
 
-              {/* Trust Micro Indicators */}
               <div className="pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-3 text-center font-mono-tech">
                 <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-800">
                   <div className="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Response</div>
@@ -3036,10 +2783,8 @@ export function ContactPage() {
           </div>
         </Reveal>
 
-        {/* Right Column: Premium Form Card */}
         <Reveal delay={100} className="lg:col-span-7">
           <div className="bg-white dark:bg-[#131C2D] rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-200/90 dark:border-slate-800 shadow-[0_20px_50px_rgba(11,25,44,0.06)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.35)] relative overflow-hidden transition-all">
-            {/* Top Gradient Bar */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0B192C] via-blue-500 to-[#0B192C] dark:from-blue-600 dark:via-cyan-400 dark:to-blue-600" />
 
             {submitted ? (
@@ -3061,7 +2806,6 @@ export function ContactPage() {
                       setFormData({
                         name: '',
                         email: '',
-                        budget: 'Under $2,500',
                         projectType: 'Website',
                         message: '',
                       });
@@ -3137,69 +2881,38 @@ export function ContactPage() {
                   </div>
                 </div>
 
-                {/* 2-Column Row: Budget Range & Project Type */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div className="group">
-                    <label className="flex items-center gap-1.5 text-[11px] font-mono-tech text-[#0B192C]/80 dark:text-slate-300 uppercase tracking-wider mb-2 font-semibold transition-colors duration-200 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400 group-hover:text-[#0B192C]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-focus-within:bg-blue-600 dark:group-focus-within:bg-blue-400 group-focus-within:scale-125 transition-all duration-200" />
-                      <span>Budget Range</span>
-                      <span className="text-blue-600 dark:text-blue-400">*</span>
-                    </label>
-                    <div className="relative">
-                      <select
-                        required
-                        value={formData.budget}
-                        onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                        className="contact-input-field w-full bg-[#F8FAFC] dark:bg-[#0F172A]/90 border border-slate-200/90 dark:border-slate-700/80 rounded-xl px-4 py-3.5 pr-10 text-[#0B192C] dark:text-white text-xs sm:text-sm font-normal shadow-2xs hover:shadow-md hover:border-blue-400/50 dark:hover:border-slate-600 focus:outline-none focus:bg-white dark:focus:bg-[#0F172A] focus:border-[#0B192C] dark:focus:border-blue-500 focus:ring-4 focus:ring-[#0B192C]/10 dark:focus:ring-blue-500/20 focus:shadow-lg focus:shadow-[#0B192C]/5 dark:focus:shadow-blue-500/10 cursor-pointer appearance-none"
-                      >
-                        <option value="Under $2,500">Under $2,500</option>
-                        <option value="$2,500–$6,500">$2,500 – $6,500</option>
-                        <option value="$6,500–$15,000">$6,500 – $15,000</option>
-                        <option value="$15,000+">$15,000+</option>
-                        <option value="Not sure yet">Not sure yet</option>
-                      </select>
-                      <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400 group-focus-within:rotate-180 transition-all duration-300">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group">
-                    <label className="flex items-center gap-1.5 text-[11px] font-mono-tech text-[#0B192C]/80 dark:text-slate-300 uppercase tracking-wider mb-2 font-semibold transition-colors duration-200 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400 group-hover:text-[#0B192C]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-focus-within:bg-blue-600 dark:group-focus-within:bg-blue-400 group-focus-within:scale-125 transition-all duration-200" />
-                      <span>Project Type</span>
-                      <span className="text-blue-600 dark:text-blue-400">*</span>
-                    </label>
-                    <div className="relative">
-                      <select
-                        required
-                        value={formData.projectType}
-                        onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                        className="contact-input-field w-full bg-[#F8FAFC] dark:bg-[#0F172A]/90 border border-slate-200/90 dark:border-slate-700/80 rounded-xl px-4 py-3.5 pr-10 text-[#0B192C] dark:text-white text-xs sm:text-sm font-normal shadow-2xs hover:shadow-md hover:border-blue-400/50 dark:hover:border-slate-600 focus:outline-none focus:bg-white dark:focus:bg-[#0F172A] focus:border-[#0B192C] dark:focus:border-blue-500 focus:ring-4 focus:ring-[#0B192C]/10 dark:focus:ring-blue-500/20 focus:shadow-lg focus:shadow-[#0B192C]/5 dark:focus:shadow-blue-500/10 cursor-pointer appearance-none"
-                      >
-                        <option value="Website">Website</option>
-                        <option value="Landing Page">Landing Page</option>
-                        <option value="E-commerce Store">E-commerce Store</option>
-                        <option value="Web Application">Web Application</option>
-                        <option value="AI Automation">AI Automation</option>
-                        <option value="AI Chatbot or Agent">AI Chatbot or Agent</option>
-                        <option value="Integration or API">Integration or API</option>
-                        <option value="Redesign & Rebuild">Redesign & Rebuild</option>
-                        <option value="Maintenance & Support">Maintenance & Support</option>
-                        <option value="Other">Other</option>
-                      </select>
-                      <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400 group-focus-within:rotate-180 transition-all duration-300">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </div>
+                {/* Project Type (full-width row — Budget field removed) */}
+                <div className="group">
+                  <label className="flex items-center gap-1.5 text-[11px] font-mono-tech text-[#0B192C]/80 dark:text-slate-300 uppercase tracking-wider mb-2 font-semibold transition-colors duration-200 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400 group-hover:text-[#0B192C]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-focus-within:bg-blue-600 dark:group-focus-within:bg-blue-400 group-focus-within:scale-125 transition-all duration-200" />
+                    <span>Project Type</span>
+                    <span className="text-blue-600 dark:text-blue-400">*</span>
+                  </label>
+                  <div className="relative">
+                    <select
+                      required
+                      value={formData.projectType}
+                      onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                      className="contact-input-field w-full bg-[#F8FAFC] dark:bg-[#0F172A]/90 border border-slate-200/90 dark:border-slate-700/80 rounded-xl px-4 py-3.5 pr-10 text-[#0B192C] dark:text-white text-xs sm:text-sm font-normal shadow-2xs hover:shadow-md hover:border-blue-400/50 dark:hover:border-slate-600 focus:outline-none focus:bg-white dark:focus:bg-[#0F172A] focus:border-[#0B192C] dark:focus:border-blue-500 focus:ring-4 focus:ring-[#0B192C]/10 dark:focus:ring-blue-500/20 focus:shadow-lg focus:shadow-[#0B192C]/5 dark:focus:shadow-blue-500/10 cursor-pointer appearance-none"
+                    >
+                      <option value="Website">Website</option>
+                      <option value="Landing Page">Landing Page</option>
+                      <option value="E-commerce Store">E-commerce Store</option>
+                      <option value="Web Application">Web Application</option>
+                      <option value="AI Automation">AI Automation</option>
+                      <option value="AI Chatbot / Agentic AI">AI Chatbot / Agentic AI</option>
+                      <option value="Redesign & Rebuild">Redesign & Rebuild</option>
+                      <option value="Maintenance & Support">Maintenance & Support</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400 group-focus-within:rotate-180 transition-all duration-300">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                      </svg>
                     </div>
                   </div>
                 </div>
 
-                {/* Message Textarea */}
                 <div className="group">
                   <label className="flex items-center gap-1.5 text-[11px] font-mono-tech text-[#0B192C]/80 dark:text-slate-300 uppercase tracking-wider mb-2 font-semibold transition-colors duration-200 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400 group-hover:text-[#0B192C]">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-focus-within:bg-blue-600 dark:group-focus-within:bg-blue-400 group-focus-within:scale-125 transition-all duration-200" />
@@ -3216,7 +2929,6 @@ export function ContactPage() {
                   />
                 </div>
 
-                {/* Submit Button */}
                 <button
                   type="submit"
                   disabled={loading}
@@ -3259,22 +2971,19 @@ export function ContactPage() {
 }
 
 // ==========================================
-// 14. LOGO INTRO COMPONENT
+// 13. LOGO INTRO COMPONENT
 // ==========================================
 export function LogoIntro({ onComplete, darkMode }: { onComplete: () => void; darkMode?: boolean }) {
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
-    // Prevent scrolling while intro animation plays
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
 
-    // Start overlay fade-out after 1050ms
     const fadeTimer = setTimeout(() => {
       setIsExiting(true);
     }, 1050);
 
-    // Complete transition and unmount component at 1400ms total
     const completeTimer = setTimeout(() => {
       document.body.style.overflow = originalOverflow;
       onComplete();
@@ -3294,12 +3003,10 @@ export function LogoIntro({ onComplete, darkMode }: { onComplete: () => void; da
       aria-hidden="true"
     >
       <div className="flex flex-col items-center justify-center p-6 text-center">
-        {/* Animated Brand Logo Container */}
         <div className="relative animate-logo-intro animate-logo-sheen px-8 py-5 bg-white dark:bg-slate-800 rounded-3xl shadow-[0_12px_40px_rgba(11,25,44,0.08)] border border-slate-100 dark:border-slate-700 flex items-center justify-center">
           <IntroLogo darkMode={darkMode} />
         </div>
 
-        {/* Subtle accent line below logo */}
         <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#0B192C] dark:via-blue-400 to-transparent mt-6 rounded-full opacity-60 animate-pulse" />
       </div>
     </div>
@@ -3376,19 +3083,16 @@ export function TestimonialsSection() {
           </div>
         </Reveal>
 
-        {/* Featured Spotlight Slider Card */}
         <Reveal>
           <div
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
             className="max-w-4xl mx-auto rounded-3xl p-6 sm:p-10 md:p-14 border border-slate-200/90 dark:border-slate-700/80 bg-white dark:bg-slate-800/90 shadow-xl relative overflow-hidden backdrop-blur-xs transition-all duration-300 mb-12 sm:mb-16"
           >
-            {/* Background Decorative Gradient Blur */}
             <div className="absolute -right-16 -top-16 w-64 h-64 bg-blue-500/10 dark:bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute -left-16 -bottom-16 w-64 h-64 bg-indigo-500/10 dark:bg-indigo-400/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="flex items-center justify-between gap-4 mb-6 sm:mb-8 relative z-10">
-              {/* Quote Icon */}
               <div className="w-12 h-12 rounded-2xl bg-[#0B192C]/5 dark:bg-blue-950/60 border border-[#0B192C]/10 dark:border-blue-500/30 flex items-center justify-center text-[#0B192C] dark:text-blue-400 shrink-0">
                 <svg className="w-6 h-6" viewBox="0 0 40 40" fill="currentColor">
                   <path d="M12 22H6C6 16.5 9.5 12 15 11V15C12 16 11 18 11 20H15V28H7V22H12Z" />
@@ -3396,7 +3100,6 @@ export function TestimonialsSection() {
                 </svg>
               </div>
 
-              {/* Rating & Metric Badge */}
               <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                 <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-mono-tech font-bold text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/20">
                   {"★".repeat(current.rating)} 5.0
@@ -3407,7 +3110,6 @@ export function TestimonialsSection() {
               </div>
             </div>
 
-            {/* Testimonial Quote */}
             <div className="min-h-[140px] sm:min-h-[120px] flex items-center relative z-10">
               <blockquote
                 key={current.id}
@@ -3418,7 +3120,6 @@ export function TestimonialsSection() {
               </blockquote>
             </div>
 
-            {/* Footer Author Info & Controls */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-6 mt-6 border-t border-slate-200/80 dark:border-slate-700/80 relative z-10">
               <div className="flex items-center gap-3.5">
                 <img
@@ -3440,7 +3141,6 @@ export function TestimonialsSection() {
                 </div>
               </div>
 
-              {/* Slider Controls & Pagination Dots */}
               <div className="flex items-center gap-4 self-end sm:self-auto">
                 <div className="flex items-center gap-1.5">
                   {TESTIMONIALS.map((t, idx) => (
@@ -3477,10 +3177,8 @@ export function TestimonialsSection() {
           </div>
         </Reveal>
 
-        {/* Scroll Animation Marquee Track */}
         <Reveal>
           <div className="relative w-full overflow-hidden py-2">
-            {/* Left/Right Edge Blur Gradients */}
             <div className="absolute top-0 bottom-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-[#F8FAFC] dark:from-[#0F172A] to-transparent z-10 pointer-events-none" />
             <div className="absolute top-0 bottom-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-[#F8FAFC] dark:from-[#0F172A] to-transparent z-10 pointer-events-none" />
 
@@ -3658,14 +3356,13 @@ function getInitialRoute(): { page: Page; projectId: number; blogSlug?: string; 
   const lowerPath = path.toLowerCase();
   const hash = window.location.hash.replace('#', '').toLowerCase();
 
+  // Pricing route removed — /pricing now falls through to 404
   if (lowerPath === '/work' || lowerPath === '/projects' || hash === 'work' || hash === 'projects') {
     return { page: 'work', projectId: 1 };
   } else if (lowerPath === '/services' || hash === 'services') {
     return { page: 'services', projectId: 1 };
   } else if (lowerPath === '/about' || hash === 'about') {
     return { page: 'about', projectId: 1 };
-  } else if (lowerPath === '/pricing' || hash === 'pricing') {
-    return { page: 'pricing', projectId: 1 };
   } else if (lowerPath === '/contact' || hash === 'contact') {
     return { page: 'contact', projectId: 1 };
   } else if (lowerPath === '/blog' || hash === 'blog') {
@@ -3753,11 +3450,6 @@ export default function App() {
       description = 'Learn about Sibling and our approach to building websites, digital products, AI automations, and business systems.';
       canonical = 'https://www.sibling.tech/about';
       breadcrumbName = 'About Sibling';
-    } else if (currentPage === 'pricing') {
-      title = 'Digital Solutions Pricing & Flexible Investment Tiers | Sibling';
-      description = 'Transparent pricing for custom websites, web apps, automation, integrations, e-commerce, and digital products.';
-      canonical = 'https://www.sibling.tech/pricing';
-      breadcrumbName = 'Pricing Tiers';
     } else if (currentPage === 'contact') {
       title = 'Contact Sibling — Web Development & Digital Solutions';
       description = 'Get in touch with Sibling to discuss your website, web app, automation, integration, AI, or digital product project.';
@@ -3785,11 +3477,9 @@ export default function App() {
 
     document.title = title;
 
-    // Update Meta Description
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', description);
 
-    // Update Robots Meta Tag
     const metaRobots = document.querySelector('meta[name="robots"]');
     if (metaRobots) {
       if (currentPage === '404' || isAdminRoute) {
@@ -3799,7 +3489,6 @@ export default function App() {
       }
     }
 
-    // Update Open Graph Tags
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute('content', title);
 
@@ -3809,7 +3498,6 @@ export default function App() {
     const ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) ogUrl.setAttribute('content', canonical);
 
-    // Update Twitter Cards
     const twitterTitle = document.querySelector('meta[name="twitter:title"]');
     if (twitterTitle) twitterTitle.setAttribute('content', title);
 
@@ -3819,11 +3507,9 @@ export default function App() {
     const twitterUrl = document.querySelector('meta[name="twitter:url"]');
     if (twitterUrl) twitterUrl.setAttribute('content', canonical);
 
-    // Update Canonical URL
     const canonicalLink = document.querySelector('link[rel="canonical"]');
     if (canonicalLink) canonicalLink.setAttribute('href', canonical);
 
-    // Inject BreadcrumbList JSON-LD Schema for Subpages
     if (currentPage !== 'home' && currentPage !== '404' && !isAdminRoute) {
       const breadcrumbSchema = {
         "@context": "https://schema.org",
@@ -3857,7 +3543,6 @@ export default function App() {
       if (scriptTag) scriptTag.remove();
     }
 
-    // Inject Service Offerings JSON-LD Schema on Services Page
     if (currentPage === 'services') {
       const serviceSchema = {
         "@context": "https://schema.org",
@@ -3896,7 +3581,6 @@ export default function App() {
       if (scriptTag) scriptTag.remove();
     }
 
-    // Google Analytics 4: Track pageview for client-side navigation
     trackPageView(canonical, title);
   }, [currentPage, projectId, isAdminRoute]);
 
@@ -3913,8 +3597,6 @@ export default function App() {
         setCurrentPage('services');
       } else if (lowerPath === '/about' || hash === 'about') {
         setCurrentPage('about');
-      } else if (lowerPath === '/pricing' || hash === 'pricing') {
-        setCurrentPage('pricing');
       } else if (lowerPath === '/contact' || hash === 'contact') {
         setCurrentPage('contact');
       } else if (lowerPath === '/blog' || hash === 'blog') {
@@ -3982,7 +3664,6 @@ export default function App() {
     if (page === 'work') targetPath = '/work';
     else if (page === 'services') targetPath = '/services';
     else if (page === 'about') targetPath = '/about';
-    else if (page === 'pricing') targetPath = '/pricing';
     else if (page === 'contact') targetPath = '/contact';
     else if (page === 'blog') targetPath = '/blog';
     else if (page === 'blog-detail' && param) {
@@ -4093,7 +3774,6 @@ export default function App() {
           {currentPage === 'project' && <ProjectDetailPage projectId={projectId} navigate={(p, id) => navigate(p, id)} />}
           {currentPage === 'services' && <ServicesPage navigate={(p, id) => navigate(p, id)} />}
           {currentPage === 'about' && <AboutPage navigate={(p, id) => navigate(p, id)} />}
-          {currentPage === 'pricing' && <PricingPage navigate={(p, id) => navigate(p, id)} />}
           {currentPage === 'contact' && <ContactPage />}
           {currentPage === 'blog' && <BlogListPage onNavigate={(p, param) => navigate(p as Page, param)} />}
           {currentPage === 'blog-detail' && (
@@ -4107,6 +3787,3 @@ export default function App() {
     </div>
   );
 }
-
-
-
