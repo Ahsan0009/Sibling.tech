@@ -1501,7 +1501,7 @@ export function Footer({ navigate, darkMode }: { navigate: (page: Page, id?: num
                 </li>
                 <li>
                   <a
-                    href="https://www.upwork.com/freelancers/~01ccd2af3f92e93ff4?mp_source=share"
+                    href="https://www.upwork.com/freelancers/~01d7d412bcc5a680b1"
                     target="_blank"
                     rel="noreferrer"
                     className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white link-underline cursor-pointer font-medium"
@@ -1517,26 +1517,6 @@ export function Footer({ navigate, darkMode }: { navigate: (page: Page, id?: num
                     className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white link-underline cursor-pointer font-medium"
                   >
                     LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.facebook.com/siblingtech"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white link-underline cursor-pointer font-medium"
-                  >
-                    Facebook
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com/siblingtech"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white link-underline cursor-pointer font-medium"
-                  >
-                    Instagram
                   </a>
                 </li>
                 <li>
@@ -2749,17 +2729,11 @@ export function ContactPage() {
                     <a href="https://github.com/websoultech859-maker" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
                       GitHub
                     </a>
-                    <a href="https://www.upwork.com/freelancers/~01ccd2af3f92e93ff4?mp_source=share" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
+                    <a href="https://www.upwork.com/freelancers/~01d7d412bcc5a680b1" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
                       Upwork
                     </a>
                     <a href="https://www.linkedin.com/company/siblingtechnologies/" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
                       LinkedIn
-                    </a>
-                    <a href="https://www.facebook.com/siblingtech" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
-                      Facebook
-                    </a>
-                    <a href="https://www.instagram.com/siblingtech" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
-                      Instagram
                     </a>
                   </div>
                 </div>
