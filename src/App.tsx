@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { TawkWidget } from './TawkWidget';
 import { BlogListPage } from './components/blog/BlogListPage';
 import { BlogDetailPage } from './components/blog/BlogDetailPage';
 import { LatestBlogsSection } from './components/blog/LatestBlogsSection';
@@ -4075,7 +4074,6 @@ export default function App() {
       </div>
 
       <Footer navigate={(p, id) => navigate(p, id)} darkMode={darkMode} />
-      <TawkWidget />
     </div>
   );
 }
