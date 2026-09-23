@@ -600,7 +600,7 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: "ecommerce",
-    title: "E-commerce Development",
+    title: "E-commerce Solutions",
     description: "High-converting online stores built with modern headless architectures. Seamless checkout flows, custom subscriptions, and sub-second catalog navigation.",
     items: [
       "Custom Next.js",
@@ -1154,7 +1154,7 @@ export function Nav({
     { id: 'ai-automation', label: 'AI Automation', desc: 'Intelligent workflow & process automation' },
     { id: 'ai-chatbots', label: 'AI Chatbots & Agentic AI', desc: 'Custom LLM agents and autonomous bots' },
     { id: 'web-design', label: 'Website Design & Dev', desc: 'Custom digital experiences built from scratch' },
-    { id: 'ecommerce', label: 'E-commerce Development', desc: 'High-converting headless stores' },
+    { id: 'ecommerce', label: 'E-commerce Solutions', desc: 'High-converting headless stores' },
     { id: 'webapp', label: 'Web Apps & Digital Products', desc: 'Scalable full-stack SaaS and business tools' },
     { id: 'maintenance', label: 'Maintenance & Support', desc: 'Security patches & priority support' },
   ];
