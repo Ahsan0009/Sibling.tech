@@ -1106,7 +1106,7 @@ export function Nav({
               : '1px solid transparent',
         }}
       >
-              <div className="w-full flex items-center justify-start gap-2 lg:gap-3">
+              <div className="w-full flex items-center justify-start gap-2 lg:gap-3">g
           {/* Header Logo */}
           <button
             onClick={() => {
