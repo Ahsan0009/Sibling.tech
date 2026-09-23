@@ -440,6 +440,16 @@ export const TECH_STACK: TechStackItem[] = [
     )
   },
   {
+    name: "Angular",
+    textColorClass: "text-[#DD0031] dark:text-[#FF5277]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="m12 2 8.7 3.1-1.3 11.4L12 21l-7.4-4.5L3.3 5.1 12 2Z" fill="#DD0031" />
+        <path d="m12 4.7-5.1 11h1.9l1-2.5h4.4l1 2.5h1.9L12 4.7Zm0 3.8 1.5 3.2h-3l1.5-3.2Z" fill="white" />
+      </svg>
+    )
+  },
+  {
     name: "PostgreSQL",
     textColorClass: "text-[#2563EB] dark:text-[#60A5FA]",
     icon: (
@@ -458,11 +468,42 @@ export const TECH_STACK: TechStackItem[] = [
     )
   },
   {
+    name: "Firebase",
+    textColorClass: "text-[#D97706] dark:text-[#FFCA28]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.89 15.672L6.16 3.428c.067-.36.544-.454.747-.156l2.973 4.364L3.89 15.672z" fill="#FFA000" />
+        <path d="M13.435 8.784l-2.457-4.664a.434.434 0 00-.776 0L3.84 15.68l9.595-6.896z" fill="#F57C00" />
+        <path d="M20.16 15.672l-2.585-13.43c-.073-.38-.58-.456-.757-.113l-3.383 6.643 6.725 6.9z" fill="#FFCA28" />
+        <path d="M3.84 15.68l7.632 4.4a1.87 1.87 0 001.888 0l7.632-4.4-8.576 5.07a.936.936 0 01-.952 0L3.84 15.68z" fill="#FFCA28" />
+      </svg>
+    )
+  },
+  {
+    name: "Supabase",
+    textColorClass: "text-[#16A34A] dark:text-[#4ADE80]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.4 2.8 4.1 13.5c-.8.9-.2 2.3 1 2.3h6.1l-.6 5.4c-.2 1.4 1.6 2 2.3.8l7-11.1c.6-1-.1-2.2-1.2-2.2h-5.4l1.4-4.5c.4-1.3-.5-2.3-1.3-1.4Z" fill="#3ECF8E" />
+      </svg>
+    )
+  },
+  {
     name: "Stripe",
     textColorClass: "text-[#4F46E5] dark:text-[#818CF8]",
     icon: (
       <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C17.712.748 15.223.23 12.607.23 6.945.23 3.02 3.195 3.02 8.01c0 7.377 10.158 6.208 10.158 9.388 0 1.054-.925 1.547-2.28 1.547-2.613 0-5.385-1.163-7.25-2.164l-.946 5.602c1.942.923 4.887 1.488 7.77 1.488 5.864 0 9.948-2.868 9.948-7.854 0-7.85-10.444-6.529-10.444-9.367Z" fill="#635BFF" />
+      </svg>
+    )
+  },
+  {
+    name: "Docker",
+    textColorClass: "text-[#2496ED] dark:text-[#5BB7FF]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 13.5c.5-2.1 1.8-3.2 3.8-3.2h.7V8.5h3v1.8h1.2V8.5h3v1.8h1.2V8.5h3v1.8h.9c1.2 0 2.1.4 2.9 1.2-.7.4-1.3.9-1.7 1.6-.5-.3-1-.5-1.7-.5H5.8c-.7 0-1.3.3-1.8.9H2Z" fill="#2496ED" />
+        <path d="M3 15.2h17.8c-.8 3.8-3.5 5.8-8.1 5.8-4.8 0-8-2-9.7-5.8Z" fill="#2496ED" />
       </svg>
     )
   },
@@ -481,18 +522,6 @@ export const TECH_STACK: TechStackItem[] = [
     icon: (
       <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M16.64 3.75H7.36C5.36 3.75 3.75 5.36 3.75 7.36V16.64C3.75 18.64 5.36 20.25 7.36 20.25H16.64C18.64 20.25 20.25 18.64 20.25 16.64V7.36C20.25 5.36 18.64 3.75 16.64 3.75ZM15.8 8.8L12.4 12.2L15.8 15.6H13.4L11.2 13.4L9 15.6H6.6L10 12.2L6.6 8.8H9L11.2 11L13.4 8.8H15.8Z" fill="#F03E2F" />
-      </svg>
-    )
-  },
-  {
-    name: "Firebase",
-    textColorClass: "text-[#D97706] dark:text-[#FFCA28]",
-    icon: (
-      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.89 15.672L6.16 3.428c.067-.36.544-.454.747-.156l2.973 4.364L3.89 15.672z" fill="#FFA000" />
-        <path d="M13.435 8.784l-2.457-4.664a.434.434 0 00-.776 0L3.84 15.68l9.595-6.896z" fill="#F57C00" />
-        <path d="M20.16 15.672l-2.585-13.43c-.073-.38-.58-.456-.757-.113l-3.383 6.643 6.725 6.9z" fill="#FFCA28" />
-        <path d="M3.84 15.68l7.632 4.4a1.87 1.87 0 001.888 0l7.632-4.4-8.576 5.07a.936.936 0 01-.952 0L3.84 15.68z" fill="#FFCA28" />
       </svg>
     )
   },
@@ -540,35 +569,6 @@ export const TECH_STACK: TechStackItem[] = [
     icon: (
       <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M4 4h6v6H4V4Zm10 0h6v6h-6V4ZM4 14h6v6H4v-6Zm7-7h2v10h-2V7Zm2 3h1v4h-1v-4Zm-3 0h2v4h-2v-4Z" fill="#7C3AED" />
-      </svg>
-    )
-  },
-  {
-    name: "Docker",
-    textColorClass: "text-[#2496ED] dark:text-[#5BB7FF]",
-    icon: (
-      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 13.5c.5-2.1 1.8-3.2 3.8-3.2h.7V8.5h3v1.8h1.2V8.5h3v1.8h1.2V8.5h3v1.8h.9c1.2 0 2.1.4 2.9 1.2-.7.4-1.3.9-1.7 1.6-.5-.3-1-.5-1.7-.5H5.8c-.7 0-1.3.3-1.8.9H2Z" fill="#2496ED" />
-        <path d="M3 15.2h17.8c-.8 3.8-3.5 5.8-8.1 5.8-4.8 0-8-2-9.7-5.8Z" fill="#2496ED" />
-      </svg>
-    )
-  },
-  {
-    name: "Supabase",
-    textColorClass: "text-[#16A34A] dark:text-[#4ADE80]",
-    icon: (
-      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13.4 2.8 4.1 13.5c-.8.9-.2 2.3 1 2.3h6.1l-.6 5.4c-.2 1.4 1.6 2 2.3.8l7-11.1c.6-1-.1-2.2-1.2-2.2h-5.4l1.4-4.5c.4-1.3-.5-2.3-1.3-1.4Z" fill="#3ECF8E" />
-      </svg>
-    )
-  },
-  {
-    name: "Angular",
-    textColorClass: "text-[#DD0031] dark:text-[#FF5277]",
-    icon: (
-      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="m12 2 8.7 3.1-1.3 11.4L12 21l-7.4-4.5L3.3 5.1 12 2Z" fill="#DD0031" />
-        <path d="m12 4.7-5.1 11h1.9l1-2.5h4.4l1 2.5h1.9L12 4.7Zm0 3.8 1.5 3.2h-3l1.5-3.2Z" fill="white" />
       </svg>
     )
   }
@@ -1238,12 +1238,12 @@ export function Nav({
   const navLinkClass = (isActive: boolean) => `text-xs lg:text-sm transition-colors cursor-pointer link-underline ${isActive ? 'text-[#0B192C] dark:text-white font-semibold' : 'text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white'}`;
 
   const serviceDropdownItems = [
-    { id: 'ai-automation',  label: 'AI Automation',              desc: 'Intelligent workflow & process automation' },
-    { id: 'ai-chatbots',   label: 'AI Chatbots & Agentic AI',   desc: 'Custom LLM agents and autonomous bots' },
-    { id: 'web-design',    label: 'Website Design & Dev',        desc: 'Custom digital experiences built from scratch' },
-    { id: 'ecommerce',     label: 'E-commerce Development',      desc: 'High-converting headless stores' },
-    { id: 'webapp',        label: 'Web Apps & Digital Products', desc: 'Scalable full-stack SaaS and business tools' },
-    { id: 'maintenance',   label: 'Maintenance & Support',       desc: 'Security patches & priority support' },
+    { id: 'ai-automation', label: 'AI Automation', desc: 'Intelligent workflow & process automation' },
+    { id: 'ai-chatbots', label: 'AI Chatbots & Agentic AI', desc: 'Custom LLM agents and autonomous bots' },
+    { id: 'web-design', label: 'Website Design & Dev', desc: 'Custom digital experiences built from scratch' },
+    { id: 'ecommerce', label: 'E-commerce Development', desc: 'High-converting headless stores' },
+    { id: 'webapp', label: 'Web Apps & Digital Products', desc: 'Scalable full-stack SaaS and business tools' },
+    { id: 'maintenance', label: 'Maintenance & Support', desc: 'Security patches & priority support' },
   ];
 
 
@@ -1315,15 +1315,13 @@ export function Nav({
 
               {/* Dropdown panel */}
               <div
-                className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 rounded-2xl shadow-xl border transition-all duration-200 origin-top z-50 ${
-                  servicesOpen
+                className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 rounded-2xl shadow-xl border transition-all duration-200 origin-top z-50 ${servicesOpen
                     ? 'opacity-100 scale-100 pointer-events-auto'
                     : 'opacity-0 scale-95 pointer-events-none'
-                } ${
-                  darkMode
+                  } ${darkMode
                     ? 'bg-slate-900 border-slate-700/80'
                     : 'bg-white border-slate-200'
-                }`}
+                  }`}
                 style={{ backdropFilter: 'blur(12px)' }}
               >
                 <div className="p-2">
@@ -1331,33 +1329,27 @@ export function Nav({
                     <button
                       key={item.id}
                       onClick={() => { navigate('services'); setServicesOpen(false); }}
-                      className={`w-full text-left px-3 py-2.5 rounded-xl group transition-all duration-150 flex items-start gap-3 ${
-                        darkMode ? 'hover:bg-slate-800' : 'hover:bg-slate-50'
-                      }`}
+                      className={`w-full text-left px-3 py-2.5 rounded-xl group transition-all duration-150 flex items-start gap-3 ${darkMode ? 'hover:bg-slate-800' : 'hover:bg-slate-50'
+                        }`}
                     >
-                      <span className={`mt-0.5 w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5 ${
-                        darkMode ? 'bg-blue-400' : 'bg-[#0B192C]'
-                      }`} />
+                      <span className={`mt-0.5 w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5 ${darkMode ? 'bg-blue-400' : 'bg-[#0B192C]'
+                        }`} />
                       <div>
-                        <div className={`text-xs font-semibold ${
-                          darkMode ? 'text-slate-100 group-hover:text-white' : 'text-[#0B192C] group-hover:text-[#1E3A8A]'
-                        }`}>{item.label}</div>
-                        <div className={`text-[10px] leading-snug mt-0.5 ${
-                          darkMode ? 'text-slate-400' : 'text-slate-500'
-                        }`}>{item.desc}</div>
+                        <div className={`text-xs font-semibold ${darkMode ? 'text-slate-100 group-hover:text-white' : 'text-[#0B192C] group-hover:text-[#1E3A8A]'
+                          }`}>{item.label}</div>
+                        <div className={`text-[10px] leading-snug mt-0.5 ${darkMode ? 'text-slate-400' : 'text-slate-500'
+                          }`}>{item.desc}</div>
                       </div>
                     </button>
                   ))}
                 </div>
 
-                <div className={`px-4 py-2.5 border-t ${
-                  darkMode ? 'border-slate-700/60' : 'border-slate-100'
-                }`}>
+                <div className={`px-4 py-2.5 border-t ${darkMode ? 'border-slate-700/60' : 'border-slate-100'
+                  }`}>
                   <button
                     onClick={() => { navigate('services'); setServicesOpen(false); }}
-                    className={`text-[11px] font-medium flex items-center gap-1.5 transition-colors ${
-                      darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-[#0B192C] hover:text-[#1E3A8A]'
-                    }`}
+                    className={`text-[11px] font-medium flex items-center gap-1.5 transition-colors ${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-[#0B192C] hover:text-[#1E3A8A]'
+                      }`}
                   >
                     View all services
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -1467,11 +1459,10 @@ export function Nav({
             <div>
               <button
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                className={`w-full text-lg sm:text-xl font-medium text-left px-4 py-3.5 rounded-xl transition-all cursor-pointer flex items-center justify-between min-h-[48px] ${
-                  currentPage === 'services'
+                className={`w-full text-lg sm:text-xl font-medium text-left px-4 py-3.5 rounded-xl transition-all cursor-pointer flex items-center justify-between min-h-[48px] ${currentPage === 'services'
                     ? 'bg-slate-100 dark:bg-slate-800/90 text-[#0B192C] dark:text-white font-semibold shadow-xs'
                     : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#0B192C] dark:hover:text-white'
-                }`}
+                  }`}
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 <span>Services</span>
