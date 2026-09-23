@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { BlogPost, BlogStats } from '../../types/blog';
 import { BlogStorageService } from '../../services/blogStorage';
+import { AuthService } from '../../services/authService';
 
 interface AdminDashboardOverviewProps {
   onNavigate: (page: string, param?: string | number) => void;
 }
 
 export const AdminDashboardOverview: React.FC<AdminDashboardOverviewProps> = ({ onNavigate }) => {
+  const currentUser = AuthService.getCurrentUser();
+  const displayName = currentUser?.name
+    ? currentUser.name.replace(/\s*\(.*?\)/, '').trim()
+    : 'Admin';
   const [stats, setStats] = useState<BlogStats>({ total: 0, published: 0, drafts: 0, featured: 0 });
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
 
@@ -75,7 +80,7 @@ export const AdminDashboardOverview: React.FC<AdminDashboardOverviewProps> = ({ 
             Sibling Content Control Center
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'white' }}>
-            Welcome back, Ahsan! 👋
+            Welcome back, {displayName}! 👋
           </h2>
           <p className="text-xs sm:text-sm text-slate-200 max-w-xl">
             Manage public blog articles, SEO metadata, featured showcases, and rich media without modifying code.

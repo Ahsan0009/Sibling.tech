@@ -128,14 +128,14 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2.5 min-w-0">
               <div className="w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center font-mono-tech shrink-0">
-                S
+                {user?.name ? user.name.charAt(0).toUpperCase() : 'A'}
               </div>
               <div className="truncate">
                 <div className="text-xs font-bold text-[#0B192C] dark:text-white truncate font-mono-tech">
-                  {user?.name || 'Saad (Admin)'}
+                  {user?.name || 'Administrator'}
                 </div>
                 <div className="text-[10px] text-slate-400 truncate font-mono-tech">
-                  {user?.email || 'sibling.tech859@gmail.com'}
+                  {user?.email || 'admin@sibling.tech'}
                 </div>
               </div>
             </div>
@@ -299,7 +299,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
         {/* Footer */}
         <footer className="px-8 py-4 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B1424] text-xs text-slate-400 font-mono-tech flex items-center justify-between">
           <span>Sibling Content Management System • v2.0</span>
-          <span>Authenticated as Saad ({user?.email || 'sibling.tech859@gmail.com'})</span>
+          <span>Authenticated as {user?.name || 'Administrator'} ({user?.email || ''})</span>
         </footer>
       </main>
     </div>

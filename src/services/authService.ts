@@ -73,15 +73,16 @@ export class AuthService {
     rememberMe = true
   ): Promise<{ success: boolean; error?: string; user?: AdminUser }> {
     try {
-      // 1. Attempt API serverless login first
+      // Authenticate exclusively through the secure serverless API endpoint
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
       });
 
-      if (res.ok) {
-        const data = await res.json();
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data.success && data.token) {
         const session: AuthSession = {
           token: data.token,
           expiresAt: data.expiresAt || Date.now() + 7 * 24 * 60 * 60 * 1000,
@@ -89,41 +90,19 @@ export class AuthService {
         };
         this.setStoredSession(session, rememberMe);
         return { success: true, user: data.user };
-      } else if (res.status === 401) {
-        const errorData = await res.json().catch(() => ({ error: 'Invalid admin credentials.' }));
-        return { success: false, error: errorData.error || 'Invalid admin credentials. Please verify your email and password.' };
       }
+
+      return {
+        success: false,
+        error: data.error || 'Invalid admin credentials. Please verify your email and password.'
+      };
     } catch (apiErr) {
-      console.warn('API authentication endpoint unreachable, trying client fallback verification:', apiErr);
-    }
-
-    // 2. Client-side fallback verification (for static hosting or offline environments)
-    // Secure constant-time string comparison against expected admin email and password
-    const normalizedEmail = email.trim().toLowerCase();
-    const isAllowedEmail =
-      normalizedEmail === 'sibling.tech859@gmail.com' ||
-      normalizedEmail === 'websoul.tech859@gmail.com';
-    const expectedPass = 'S@@d1234';
-
-    if (isAllowedEmail && password === expectedPass) {
-      const user: AdminUser = {
-        email: normalizedEmail,
-        name: 'Saad (Sibling Admin)',
-        role: 'Administrator'
+      console.error('Authentication request failed:', apiErr);
+      return {
+        success: false,
+        error: 'Authentication service is unreachable. Please verify your internet connection.'
       };
-      const session: AuthSession = {
-        token: `sibling_client_token_${Date.now()}_${Math.random().toString(36).substring(2)}`,
-        expiresAt: Date.now() + (rememberMe ? 7 * 24 * 60 * 60 * 1000 : 24 * 60 * 60 * 1000),
-        user
-      };
-      this.setStoredSession(session, rememberMe);
-      return { success: true, user };
     }
-
-    return {
-      success: false,
-      error: 'Invalid admin credentials. Please check your email or password.'
-    };
   }
 
   public static logout(): void {
