@@ -16,7 +16,15 @@ const DEFAULT_CATEGORIES = [
   'UI/UX Design',
   'E-commerce',
   'Case Studies',
-  'Engineering'
+  'Engineering',
+  'AI Automation',
+  'AI Agents & Integrations',
+  'Business Process Automation',
+  'No-Code & Workflow Tools',
+  'Cloud & DevOps',
+  'Analytics & Data',
+  'Cybersecurity',
+  'SaaS & Product Strategy'
 ];
 
 const PRESET_INTERNAL_LINKS: InternalLink[] = [
@@ -274,7 +282,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
   };
 
   return (
-    <div className="max-w-5xl mx-auto space-y-8 pb-16">
+    <div className="admin-page max-w-5xl mx-auto space-y-8 pb-16">
       {/* Top Header & Actions */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
@@ -351,7 +359,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
         {/* Left Column (Main Article Fields) */}
         <div className="lg:col-span-8 space-y-6">
           {/* Section 1: Title & Slug */}
-          <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs space-y-4">
+          <div className="admin-panel p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs space-y-4">
             <h3 className="text-sm font-bold uppercase tracking-wider text-[#0B192C] dark:text-white font-mono-tech pb-2 border-b border-slate-100 dark:border-slate-700">
               1. Title & URL Slug
             </h3>
@@ -409,7 +417,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
           </div>
 
           {/* Section 2: Excerpt & Rich Content Editor */}
-          <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs space-y-4">
+          <div className="admin-panel p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs space-y-4">
             <h3 className="text-sm font-bold uppercase tracking-wider text-[#0B192C] dark:text-white font-mono-tech pb-2 border-b border-slate-100 dark:border-slate-700">
               2. Excerpt & Complete Blog Content
             </h3>
@@ -536,7 +544,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
           </div>
 
           {/* Section 3: SEO Meta Fields (Mandatory) */}
-          <div className="p-6 rounded-2xl border border-blue-200 dark:border-blue-900/60 bg-blue-50/30 dark:bg-blue-950/20 shadow-xs space-y-4">
+          <div className="admin-panel admin-panel-accent p-6 rounded-2xl border border-blue-200 dark:border-blue-900/60 bg-blue-50/30 dark:bg-blue-950/20 shadow-xs space-y-4">
             <div className="flex items-center justify-between pb-2 border-b border-blue-200/60 dark:border-blue-800/40">
               <h3 className="text-sm font-bold uppercase tracking-wider text-[#0B192C] dark:text-blue-300 font-mono-tech flex items-center gap-2">
                 <span>🎯 3. SEO Metadata (Required for Publishing)</span>
@@ -619,7 +627,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
         {/* Right Column (Sidebar Settings: Image, Category, Author, Tags, Internal Links) */}
         <div className="lg:col-span-4 space-y-6">
           {/* Publish / Featured Settings Card */}
-          <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs space-y-4">
+          <div className="admin-panel p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs space-y-4">
             <h3 className="text-xs font-bold uppercase tracking-wider text-[#0B192C] dark:text-white font-mono-tech pb-2 border-b border-slate-100 dark:border-slate-700">
               Publishing Settings
             </h3>
@@ -685,7 +693,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
           </div>
 
           {/* ─── Featured Image Card (Cloudinary Upload) ─── */}
-          <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs space-y-4">
+          <div className="admin-panel p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs space-y-4">
             <h3 className="text-xs font-bold uppercase tracking-wider text-[#0B192C] dark:text-white font-mono-tech pb-2 border-b border-slate-100 dark:border-slate-700">
               Featured Image & SEO Alt Text
             </h3>
@@ -833,7 +841,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
           </div>
 
           {/* Category & Author Card */}
-          <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs space-y-4">
+          <div className="admin-panel p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs space-y-4">
             <h3 className="text-xs font-bold uppercase tracking-wider text-[#0B192C] dark:text-white font-mono-tech pb-2 border-b border-slate-100 dark:border-slate-700">
               Category & Author
             </h3>
@@ -871,7 +879,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
           </div>
 
           {/* Tags Manager Card */}
-          <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs space-y-4">
+          <div className="admin-panel p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs space-y-4">
             <h3 className="text-xs font-bold uppercase tracking-wider text-[#0B192C] dark:text-white font-mono-tech pb-2 border-b border-slate-100 dark:border-slate-700">
               Tags (Optional)
             </h3>
@@ -919,7 +927,7 @@ export const AdminBlogForm: React.FC<AdminBlogFormProps> = ({ blogId, onNavigate
           </div>
 
           {/* Related / Internal Links Builder Card */}
-          <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs space-y-4">
+          <div className="admin-panel p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs space-y-4">
             <h3 className="text-xs font-bold uppercase tracking-wider text-[#0B192C] dark:text-white font-mono-tech pb-2 border-b border-slate-100 dark:border-slate-700">
               Related / Internal Links
             </h3>

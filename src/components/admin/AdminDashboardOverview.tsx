@@ -67,15 +67,15 @@ export const AdminDashboardOverview: React.FC<AdminDashboardOverviewProps> = ({ 
   ];
 
   return (
-    <div className="space-y-8 max-w-7xl mx-auto">
+    <div className="admin-page space-y-8 max-w-7xl mx-auto">
       {/* Welcome Banner */}
-      <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#0B192C] via-[#1E3A8A] to-[#0B192C] text-white relative overflow-hidden shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="admin-welcome p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#0B192C] via-[#1E3A8A] to-[#0B192C] text-white relative overflow-hidden shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="relative z-10">
           <span className="text-xs font-mono-tech text-sky-400 uppercase tracking-widest block mb-2 font-semibold">
             Sibling Content Control Center
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'white' }}>
-            Welcome back, Saad! 👋
+            Welcome back, Ahsan! 👋
           </h2>
           <p className="text-xs sm:text-sm text-slate-200 max-w-xl">
             Manage public blog articles, SEO metadata, featured showcases, and rich media without modifying code.
@@ -103,7 +103,7 @@ export const AdminDashboardOverview: React.FC<AdminDashboardOverviewProps> = ({ 
         {statCards.map((card) => (
           <div
             key={card.title}
-            className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs hover:shadow-md transition-all flex items-center justify-between"
+            className="admin-panel p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 shadow-xs hover:shadow-md transition-all flex items-center justify-between"
           >
             <div>
               <span className="text-xs font-mono-tech text-slate-500 dark:text-slate-400 block mb-1">
@@ -121,8 +121,8 @@ export const AdminDashboardOverview: React.FC<AdminDashboardOverviewProps> = ({ 
       </div>
 
       {/* Quick Action Bar */}
-      <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div>
+      <div className="admin-panel p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="min-w-0">
           <h3 className="text-base font-bold text-[#0B192C] dark:text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Ready to publish new engineering insights?
           </h3>
