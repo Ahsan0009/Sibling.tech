@@ -1,12 +1,16 @@
 import { AdminUser, AuthSession } from '../types/blog';
 
-const SESSION_STORAGE_KEY = 'websoul_admin_session_v1';
+const SESSION_STORAGE_KEY = 'sibling_admin_session_v1';
 
 export class AuthService {
   private static getStoredSession(): AuthSession | null {
     if (typeof window === 'undefined') return null;
     try {
-      const stored = localStorage.getItem(SESSION_STORAGE_KEY) || sessionStorage.getItem(SESSION_STORAGE_KEY);
+      const stored =
+        localStorage.getItem(SESSION_STORAGE_KEY) ||
+        sessionStorage.getItem(SESSION_STORAGE_KEY) ||
+        localStorage.getItem('websoul_admin_session_v1') ||
+        sessionStorage.getItem('websoul_admin_session_v1');
       if (!stored) return null;
       const session = JSON.parse(stored) as AuthSession;
       if (!session || !session.token || session.expiresAt < Date.now()) {
@@ -29,7 +33,7 @@ export class AuthService {
       } else {
         sessionStorage.setItem(SESSION_STORAGE_KEY, serialized);
       }
-      window.dispatchEvent(new CustomEvent('websoul_auth_changed', { detail: session }));
+      window.dispatchEvent(new CustomEvent('sibling_auth_changed', { detail: session }));
     } catch (e) {
       console.error('Error saving session:', e);
     }
@@ -40,7 +44,9 @@ export class AuthService {
     try {
       localStorage.removeItem(SESSION_STORAGE_KEY);
       sessionStorage.removeItem(SESSION_STORAGE_KEY);
-      window.dispatchEvent(new CustomEvent('websoul_auth_changed', { detail: null }));
+      localStorage.removeItem('websoul_admin_session_v1');
+      sessionStorage.removeItem('websoul_admin_session_v1');
+      window.dispatchEvent(new CustomEvent('sibling_auth_changed', { detail: null }));
     } catch (e) {
       console.error('Error clearing session:', e);
     }
@@ -94,17 +100,19 @@ export class AuthService {
     // 2. Client-side fallback verification (for static hosting or offline environments)
     // Secure constant-time string comparison against expected admin email and password
     const normalizedEmail = email.trim().toLowerCase();
-    const expectedEmail = 'websoul.tech859@gmail.com';
+    const isAllowedEmail =
+      normalizedEmail === 'sibling.tech859@gmail.com' ||
+      normalizedEmail === 'websoul.tech859@gmail.com';
     const expectedPass = 'S@@d1234';
 
-    if (normalizedEmail === expectedEmail && password === expectedPass) {
+    if (isAllowedEmail && password === expectedPass) {
       const user: AdminUser = {
         email: normalizedEmail,
-        name: 'Saad (WebSoul Admin)',
+        name: 'Saad (Sibling Admin)',
         role: 'Administrator'
       };
       const session: AuthSession = {
-        token: `ws_client_token_${Date.now()}_${Math.random().toString(36).substring(2)}`,
+        token: `sibling_client_token_${Date.now()}_${Math.random().toString(36).substring(2)}`,
         expiresAt: Date.now() + (rememberMe ? 7 * 24 * 60 * 60 * 1000 : 24 * 60 * 60 * 1000),
         user
       };

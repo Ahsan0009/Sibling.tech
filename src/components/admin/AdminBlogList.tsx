@@ -32,8 +32,8 @@ export const AdminBlogList: React.FC<AdminBlogListProps> = ({ onNavigate }) => {
       const updated = (e as CustomEvent<BlogPost[]>).detail;
       setBlogs(updated || []);
     };
-    window.addEventListener('websoul_blogs_updated', handleUpdate);
-    return () => window.removeEventListener('websoul_blogs_updated', handleUpdate);
+    window.addEventListener('sibling_blogs_updated', handleUpdate);
+    return () => window.removeEventListener('sibling_blogs_updated', handleUpdate);
   }, []);
 
   const categories = useMemo(() => {

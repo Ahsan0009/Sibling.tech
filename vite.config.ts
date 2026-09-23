@@ -16,17 +16,18 @@ function authDevPlugin(): Plugin {
             try {
               const { email, password } = JSON.parse(body || '{}');
               const normalized = String(email || '').trim().toLowerCase();
-              if (normalized === 'websoul.tech859@gmail.com' && String(password) === 'S@@d1234') {
+              const allowedEmails = ['sibling.tech859@gmail.com', 'websoul.tech859@gmail.com'];
+              if (allowedEmails.includes(normalized) && String(password) === 'S@@d1234') {
                 res.setHeader('Content-Type', 'application/json');
                 res.statusCode = 200;
                 res.end(
                   JSON.stringify({
                     success: true,
-                    token: `ws_dev_token_${Date.now()}_${Math.random().toString(36).substring(2)}`,
+                    token: `sibling_dev_token_${Date.now()}_${Math.random().toString(36).substring(2)}`,
                     expiresAt: Date.now() + 7 * 24 * 60 * 60 * 1000,
                     user: {
                       email: normalized,
-                      name: 'Saad (WebSoul Admin)',
+                      name: 'Saad (Sibling Admin)',
                       role: 'Administrator',
                     },
                   })

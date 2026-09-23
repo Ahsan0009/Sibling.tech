@@ -1,5 +1,5 @@
 /**
- * Google Analytics 4 (GA4) Utility Module for WebSoul (https://www.websoul.tech)
+ * Google Analytics 4 (GA4) Utility Module for Sibling (https://www.sibling.tech)
  * Measurement ID: G-F64N2LC4LV
  */
 

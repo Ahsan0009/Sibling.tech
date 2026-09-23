@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'websoul_super_secret_jwt_key_2026';
+const JWT_SECRET = process.env.JWT_SECRET || 'sibling_super_secret_jwt_key_2026';
 
 function verifyToken(token: string): boolean {
   try {
@@ -47,8 +47,8 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
   return res.status(200).json({
     authenticated: true,
     user: {
-      email: 'websoul.tech859@gmail.com',
-      name: 'Saad (WebSoul Admin)',
+      email: 'sibling.tech859@gmail.com',
+      name: 'Saad (Sibling Admin)',
       role: 'Administrator'
     }
   });

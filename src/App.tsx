@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { TawkWidget } from './TawkWidget';
 import { BlogListPage } from './components/blog/BlogListPage';
 import { BlogDetailPage } from './components/blog/BlogDetailPage';
 import { LatestBlogsSection } from './components/blog/LatestBlogsSection';
@@ -95,7 +94,7 @@ export interface TestimonialItem {
 export const TESTIMONIALS: TestimonialItem[] = [
   {
     id: 1,
-    quote: "Web Soul transformed our slow legacy app into a blazingly fast interface that our users actually enjoy using every single day. Load times dropped by 90%.",
+    quote: "Sibling transformed our slow legacy app into a blazingly fast interface that our users actually enjoy using every single day. Load times dropped by 90%.",
     author: "Maya Patel",
     role: "Head of Product at Orbit Analytics",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&auto=format",
@@ -104,7 +103,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
   },
   {
     id: 2,
-    quote: "The e-commerce platform engineered by WebSoul doubled our conversion rates within 30 days. Their code quality, design polish, and speed of delivery were truly world-class.",
+    quote: "The e-commerce platform engineered by Sibling doubled our conversion rates within 30 days. Their code quality, design polish, and speed of delivery were truly world-class.",
     author: "Marcus Vance",
     role: "Founder & CEO at Nexus Commerce",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&auto=format",
@@ -113,7 +112,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
   },
   {
     id: 3,
-    quote: "Working with WebSoul was effortless. They took our complex SaaS dashboard concept and delivered a pixel-perfect, highly responsive React application weeks ahead of deadline.",
+    quote: "Working with Sibling was effortless. They took our complex SaaS dashboard concept and delivered a pixel-perfect, highly responsive React application weeks ahead of deadline.",
     author: "Sophia Lin",
     role: "VP of Growth at Pulse AI",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&auto=format",
@@ -122,7 +121,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
   },
   {
     id: 4,
-    quote: "WebSoul's full-stack expertise helped us pass rigorous security audits while maintaining a silky-smooth 60fps user experience across all desktop and mobile browsers.",
+    quote: "Sibling's full-stack expertise helped us pass rigorous security audits while maintaining a silky-smooth 60fps user experience across all desktop and mobile browsers.",
     author: "David Reynolds",
     role: "CTO at FinEdge Solutions",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&auto=format",
@@ -207,7 +206,7 @@ export const PROJECTS: Project[] = [
       { label: "Organic Reach", before: "150/mo", after: "1,800/mo" },
       { label: "Reader Time", before: "1.2m", after: "4.5m" }
     ],
-    quote: "WebSoul delivered an incredibly sleek and blazing fast blog platform. Article load times are instant.",
+    quote: "Sibling delivered an incredibly sleek and blazing fast blog platform. Article load times are instant.",
     quoteAuthor: "Alex Rivera",
     quoteRole: "Content Lead & Creator"
   },
@@ -264,7 +263,7 @@ export const PROJECTS: Project[] = [
       { label: "Mobile Retention", before: "28%", after: "61%" },
       { label: "User Satisfaction", before: "3.2/5", after: "4.7/5" }
     ],
-    quote: "Web Soul transformed our slow legacy app into a blazingly fast interface that our users actually enjoy using every single day. Load times dropped by 90%.",
+    quote: "Sibling transformed our slow legacy app into a blazingly fast interface that our users actually enjoy using every single day. Load times dropped by 90%.",
     quoteAuthor: "Maya Patel",
     quoteRole: "Head of Product"
   },
@@ -340,7 +339,7 @@ export const PROJECTS: Project[] = [
       { label: "Investor Meetings", before: "2", after: "14" },
       { label: "Series A Funding", before: "$0", after: "$1.2M" }
     ],
-    quote: "Our pitch deck opened doors, but the website Web Soul built closed our seed round. Investors were blown away by the clarity and execution.",
+    quote: "Our pitch deck opened doors, but the website Sibling built closed our seed round. Investors were blown away by the clarity and execution.",
     quoteAuthor: "Nico Vance",
     quoteRole: "CEO"
   },
@@ -359,7 +358,7 @@ export const PROJECTS: Project[] = [
       { label: "Avg Project Size", before: "$8k", after: "$28k" },
       { label: "Awwwards Status", before: "None", after: "SOTD Nominee" }
     ],
-    quote: "Web Soul gave our agency the digital presence we deserved. It immediately elevated our brand perception and tripled our average deal size.",
+    quote: "Sibling gave our agency the digital presence we deserved. It immediately elevated our brand perception and tripled our average deal size.",
     quoteAuthor: "Priya Nair",
     quoteRole: "Creative Director"
   }
@@ -428,6 +427,16 @@ export const TECH_STACK: TechStackItem[] = [
     )
   },
   {
+    name: "Angular",
+    textColorClass: "text-[#DD0031] dark:text-[#FF5277]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="m12 2 8.7 3.1-1.3 11.4L12 21l-7.4-4.5L3.3 5.1 12 2Z" fill="#DD0031" />
+        <path d="m12 4.7-5.1 11h1.9l1-2.5h4.4l1 2.5h1.9L12 4.7Zm0 3.8 1.5 3.2h-3l1.5-3.2Z" fill="white" />
+      </svg>
+    )
+  },
+  {
     name: "PostgreSQL",
     textColorClass: "text-[#2563EB] dark:text-[#60A5FA]",
     icon: (
@@ -446,11 +455,42 @@ export const TECH_STACK: TechStackItem[] = [
     )
   },
   {
+    name: "Firebase",
+    textColorClass: "text-[#D97706] dark:text-[#FFCA28]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.89 15.672L6.16 3.428c.067-.36.544-.454.747-.156l2.973 4.364L3.89 15.672z" fill="#FFA000" />
+        <path d="M13.435 8.784l-2.457-4.664a.434.434 0 00-.776 0L3.84 15.68l9.595-6.896z" fill="#F57C00" />
+        <path d="M20.16 15.672l-2.585-13.43c-.073-.38-.58-.456-.757-.113l-3.383 6.643 6.725 6.9z" fill="#FFCA28" />
+        <path d="M3.84 15.68l7.632 4.4a1.87 1.87 0 001.888 0l7.632-4.4-8.576 5.07a.936.936 0 01-.952 0L3.84 15.68z" fill="#FFCA28" />
+      </svg>
+    )
+  },
+  {
+    name: "Supabase",
+    textColorClass: "text-[#16A34A] dark:text-[#4ADE80]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.4 2.8 4.1 13.5c-.8.9-.2 2.3 1 2.3h6.1l-.6 5.4c-.2 1.4 1.6 2 2.3.8l7-11.1c.6-1-.1-2.2-1.2-2.2h-5.4l1.4-4.5c.4-1.3-.5-2.3-1.3-1.4Z" fill="#3ECF8E" />
+      </svg>
+    )
+  },
+  {
     name: "Stripe",
     textColorClass: "text-[#4F46E5] dark:text-[#818CF8]",
     icon: (
       <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C17.712.748 15.223.23 12.607.23 6.945.23 3.02 3.195 3.02 8.01c0 7.377 10.158 6.208 10.158 9.388 0 1.054-.925 1.547-2.28 1.547-2.613 0-5.385-1.163-7.25-2.164l-.946 5.602c1.942.923 4.887 1.488 7.77 1.488 5.864 0 9.948-2.868 9.948-7.854 0-7.85-10.444-6.529-10.444-9.367Z" fill="#635BFF" />
+      </svg>
+    )
+  },
+  {
+    name: "Docker",
+    textColorClass: "text-[#2496ED] dark:text-[#5BB7FF]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 13.5c.5-2.1 1.8-3.2 3.8-3.2h.7V8.5h3v1.8h1.2V8.5h3v1.8h1.2V8.5h3v1.8h.9c1.2 0 2.1.4 2.9 1.2-.7.4-1.3.9-1.7 1.6-.5-.3-1-.5-1.7-.5H5.8c-.7 0-1.3.3-1.8.9H2Z" fill="#2496ED" />
+        <path d="M3 15.2h17.8c-.8 3.8-3.5 5.8-8.1 5.8-4.8 0-8-2-9.7-5.8Z" fill="#2496ED" />
       </svg>
     )
   },
@@ -473,14 +513,49 @@ export const TECH_STACK: TechStackItem[] = [
     )
   },
   {
-    name: "Firebase",
-    textColorClass: "text-[#D97706] dark:text-[#FFCA28]",
+    name: "n8n",
+    textColorClass: "text-[#EA4B71] dark:text-[#FF7898]",
     icon: (
       <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.89 15.672L6.16 3.428c.067-.36.544-.454.747-.156l2.973 4.364L3.89 15.672z" fill="#FFA000" />
-        <path d="M13.435 8.784l-2.457-4.664a.434.434 0 00-.776 0L3.84 15.68l9.595-6.896z" fill="#F57C00" />
-        <path d="M20.16 15.672l-2.585-13.43c-.073-.38-.58-.456-.757-.113l-3.383 6.643 6.725 6.9z" fill="#FFCA28" />
-        <path d="M3.84 15.68l7.632 4.4a1.87 1.87 0 001.888 0l7.632-4.4-8.576 5.07a.936.936 0 01-.952 0L3.84 15.68z" fill="#FFCA28" />
+        <path d="M7 4h4v4H7V4Zm6 6h4v4h-4v-4ZM3 16h4v4H3v-4Zm14 0h4v4h-4v-4Z" fill="#EA4B71" />
+        <path d="M11 6h2v6h-2V6Zm-4 6h6v2H7v-2Zm10 0h2v4h-2v-4Zm-10 2h2v2H7v-2Z" fill="#EA4B71" />
+      </svg>
+    )
+  },
+  {
+    name: "Make",
+    textColorClass: "text-[#6D28D9] dark:text-[#A78BFA]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 6h4.2l2.1 6L11.4 6h3.2l2.1 6L18.8 6H21l-3.2 12h-3.1l-1.7-5.8L11.3 18H8.1L3 6Z" fill="#6D28D9" />
+      </svg>
+    )
+  },
+  {
+    name: "Relay",
+    textColorClass: "text-[#111827] dark:text-white",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 5h7a5 5 0 0 1 0 10H8v4H4V5Zm4 4v2h3a1 1 0 1 0 0-2H8Z" fill="#111827" className="dark:fill-white" />
+        <path d="M15 9h5v4h-5V9Z" fill="#F97316" />
+      </svg>
+    )
+  },
+  {
+    name: "Zapier",
+    textColorClass: "text-[#FF4A00] dark:text-[#FF7A45]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 2h2v7.1l5.02-5.02 1.4 1.42L14.4 10.5h7.1v2h-7.1l5.02 5-1.4 1.42L13 13.9V21h-2v-7.1l-5.02 5.02-1.4-1.42 5.02-5H2v-2h7.6L4.58 5.5l1.4-1.42L11 9.1V2Z" fill="#FF4A00" />
+      </svg>
+    )
+  },
+  {
+    name: "Pipedream",
+    textColorClass: "text-[#7C3AED] dark:text-[#A78BFA]",
+    icon: (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 4h6v6H4V4Zm10 0h6v6h-6V4ZM4 14h6v6H4v-6Zm7-7h2v10h-2V7Zm2 3h1v4h-1v-4Zm-3 0h2v4h-2v-4Z" fill="#7C3AED" />
       </svg>
     )
   }
@@ -550,7 +625,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: "maintenance",
     title: "Maintenance & Support",
-    description: "Keep your web products secure, updated, and lightning fast. Dedicated monthly maintenance, security patches, and priority hotfixes.",
+    description: "Keep your digital products and systems secure, updated, and reliable. Dedicated monthly maintenance, security patches, and priority hotfixes.",
     items: [
       "Monthly content updates",
       "Security monitoring",
@@ -565,27 +640,27 @@ export const PROCESS_STEPS: ProcessStep[] = [
   {
     number: "01",
     title: "Discover",
-    description: "Deep-dive into your goals, users, and competitive landscape."
+    description: "Deep-dive into your goals, users, workflows, and competitive landscape."
   },
   {
     number: "02",
     title: "Design",
-    description: "Wireframes and high-fidelity Figma prototypes with your feedback."
+    description: "Wireframes, system maps, and high-fidelity Figma prototypes shaped by your goals."
   },
   {
     number: "03",
     title: "Build",
-    description: "Clean, performant code — tested on every browser and device."
+    description: "Clean, performant websites, apps, automations, and integrations tested for real-world use."
   },
   {
     number: "04",
     title: "Launch",
-    description: "Staged deployment with load testing and rollback safety net."
+    description: "Staged rollout with testing, monitoring, and a clear path to launch safely."
   },
   {
     number: "05",
     title: "Grow",
-    description: "Analytics, A/B testing, and continuous improvement post-launch."
+    description: "Analytics, optimization, automation improvements, and ongoing support after launch."
   }
 ];
 
@@ -987,7 +1062,7 @@ export function FooterLogo({ darkMode }: { darkMode?: boolean }) {
           Sibling<span className="text-blue-600 dark:text-sky-400">.tech</span>
         </span>
         <span className="text-[10px] font-mono-tech text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-widest">
-          Web Engineering
+          Digital Solutions
         </span>
       </div>
     </div>
@@ -1044,7 +1119,6 @@ export function Nav({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -1056,7 +1130,6 @@ export function Nav({
     };
   }, [mobileMenuOpen]);
 
-  // Automatically close mobile menu when switching to desktop view
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -1075,13 +1148,15 @@ export function Nav({
     { page: 'contact', label: 'Contact' },
   ];
 
+  const navLinkClass = (isActive: boolean) => `text-xs lg:text-sm transition-colors cursor-pointer link-underline ${isActive ? 'text-[#0B192C] dark:text-white font-semibold' : 'text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white'}`;
+
   const serviceDropdownItems = [
-    { id: 'ai-automation',  label: 'AI Automation',              desc: 'Intelligent workflow & process automation' },
-    { id: 'ai-chatbots',   label: 'AI Chatbots & Agentic AI',   desc: 'Custom LLM agents and autonomous bots' },
-    { id: 'web-design',    label: 'Website Design & Dev',        desc: 'Custom UI/UX built from scratch' },
-    { id: 'ecommerce',     label: 'E-commerce Development',      desc: 'High-converting headless stores' },
-    { id: 'webapp',        label: 'Web App Development',         desc: 'Scalable full-stack SaaS & tools' },
-    { id: 'maintenance',   label: 'Maintenance & Support',       desc: 'Security patches & priority support' },
+    { id: 'ai-automation', label: 'AI Automation', desc: 'Intelligent workflow & process automation' },
+    { id: 'ai-chatbots', label: 'AI Chatbots & Agentic AI', desc: 'Custom LLM agents and autonomous bots' },
+    { id: 'web-design', label: 'Website Design & Dev', desc: 'Custom digital experiences built from scratch' },
+    { id: 'ecommerce', label: 'E-commerce Development', desc: 'High-converting headless stores' },
+    { id: 'webapp', label: 'Web Apps & Digital Products', desc: 'Scalable full-stack SaaS and business tools' },
+    { id: 'maintenance', label: 'Maintenance & Support', desc: 'Security patches & priority support' },
   ];
 
 
@@ -1106,7 +1181,7 @@ export function Nav({
               : '1px solid transparent',
         }}
       >
-              <div className="w-full flex items-center justify-start gap-2 lg:gap-3">g
+        <div className="max-w-7xl w-full mx-auto flex items-center justify-start gap-2 lg:gap-3">
           {/* Header Logo */}
           <button
             onClick={() => {
@@ -1121,7 +1196,7 @@ export function Nav({
             </div>
           </button>
 
-          {/* Desktop Links — now sit directly to the right of the logo */}
+          {/* Desktop Links — sit directly to the right of the logo */}
           <nav className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-6">
             {/* Work */}
             {navLinks.slice(0, 1).map((link) => {
@@ -1130,7 +1205,7 @@ export function Nav({
                 <button
                   key={link.page}
                   onClick={() => navigate(link.page)}
-                  className={`text-xs lg:text-sm transition-colors cursor-pointer link-underline ${isActive ? 'text-[#0B192C] dark:text-white font-semibold' : 'text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white'}`}
+                  className={navLinkClass(isActive)}
                 >
                   {link.label}
                 </button>
@@ -1140,22 +1215,18 @@ export function Nav({
             {/* Services dropdown */}
             <div
               ref={servicesRef}
-              className="relative"
+              className="relative flex items-center"
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
               <button
                 onClick={() => navigate('services')}
-                className={`text-xs lg:text-sm transition-colors cursor-pointer link-underline ${
-                  currentPage === 'services'
-                    ? 'text-[#0B192C] dark:text-white font-semibold'
-                    : 'text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white'
-                }`}
+                className={navLinkClass(currentPage === 'services')}
               >
                 Services
               </button>
 
-              {/* Dropdown panel */}
+              {/* Dropdown panel — opens left-aligned under "Services" */}
               <div
                 className={`absolute top-full left-0 mt-3 w-72 rounded-2xl shadow-xl border transition-all duration-200 origin-top z-50 ${
                   servicesOpen
@@ -1173,33 +1244,27 @@ export function Nav({
                     <button
                       key={item.id}
                       onClick={() => { navigate('services'); setServicesOpen(false); }}
-                      className={`w-full text-left px-3 py-2.5 rounded-xl group transition-all duration-150 flex items-start gap-3 ${
-                        darkMode ? 'hover:bg-slate-800' : 'hover:bg-slate-50'
-                      }`}
+                      className={`w-full text-left px-3 py-2.5 rounded-xl group transition-all duration-150 flex items-start gap-3 ${darkMode ? 'hover:bg-slate-800' : 'hover:bg-slate-50'
+                        }`}
                     >
-                      <span className={`mt-0.5 w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5 ${
-                        darkMode ? 'bg-blue-400' : 'bg-[#0B192C]'
-                      }`} />
+                      <span className={`mt-0.5 w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5 ${darkMode ? 'bg-blue-400' : 'bg-[#0B192C]'
+                        }`} />
                       <div>
-                        <div className={`text-xs font-semibold ${
-                          darkMode ? 'text-slate-100 group-hover:text-white' : 'text-[#0B192C] group-hover:text-[#1E3A8A]'
-                        }`}>{item.label}</div>
-                        <div className={`text-[10px] leading-snug mt-0.5 ${
-                          darkMode ? 'text-slate-400' : 'text-slate-500'
-                        }`}>{item.desc}</div>
+                        <div className={`text-xs font-semibold ${darkMode ? 'text-slate-100 group-hover:text-white' : 'text-[#0B192C] group-hover:text-[#1E3A8A]'
+                          }`}>{item.label}</div>
+                        <div className={`text-[10px] leading-snug mt-0.5 ${darkMode ? 'text-slate-400' : 'text-slate-500'
+                          }`}>{item.desc}</div>
                       </div>
                     </button>
                   ))}
                 </div>
 
-                <div className={`px-4 py-2.5 border-t ${
-                  darkMode ? 'border-slate-700/60' : 'border-slate-100'
-                }`}>
+                <div className={`px-4 py-2.5 border-t ${darkMode ? 'border-slate-700/60' : 'border-slate-100'
+                  }`}>
                   <button
                     onClick={() => { navigate('services'); setServicesOpen(false); }}
-                    className={`text-[11px] font-medium flex items-center gap-1.5 transition-colors ${
-                      darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-[#0B192C] hover:text-[#1E3A8A]'
-                    }`}
+                    className={`text-[11px] font-medium flex items-center gap-1.5 transition-colors ${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-[#0B192C] hover:text-[#1E3A8A]'
+                      }`}
                   >
                     View all services
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -1217,13 +1282,13 @@ export function Nav({
                 <button
                   key={link.page}
                   onClick={() => navigate(link.page)}
-                  className={`text-xs lg:text-sm transition-colors cursor-pointer link-underline ${isActive ? 'text-[#0B192C] dark:text-white font-semibold' : 'text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white'}`}
+                  className={navLinkClass(isActive)}
                 >
                   {link.label}
                 </button>
               );
             })}
-                    </nav>
+          </nav>
 
           {/* Right-side cluster: Theme toggle + CTA (desktop) */}
           <div className="hidden md:flex items-center gap-3 lg:gap-4 ml-auto pl-4 border-l border-slate-200 dark:border-slate-700/60">
@@ -1302,11 +1367,10 @@ export function Nav({
             <div>
               <button
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                className={`w-full text-lg sm:text-xl font-medium text-left px-4 py-3.5 rounded-xl transition-all cursor-pointer flex items-center justify-between min-h-[48px] ${
-                  currentPage === 'services'
-                    ? 'bg-slate-100 dark:bg-slate-800/90 text-[#0B192C] dark:text-white font-semibold shadow-xs'
-                    : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#0B192C] dark:hover:text-white'
-                }`}
+                className={`w-full text-lg sm:text-xl font-medium text-left px-4 py-3.5 rounded-xl transition-all cursor-pointer flex items-center justify-between min-h-[48px] ${currentPage === 'services'
+                  ? 'bg-slate-100 dark:bg-slate-800/90 text-[#0B192C] dark:text-white font-semibold shadow-xs'
+                  : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#0B192C] dark:hover:text-white'
+                  }`}
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 <span>Services</span>
@@ -1394,7 +1458,7 @@ export function Footer({ navigate, darkMode }: { navigate: (page: Page, id?: num
               </div>
             </div>
             <p className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 leading-relaxed">
-              Building ultra-performant, high-converting digital products for startups and growing businesses. Hand-crafted code, zero bloat.
+              Building high-performance websites, intelligent automations, and digital products for startups and growing businesses. Thoughtful strategy, hand-crafted code, zero bloat.
             </p>
           </div>
 
@@ -1447,10 +1511,40 @@ export function Footer({ navigate, darkMode }: { navigate: (page: Page, id?: num
                 </li>
                 <li>
                   <a
-                    href="mailto:contact@websoul.tech"
+                    href="https://www.linkedin.com/company/siblingtechnologies/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white link-underline cursor-pointer font-medium"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/siblingtech"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white link-underline cursor-pointer font-medium"
+                  >
+                    Facebook
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/siblingtech"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white link-underline cursor-pointer font-medium"
+                  >
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:contact@sibling.tech"
                     className="text-xs sm:text-sm text-[#0B192C] dark:text-blue-400 font-semibold hover:underline font-mono-tech cursor-pointer"
                   >
-                    contact@websoul.tech
+                    contact@sibling.tech
                   </a>
                 </li>
               </ul>
@@ -1461,10 +1555,10 @@ export function Footer({ navigate, darkMode }: { navigate: (page: Page, id?: num
         {/* Bottom Bar */}
         <div className="border-t border-slate-200 dark:border-slate-800 mt-10 sm:mt-12 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-center sm:text-left">
           <p className="text-xs font-mono-tech text-[#64748B] dark:text-slate-500">
-            copyright © 2026 Web Soul. All rights reserved.
+            copyright © 2023 Sibling. All rights reserved.
           </p>
           <p className="text-xs font-mono-tech text-[#64748B] dark:text-slate-500">
-            Designed & built by Web Soul
+            Designed & built by Sibling
           </p>
         </div>
       </div>
@@ -1491,7 +1585,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
     <div className="min-h-screen bg-white dark:bg-[#0F172A] transition-colors duration-300">
       {/* HERO SECTION */}
       <section className="min-h-[calc(100vh-4rem)] flex items-center overflow-hidden relative pt-16">
-        {/* Backgrounds */}
         <div className="hero-mesh absolute inset-0 pointer-events-none" />
         <div
           className="absolute inset-0 pointer-events-none"
@@ -1518,7 +1611,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            {/* Left Column */}
             <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono-tech bg-[#0B192C]/5 dark:bg-blue-950/50 border border-[#0B192C]/15 dark:border-blue-500/30 text-[#0B192C] dark:text-blue-300 font-semibold mb-5 sm:mb-6 max-w-full">
                 <span className="w-2 h-2 rounded-full bg-[#0B192C] dark:bg-blue-400 animate-pulse shrink-0" />
@@ -1529,12 +1621,12 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] sm:leading-[1.05] tracking-tight mb-4 sm:mb-6 text-[#0B192C] dark:text-slate-100"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
-                We build fast, modern websites that turn{' '}
-                <span className="gradient-text">visitors into customers.</span>
+                We build digital solutions that{' '}
+                <span className="gradient-text">move businesses forward.</span>
               </h1>
 
               <p className="text-base sm:text-lg text-[#475569] dark:text-slate-400 max-w-lg mb-6 sm:mb-8 leading-relaxed font-normal">
-                Web development and design for startups and businesses that want to grow. No templates, no shortcuts — just hand-crafted code that performs.
+                Web development, AI automation, and digital solutions for startups and businesses that want to grow. No templates, no shortcuts — just thoughtful systems that perform.
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto flex-wrap">
@@ -1559,7 +1651,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                 </button>
               </div>
 
-              {/* Stat Mini Cards for Mobile & Tablet (below lg) */}
               <div className="grid grid-cols-3 gap-2.5 sm:gap-4 mt-8 lg:hidden">
                 <div className="bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-xs rounded-xl p-2.5 sm:p-3 text-center">
                   <div className="text-[10px] sm:text-xs text-[#64748B] dark:text-slate-400 mb-0.5 font-mono-tech">Avg. load</div>
@@ -1576,10 +1667,8 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
               </div>
             </div>
 
-            {/* Right Column: Code Editor Mockup (Desktop lg+) */}
             <div className="lg:col-span-5 hidden lg:block">
               <div className="bg-[#0B192C] dark:bg-[#09101E] rounded-xl border border-[#0B192C]/20 dark:border-slate-800 shadow-2xl overflow-hidden">
-                {/* Header */}
                 <div className="px-4 py-3 bg-white/5 border-b border-white/10 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <span className="w-3 h-3 rounded-full bg-[#FF5F56]" />
@@ -1591,7 +1680,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                   </span>
                 </div>
 
-                {/* Code Area */}
                 <div className="p-5 min-h-[220px] font-mono-tech text-xs leading-relaxed overflow-x-auto bg-[#07111E]">
                   {currentSnippet.lines.map((line, lIdx) => (
                     <div key={lIdx} className="whitespace-pre">
@@ -1610,7 +1698,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                   ))}
                 </div>
 
-                {/* Bottom Indicators */}
                 <div className="px-4 py-2.5 border-t border-white/10 flex items-center justify-center gap-2 bg-[#0B192C] dark:bg-[#09101E]">
                   {CODE_SNIPPETS.map((_, i) => (
                     <span
@@ -1622,7 +1709,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                 </div>
               </div>
 
-              {/* Stat Mini Cards for Desktop */}
               <div className="flex items-center justify-between gap-4 mt-6">
                 <div className="bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-sm rounded-xl p-3 flex-1 text-center">
                   <div className="text-xs text-[#64748B] dark:text-slate-400 mb-1 font-mono-tech">Avg. load time</div>
@@ -1647,7 +1733,7 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           <Reveal>
             <h3 className="text-xs uppercase tracking-widest mb-5 sm:mb-7 font-mono-tech text-[#0B192C] dark:text-slate-300 font-semibold text-center">
-              Tech stack I work with
+              Tech stack we work with
             </h3>
           </Reveal>
           <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-3.5">
@@ -1703,7 +1789,7 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                 <div className="aspect-video overflow-hidden relative">
                   <img
                     src={project.image}
-                    alt={`${project.title} - Custom ${project.category} Web Development Case Study`}
+                    alt={`${project.title} - Custom ${project.category} Digital Solutions Case Study`}
                     loading="lazy"
                     decoding="async"
                     width="800"
@@ -1768,7 +1854,6 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
           ))}
         </div>
 
-        {/* Mobile button */}
         <div className="mt-8 text-center sm:hidden">
           <ButtonSecondary onClick={() => navigate('work')} className="w-full justify-center text-center">
             View All Work →
@@ -1785,10 +1870,10 @@ export function HomePage({ navigate }: { navigate: (page: Page, id?: number) => 
                 Services
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0B192C] dark:text-white mb-3 sm:mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                End-to-end web engineering.
+                End-to-end digital solutions.
               </h2>
               <p className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 leading-relaxed">
-                Everything you need to build, launch, and scale modern web platforms. Hand-crafted code designed to convert.
+                From websites and web apps to AI automation, integrations, and ongoing support, we build the digital systems your business needs to launch and grow.
               </p>
             </div>
           </Reveal>
@@ -1904,13 +1989,12 @@ export function WorkPage({ navigate }: { navigate: (page: Page, id?: number) => 
           Portfolio
         </span>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B192C] dark:text-white mb-3 sm:mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-          Web Development Portfolio & Case Studies
+          Digital Solutions Portfolio & Case Studies
         </h1>
         <p className="text-base sm:text-lg text-[#475569] dark:text-slate-400 max-w-xl">
           47 projects shipped. Here are the ones that mattered most.
         </p>
 
-        {/* Filter Pills */}
         <div className="flex flex-wrap gap-2 sm:gap-3 my-6 sm:my-8">
           {FILTER_CATEGORIES.map((cat) => {
             const isActive = activeCategory === cat;
@@ -1930,7 +2014,6 @@ export function WorkPage({ navigate }: { navigate: (page: Page, id?: number) => 
         </div>
       </Reveal>
 
-      {/* Projects Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {filteredProjects.map((project, idx) => (
           <Reveal key={project.id} delay={idx * 80}>
@@ -1941,7 +2024,7 @@ export function WorkPage({ navigate }: { navigate: (page: Page, id?: number) => 
               <div className="aspect-video overflow-hidden relative">
                 <img
                   src={project.image}
-                  alt={`${project.title} - Custom ${project.category} Web Engineering Case Study`}
+                  alt={`${project.title} - Custom ${project.category} Digital Solutions Case Study`}
                   loading="lazy"
                   decoding="async"
                   width="800"
@@ -2059,7 +2142,6 @@ export function ProjectDetailPage({
           {project.tagline}
         </p>
 
-        {/* Featured Image */}
         <div className="aspect-video rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 mb-8 sm:mb-12 shadow-lg">
           <img
             src={project.image}
@@ -2072,7 +2154,6 @@ export function ProjectDetailPage({
           />
         </div>
 
-        {/* Challenge & Solution Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
           <div className="bg-[#F8FAFC] dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl p-5 sm:p-6">
             <h3 className="text-lg sm:text-xl font-bold text-[#0B192C] dark:text-white mb-2.5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -2092,7 +2173,6 @@ export function ProjectDetailPage({
           </div>
         </div>
 
-        {/* Tech Stack Used */}
         <div className="mb-8 sm:mb-12">
           <h4 className="text-xs font-mono-tech uppercase tracking-widest text-[#0B192C] dark:text-slate-300 font-semibold mb-3 sm:mb-4">
             Tech Stack Used
@@ -2109,7 +2189,6 @@ export function ProjectDetailPage({
           </div>
         </div>
 
-        {/* Results Row */}
         <div className="mb-8 sm:mb-12">
           <h3 className="text-lg sm:text-xl font-bold text-[#0B192C] dark:text-white mb-4 sm:mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Key Impact & Results
@@ -2137,7 +2216,6 @@ export function ProjectDetailPage({
           </div>
         </div>
 
-        {/* Client Quote */}
         <div className="rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-slate-200 dark:border-slate-700 border-l-4 border-l-[#0B192C] dark:border-l-blue-500 bg-[#F8FAFC] dark:bg-slate-800/60 mb-12 sm:mb-16">
           <p className="text-base sm:text-lg italic text-[#0B192C] dark:text-slate-100 mb-3 sm:mb-4 leading-relaxed">
             "{project.quote}"
@@ -2150,7 +2228,6 @@ export function ProjectDetailPage({
           </div>
         </div>
 
-        {/* Prev / Next Pagination */}
         <div className="border-t border-slate-200 dark:border-slate-800 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 mb-12 sm:mb-16">
           <button
             onClick={() => navigate('project', prevProjectId)}
@@ -2166,7 +2243,6 @@ export function ProjectDetailPage({
           </button>
         </div>
 
-        {/* Final CTA */}
         <div className="text-center">
           <ButtonPrimary onClick={() => navigate('contact')} className="px-8 py-4 text-base mx-auto">
             Start a Project →
@@ -2189,15 +2265,14 @@ export function ServicesPage({ navigate }: { navigate: (page: Page, id?: number)
             What We Do
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0B192C] dark:text-white mb-3 sm:mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Custom Web Development & Engineering Services
+            Web Development & Digital Solutions
           </h1>
           <p className="text-xs sm:text-base text-[#475569] dark:text-slate-400">
-            From bespoke custom design to complex full-stack web applications.
+            From high-converting websites and web apps to AI automation, intelligent agents, integrations, and ongoing support.
           </p>
         </div>
       </Reveal>
 
-      {/* Services Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
         {SERVICES.map((service, idx) => (
           <Reveal key={service.id} delay={idx * 80}>
@@ -2226,7 +2301,6 @@ export function ServicesPage({ navigate }: { navigate: (page: Page, id?: number)
         ))}
       </div>
 
-      {/* Process Vertical Timeline */}
       <Reveal>
         <div className="max-w-3xl mx-auto mt-16 sm:mt-24">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#0B192C] dark:text-white text-center mb-10 sm:mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -2258,10 +2332,8 @@ export function ServicesPage({ navigate }: { navigate: (page: Page, id?: number)
         </div>
       </Reveal>
 
-      {/* FAQ SECTION */}
       <FAQSection />
 
-      {/* Final CTA */}
       <Reveal className="text-center mt-16 sm:mt-20">
         <div className="bg-[#F8FAFC] dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 sm:p-10 max-w-3xl mx-auto shadow-xs">
           <h3 className="text-xl sm:text-2xl font-bold text-[#0B192C] dark:text-white mb-2 sm:mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -2295,7 +2367,7 @@ export const ABOUT_HIGHLIGHTS: AboutHighlight[] = [
     number: "01",
     badge: "01 — Custom Built",
     title: "Built Around Your Business",
-    description: "No generic solutions. Every website is designed and developed around your goals, brand and audience.",
+    description: "No generic solutions. Every digital product, system, and experience is shaped around your goals, brand, audience, and workflow.",
     icon: (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
@@ -2356,7 +2428,7 @@ export function AboutSection({
         <div className="max-w-3xl mb-10 sm:mb-14 lg:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono-tech bg-[#0B192C]/5 dark:bg-blue-950/50 border border-[#0B192C]/15 dark:border-blue-500/30 text-[#0B192C] dark:text-blue-300 font-semibold mb-4 sm:mb-5">
             <span className="w-2 h-2 rounded-full bg-[#0B192C] dark:bg-blue-400 animate-pulse shrink-0" />
-            <span>About WebSoul</span>
+            <span>About Sibling</span>
           </div>
 
           {isStandalonePage ? (
@@ -2376,7 +2448,7 @@ export function AboutSection({
           )}
 
           <p className="text-base sm:text-lg text-[#475569] dark:text-slate-300 leading-relaxed font-normal">
-            WebSoul is a web development studio focused on building modern, high-performance digital experiences for startups and growing businesses. We combine thoughtful design, clean engineering and strategic thinking to create websites that don't just look good — they work hard for your business.
+            Sibling is a digital solutions agency helping startups and growing businesses build better ways to attract customers, operate efficiently, and scale. We combine thoughtful design, clean engineering, automation, AI, and strategic thinking to create digital products that work hard for your business.
           </p>
         </div>
       </Reveal>
@@ -2390,18 +2462,18 @@ export function AboutSection({
                   className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0B192C] dark:text-white mb-4 sm:mb-6 tracking-tight"
                   style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
-                  More Than Just a Website.
+                  More Than Just a Digital Presence.
                 </h3>
 
                 <div className="space-y-4 sm:space-y-4.5 text-xs sm:text-sm text-[#475569] dark:text-slate-400 leading-relaxed">
                   <p>
-                    Your website is often the first real interaction someone has with your business. That's why we don't believe in generic templates, rushed builds or unnecessary complexity.
+                    Your digital presence and internal systems shape how people discover, trust, and experience your business. That's why we don't believe in generic templates, rushed builds, or unnecessary complexity.
                   </p>
                   <p>
-                    At WebSoul, every project starts with understanding your business, your audience and your goals. From strategy and design to development and performance optimization, we focus on creating digital experiences that are fast, intuitive and built to support real growth.
+                    At Sibling, every project starts with understanding your business, your audience, and your goals. From strategy and design to development, automation, AI, and integrations, we create digital solutions that are fast, intuitive, and built to support real growth.
                   </p>
                   <p>
-                    Whether you're launching something new, improving an outdated website or building a more powerful digital presence, we create solutions designed around what your business actually needs.
+                    Whether you're launching a new website, streamlining operations, connecting your tools, or building a more powerful digital product, we create solutions designed around what your business actually needs.
                   </p>
                 </div>
               </div>
@@ -2449,7 +2521,7 @@ export function AboutSection({
                 </div>
 
                 <div className="pt-3.5 mt-3.5 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between text-[11px] font-mono-tech text-slate-400 dark:text-slate-500">
-                  <span>WebSoul Standard</span>
+                  <span>Sibling Standard</span>
                   <span className="group-hover:text-[#0B192C] dark:group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all">✓</span>
                 </div>
               </div>
@@ -2472,7 +2544,7 @@ export function AboutSection({
               className="text-base sm:text-xl md:text-2xl font-bold text-[#0B192C] dark:text-slate-100 leading-snug tracking-tight"
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
-              "We don't just build websites. We build the digital foundation your business can grow on."
+              "We don't just build websites. We build the digital systems and solutions your business can grow on."
             </p>
           </div>
         </div>
@@ -2486,7 +2558,6 @@ export function AboutPage({ navigate }: { navigate: (page: Page, id?: number) =>
     <div className="pt-24 sm:pt-32 pb-16 sm:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 bg-white dark:bg-[#0F172A] transition-colors duration-300">
       <AboutSection navigate={navigate} isStandalonePage={true} />
 
-      {/* Core Tech Stack Section */}
       <Reveal delay={150}>
         <div className="mt-16 sm:mt-20 pt-12 sm:pt-16 border-t border-slate-200 dark:border-slate-800">
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
@@ -2516,17 +2587,16 @@ export function AboutPage({ navigate }: { navigate: (page: Page, id?: number) =>
         </div>
       </Reveal>
 
-      {/* Bottom CTA Banner */}
       <Reveal delay={200}>
         <div className="mt-16 sm:mt-20 text-center bg-[#F8FAFC] dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 sm:p-12 max-w-4xl mx-auto shadow-xs">
           <span className="text-xs font-mono-tech uppercase tracking-widest text-[#0B192C] dark:text-blue-400 font-semibold block mb-2">
             Let's Collaborate
           </span>
           <h3 className="text-2xl sm:text-3xl font-bold text-[#0B192C] dark:text-white mb-3 sm:mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Ready to build a high-performance web presence?
+            Ready to build a stronger digital foundation?
           </h3>
           <p className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed">
-            Whether you're starting from scratch or re-engineering an existing platform, let's create a digital solution tailored to your goals.
+            Whether you're starting from scratch or improving an existing platform or process, let's create a digital solution tailored to your goals.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <ButtonPrimary onClick={() => navigate('contact')} className="w-full sm:w-auto px-7 py-3.5 text-sm sm:text-base">
@@ -2546,7 +2616,7 @@ export function AboutPage({ navigate }: { navigate: (page: Page, id?: number) =>
 // 12. CONTACT PAGE
 // ==========================================
 // NOTE: Pricing / Budget field has been REMOVED.
-// "AI Automation" has been ADDED to the Project Type dropdown.
+// "AI Automation" and "AI Chatbot / Agentic AI" have been ADDED to the Project Type dropdown.
 export function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -2561,7 +2631,7 @@ export function ContactPage() {
   });
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('contact@websoul.tech');
+    navigator.clipboard.writeText('contact@sibling.tech');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -2598,7 +2668,7 @@ export function ContactPage() {
       });
     } catch (err) {
       console.error('EmailJS submit error:', err);
-      setErrorMessage('Unable to send message at this time. Please try again or reach out to contact@websoul.tech directly.');
+      setErrorMessage('Unable to send message at this time. Please try again or reach out to contact@sibling.tech directly.');
     } finally {
       setLoading(false);
     }
@@ -2607,7 +2677,6 @@ export function ContactPage() {
   return (
     <div className="pt-24 sm:pt-32 pb-16 sm:pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 bg-white dark:bg-[#0F172A] transition-colors duration-300">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-        {/* Left Column: Direct Contact & Info */}
         <Reveal className="lg:col-span-5">
           <div className="flex flex-col justify-between h-full">
             <div>
@@ -2627,9 +2696,7 @@ export function ContactPage() {
                 Have a new project, refactor need, or enterprise inquiry? Fill out the form or reach out directly. We respond within 24 hours with a clear roadmap.
               </p>
 
-              {/* Direct Info Cards Grid */}
               <div className="space-y-4 mb-8 sm:mb-10">
-                {/* Email Item */}
                 <div className="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-[#F8FAFC] dark:bg-slate-800/50 flex items-center justify-between gap-3 group hover:border-[#0B192C]/30 dark:hover:border-blue-500/40 transition-all">
                   <div className="flex items-center gap-3.5">
                     <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/90 dark:border-slate-700 flex items-center justify-center text-[#0B192C] dark:text-blue-400 shrink-0 shadow-2xs">
@@ -2639,8 +2706,8 @@ export function ContactPage() {
                     </div>
                     <div>
                       <div className="text-[11px] font-mono-tech font-semibold text-[#64748B] dark:text-slate-400 uppercase tracking-wider">Direct Email</div>
-                      <a href="mailto:contact@websoul.tech" className="text-xs sm:text-sm font-bold text-[#0B192C] dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors break-all">
-                        contact@websoul.tech
+                      <a href="mailto:contact@sibling.tech" className="text-xs sm:text-sm font-bold text-[#0B192C] dark:text-slate-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors break-all">
+                        contact@sibling.tech
                       </a>
                     </div>
                   </div>
@@ -2654,7 +2721,6 @@ export function ContactPage() {
                   </button>
                 </div>
 
-                {/* Location Item */}
                 <div className="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-[#F8FAFC] dark:bg-slate-800/50 flex items-center gap-3.5">
                   <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/90 dark:border-slate-700 flex items-center justify-center text-[#0B192C] dark:text-blue-400 shrink-0 shadow-2xs">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2670,8 +2736,7 @@ export function ContactPage() {
                   </div>
                 </div>
 
-                {/* Social Networks Item */}
-                <div className="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-[#F8FAFC] dark:bg-slate-800/50 flex items-center justify-between gap-3">
+                <div className="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-[#F8FAFC] dark:bg-slate-800/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div className="flex items-center gap-3.5">
                     <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/90 dark:border-slate-700 flex items-center justify-center text-[#0B192C] dark:text-blue-400 shrink-0 shadow-2xs">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2680,18 +2745,26 @@ export function ContactPage() {
                     </div>
                     <div className="text-[11px] font-mono-tech font-semibold text-[#64748B] dark:text-slate-400 uppercase tracking-wider">Social Channels</div>
                   </div>
-                  <div className="flex gap-2 font-mono-tech text-xs">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 font-mono-tech text-xs">
                     <a href="https://github.com/websoultech859-maker" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
                       GitHub
                     </a>
                     <a href="https://www.upwork.com/freelancers/~01ccd2af3f92e93ff4?mp_source=share" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
                       Upwork
                     </a>
+                    <a href="https://www.linkedin.com/company/siblingtechnologies/" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
+                      LinkedIn
+                    </a>
+                    <a href="https://www.facebook.com/siblingtech" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
+                      Facebook
+                    </a>
+                    <a href="https://www.instagram.com/siblingtech" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
+                      Instagram
+                    </a>
                   </div>
                 </div>
               </div>
 
-              {/* Trust Micro Indicators */}
               <div className="pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-3 text-center font-mono-tech">
                 <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-800">
                   <div className="text-[10px] text-slate-500 dark:text-slate-400 uppercase">Response</div>
@@ -2710,7 +2783,6 @@ export function ContactPage() {
           </div>
         </Reveal>
 
-        {/* Right Column: Premium Form Card */}
         <Reveal delay={100} className="lg:col-span-7">
           <div className="bg-white dark:bg-[#131C2D] rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-200/90 dark:border-slate-800 shadow-[0_20px_50px_rgba(11,25,44,0.06)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.35)] relative overflow-hidden transition-all">
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0B192C] via-blue-500 to-[#0B192C] dark:from-blue-600 dark:via-cyan-400 dark:to-blue-600" />
@@ -2809,7 +2881,7 @@ export function ContactPage() {
                   </div>
                 </div>
 
-                {/* Project Type (full-width row now that Budget is removed) */}
+                {/* Project Type (full-width row — Budget field removed) */}
                 <div className="group">
                   <label className="flex items-center gap-1.5 text-[11px] font-mono-tech text-[#0B192C]/80 dark:text-slate-300 uppercase tracking-wider mb-2 font-semibold transition-colors duration-200 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400 group-hover:text-[#0B192C]">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-focus-within:bg-blue-600 dark:group-focus-within:bg-blue-400 group-focus-within:scale-125 transition-all duration-200" />
@@ -2841,7 +2913,6 @@ export function ContactPage() {
                   </div>
                 </div>
 
-                {/* Message Textarea */}
                 <div className="group">
                   <label className="flex items-center gap-1.5 text-[11px] font-mono-tech text-[#0B192C]/80 dark:text-slate-300 uppercase tracking-wider mb-2 font-semibold transition-colors duration-200 group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400 group-hover:text-[#0B192C]">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-focus-within:bg-blue-600 dark:group-focus-within:bg-blue-400 group-focus-within:scale-125 transition-all duration-200" />
@@ -2858,7 +2929,6 @@ export function ContactPage() {
                   />
                 </div>
 
-                {/* Submit Button */}
                 <button
                   type="submit"
                   disabled={loading}
@@ -2953,24 +3023,24 @@ export interface FAQItem {
 
 export const FAQS: FAQItem[] = [
   {
-    question: "What custom web development services does WebSoul offer?",
-    answer: "WebSoul provides end-to-end custom web development services including React and Next.js web application development, headless e-commerce storefronts, custom UI/UX design, database architecture, API engineering, and ongoing maintenance."
+    question: "What digital solutions does Sibling offer?",
+    answer: "Sibling provides websites, web applications, AI automation, intelligent chatbots, headless e-commerce storefronts, custom UI/UX design, database architecture, API integrations, and ongoing maintenance."
   },
   {
-    question: "Which technologies and frameworks do you use for web development?",
-    answer: "We specialize in modern, high-performance web stacks including Next.js, React.js, TypeScript, Tailwind CSS, Node.js, PostgreSQL, MongoDB, Stripe, Sanity CMS, and Vercel cloud infrastructure."
+    question: "Which technologies and platforms do you use?",
+    answer: "We work with modern web stacks, AI services, automation platforms, and cloud infrastructure including Next.js, React.js, TypeScript, Tailwind CSS, Node.js, PostgreSQL, MongoDB, n8n, Make, Zapier, Supabase, Stripe, Sanity CMS, and Vercel."
   },
   {
-    question: "How long does a custom web development project take?",
-    answer: "Project timelines range from 2 to 3 weeks for high-converting landing pages and business websites, to 4 to 8 weeks for custom SaaS web applications and full-stack e-commerce platforms."
+    question: "How long does a digital solution project take?",
+    answer: "Timelines depend on the solution. A focused website or automation can take 2 to 3 weeks, while custom SaaS applications, integrations, and full-stack e-commerce platforms typically take 4 to 8 weeks."
   },
   {
-    question: "Are all WebSoul websites optimized for SEO and mobile performance?",
-    answer: "Yes, every digital product we engineer is mobile-first responsive, optimized for Core Web Vitals (sub-1-second load times), and pre-configured with technical SEO best practices, schema markup, and canonical URLs."
+    question: "How do you ensure quality across your digital solutions?",
+    answer: "We build responsive, performant, maintainable solutions with clear testing, technical SEO where relevant, reliable integrations, and an emphasis on security and long-term usability."
   },
   {
-    question: "How can I request a project estimate or hire WebSoul?",
-    answer: "You can reach out directly via our contact form or email us at contact@websoul.tech. We review your requirements and provide a detailed proposal and fixed timeline within 24 hours."
+    question: "How can I request a project estimate or hire Sibling?",
+    answer: "You can reach out directly via our contact form or email us at contact@sibling.tech. We review your requirements and provide a detailed proposal and fixed timeline within 24 hours."
   }
 ];
 
@@ -3204,10 +3274,10 @@ export function FAQSection() {
             Frequently Asked Questions
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0B192C] dark:text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Frequently Asked Questions About Our Web Engineering
+            Frequently Asked Questions About Our Digital Solutions
           </h2>
           <p className="text-xs sm:text-base text-[#475569] dark:text-slate-400 mt-2">
-            Everything you need to know about our web development services, tech stack, and process.
+            Everything you need to know about our services, technology, and process.
           </p>
         </div>
       </Reveal>
@@ -3245,7 +3315,7 @@ export function FAQSection() {
 
 export function NotFoundPage({ navigate }: { navigate: (page: Page) => void }) {
   useEffect(() => {
-    document.title = '404 Page Not Found | WebSoul';
+    document.title = '404 Page Not Found | Sibling';
     let robots = document.querySelector('meta[name="robots"]');
     if (robots) {
       robots.setAttribute('content', 'noindex, follow');
@@ -3266,14 +3336,14 @@ export function NotFoundPage({ navigate }: { navigate: (page: Page) => void }) {
         Page Not Found
       </h1>
       <p className="text-sm sm:text-base text-[#475569] dark:text-slate-400 max-w-md mb-8 leading-relaxed">
-        The page you are looking for does not exist or has been moved. Explore our web development services or return home.
+        The page you are looking for does not exist or has been moved. Explore our digital solutions or return home.
       </p>
       <div className="flex flex-wrap gap-4 justify-center">
         <ButtonPrimary onClick={() => navigate('home')}>
           Return to Homepage
         </ButtonPrimary>
         <ButtonSecondary onClick={() => navigate('services')}>
-          Explore Web Development Services
+          Explore Digital Solutions
         </ButtonSecondary>
       </div>
     </div>
@@ -3339,7 +3409,7 @@ export default function App() {
   const [editBlogId, setEditBlogId] = useState<string>(initialRoute.editBlogId || '');
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('websoul_theme');
+      const savedTheme = localStorage.getItem('sibling_theme') || localStorage.getItem('websoul_theme');
       if (savedTheme) {
         return savedTheme === 'dark';
       }
@@ -3352,56 +3422,56 @@ export default function App() {
 
   // Dynamic SEO Metadata, Open Graph, Twitter Cards, Canonical Tags & JSON-LD Head Manager
   useEffect(() => {
-    let title = 'WebSoul — Custom Web Development & Design Agency for Growing Businesses';
-    let description = 'WebSoul is a premier web development company crafting high-performing React & Next.js websites, custom web applications, e-commerce storefronts, and digital products.';
-    let canonical = 'https://www.websoul.tech/';
+    let title = 'Sibling — Web Development & Digital Solutions Agency';
+    let description = 'Sibling builds websites, web applications, AI automations, integrations, and digital products for growing businesses.';
+    let canonical = 'https://www.sibling.tech/';
     let breadcrumbName = 'Home';
 
     if (currentPage === 'work') {
-      title = 'Web Development Portfolio & Case Studies | WebSoul';
-      description = 'Explore custom web development projects, SaaS analytics platforms, and e-commerce storefronts engineered by WebSoul.';
-      canonical = 'https://www.websoul.tech/work';
+      title = 'Digital Solutions Portfolio & Case Studies | Sibling';
+      description = 'Explore websites, web apps, automation systems, SaaS platforms, and e-commerce experiences engineered by Sibling.';
+      canonical = 'https://www.sibling.tech/work';
       breadcrumbName = 'Portfolio & Case Studies';
     } else if (currentPage === 'project') {
       const project = PROJECTS.find((p) => p.id === projectId);
       if (project) {
-        title = `${project.title} Case Study | WebSoul Web Development`;
-        description = `${project.title}: ${project.tagline}. ${project.result}. Custom ${project.category} built by WebSoul agency.`;
-        canonical = `https://www.websoul.tech/project/${projectId}`;
+        title = `${project.title} Case Study | Sibling Digital Solutions`;
+        description = `${project.title}: ${project.tagline}. ${project.result}. Custom ${project.category} built by Sibling agency.`;
+        canonical = `https://www.sibling.tech/project/${projectId}`;
         breadcrumbName = `${project.title} Case Study`;
       }
     } else if (currentPage === 'services') {
-      title = 'Web Development & Software Engineering Services | WebSoul';
-      description = 'Professional web development services including custom React/Next.js web applications, headless e-commerce platforms, UI/UX design, and full-stack engineering.';
-      canonical = 'https://www.websoul.tech/services';
-      breadcrumbName = 'Web Development Services';
+      title = 'Web Development & Digital Solutions Services | Sibling';
+      description = 'Websites, web applications, AI automation, intelligent agents, integrations, e-commerce, UI/UX design, and ongoing support.';
+      canonical = 'https://www.sibling.tech/services';
+      breadcrumbName = 'Digital Solutions Services';
     } else if (currentPage === 'about') {
-      title = 'About WebSoul — Custom Web Development & Engineering Team';
-      description = 'Learn about WebSoul, our web development philosophy, engineering capabilities, and dedicated team building fast, high-converting digital products.';
-      canonical = 'https://www.websoul.tech/about';
-      breadcrumbName = 'About WebSoul';
+      title = 'About Sibling — Web Development & Digital Solutions';
+      description = 'Learn about Sibling and our approach to building websites, digital products, AI automations, and business systems.';
+      canonical = 'https://www.sibling.tech/about';
+      breadcrumbName = 'About Sibling';
     } else if (currentPage === 'contact') {
-      title = 'Contact WebSoul — Hire Web Development & Engineering Experts';
-      description = 'Get in touch with WebSoul to discuss your web development project, custom React/Next.js application, or e-commerce platform.';
-      canonical = 'https://www.websoul.tech/contact';
+      title = 'Contact Sibling — Web Development & Digital Solutions';
+      description = 'Get in touch with Sibling to discuss your website, web app, automation, integration, AI, or digital product project.';
+      canonical = 'https://www.sibling.tech/contact';
       breadcrumbName = 'Contact Us';
     } else if (currentPage === 'blog') {
-      title = 'WebSoul Blog — Web Development, Next.js & SEO Engineering Guides';
-      description = 'Read technical insights, performance optimization guides, and web development strategies from the WebSoul engineering team.';
-      canonical = 'https://www.websoul.tech/blog';
+      title = 'Sibling Blog — Digital Products, Automation & Web Guides';
+      description = 'Read practical insights on digital products, automation, web development, performance, and growing a stronger online business.';
+      canonical = 'https://www.sibling.tech/blog';
       breadcrumbName = 'Blog';
     } else if (currentPage === 'blog-detail') {
       // Handled dynamically inside BlogDetailPage component
       return;
     } else if (isAdminRoute) {
-      title = 'WebSoul Admin Dashboard';
-      description = 'Protected administrative panel for WebSoul.';
-      canonical = 'https://www.websoul.tech/admin';
+      title = 'Sibling Admin Dashboard';
+      description = 'Protected administrative panel for Sibling.';
+      canonical = 'https://www.sibling.tech/admin';
       breadcrumbName = 'Admin';
     } else if (currentPage === '404') {
-      title = '404 Page Not Found | WebSoul';
-      description = 'The requested page could not be found. Return to WebSoul web development homepage or explore our services.';
-      canonical = 'https://www.websoul.tech/404';
+      title = '404 Page Not Found | Sibling';
+      description = 'The requested page could not be found. Return to the Sibling digital solutions homepage or explore our services.';
+      canonical = 'https://www.sibling.tech/404';
       breadcrumbName = '404 Page Not Found';
     }
 
@@ -3449,7 +3519,7 @@ export default function App() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://www.websoul.tech/"
+            "item": "https://www.sibling.tech/"
           },
           {
             "@type": "ListItem",
@@ -3477,16 +3547,16 @@ export default function App() {
       const serviceSchema = {
         "@context": "https://schema.org",
         "@type": "Service",
-        "serviceType": "Web Development & Software Engineering",
+        "serviceType": "Web Development & Digital Solutions",
         "provider": {
           "@type": "Organization",
-          "name": "WebSoul",
-          "url": "https://www.websoul.tech/"
+          "name": "Sibling",
+          "url": "https://www.sibling.tech/"
         },
         "areaServed": "Global",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Web Engineering Services",
+          "name": "Digital Solutions Services",
           "itemListElement": SERVICES.map((service) => ({
             "@type": "Offer",
             "itemOffered": {
@@ -3577,10 +3647,10 @@ export default function App() {
     const root = document.documentElement;
     if (darkMode) {
       root.classList.add('dark');
-      localStorage.setItem('websoul_theme', 'dark');
+      localStorage.setItem('sibling_theme', 'dark');
     } else {
       root.classList.remove('dark');
-      localStorage.setItem('websoul_theme', 'light');
+      localStorage.setItem('sibling_theme', 'light');
     }
   }, [darkMode]);
 
@@ -3714,7 +3784,6 @@ export default function App() {
       </div>
 
       <Footer navigate={(p, id) => navigate(p, id)} darkMode={darkMode} />
-      <TawkWidget />
     </div>
   );
 }

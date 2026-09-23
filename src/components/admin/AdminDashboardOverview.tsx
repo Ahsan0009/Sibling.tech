@@ -27,8 +27,8 @@ export const AdminDashboardOverview: React.FC<AdminDashboardOverviewProps> = ({ 
       };
       setStats(s);
     };
-    window.addEventListener('websoul_blogs_updated', handleUpdate);
-    return () => window.removeEventListener('websoul_blogs_updated', handleUpdate);
+    window.addEventListener('sibling_blogs_updated', handleUpdate);
+    return () => window.removeEventListener('sibling_blogs_updated', handleUpdate);
   }, []);
 
   const statCards = [
@@ -72,7 +72,7 @@ export const AdminDashboardOverview: React.FC<AdminDashboardOverviewProps> = ({ 
       <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#0B192C] via-[#1E3A8A] to-[#0B192C] text-white relative overflow-hidden shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="relative z-10">
           <span className="text-xs font-mono-tech text-sky-400 uppercase tracking-widest block mb-2 font-semibold">
-            WebSoul Content Control Center
+            Sibling Content Control Center
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'white' }}>
             Welcome back, Saad! 👋

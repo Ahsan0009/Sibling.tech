@@ -18,7 +18,7 @@ export interface CloudinaryUploadResult {
  * Returns the secure CDN URL of the uploaded image.
  *
  * Prerequisites:
- *  - Create an unsigned upload preset named "websoul_blogs" in your Cloudinary Dashboard
+ *  - Create an unsigned upload preset named "sibling_blogs" in your Cloudinary Dashboard
  *    (Settings → Upload → Upload presets → Add preset → Signing Mode: Unsigned)
  */
 export async function uploadImageToCloudinary(
@@ -34,7 +34,7 @@ export async function uploadImageToCloudinary(
   const formData = new FormData();
   formData.append('file', file);
   formData.append('upload_preset', UPLOAD_PRESET);
-  formData.append('folder', 'websoul/blogs');
+  formData.append('folder', 'sibling/blogs');
 
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();

@@ -9,10 +9,21 @@
       "has": [
         {
           "type": "host",
+          "value": "sibling.tech"
+        }
+      ],
+      "destination": "https://www.sibling.tech/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
           "value": "websoul.tech"
         }
       ],
-      "destination": "https://www.websoul.tech/:path*",
+      "destination": "https://www.sibling.tech/:path*",
       "permanent": true
     }
   ],
