@@ -1181,7 +1181,7 @@ export function Nav({
               : '1px solid transparent',
         }}
       >
-        <div className="max-w-7xl w-full mx-auto flex items-center justify-start gap-2 lg:gap-3">
+        <div className="max-w-7xl w-full mx-auto flex items-center">
           {/* Header Logo */}
           <button
             onClick={() => {
@@ -1196,8 +1196,8 @@ export function Nav({
             </div>
           </button>
 
-          {/* Desktop Links — sit directly to the right of the logo */}
-          <nav className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-6">
+          {/* Desktop Links — centered between logo and CTA */}
+          <nav className="hidden md:flex flex-1 items-center justify-center gap-3 lg:gap-5 xl:gap-6">
             {/* Work */}
             {navLinks.slice(0, 1).map((link) => {
               const isActive = currentPage === link.page;
@@ -2616,7 +2616,7 @@ export function AboutPage({ navigate }: { navigate: (page: Page, id?: number) =>
 // 12. CONTACT PAGE
 // ==========================================
 // NOTE: Pricing / Budget field has been REMOVED.
-// "AI Automation" and "AI Chatbot / Agentic AI" have been ADDED to the Project Type dropdown.
+// AI-related project types are prioritized at the top of the dropdown.
 export function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -2895,12 +2895,13 @@ export function ContactPage() {
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                       className="contact-input-field w-full bg-[#F8FAFC] dark:bg-[#0F172A]/90 border border-slate-200/90 dark:border-slate-700/80 rounded-xl px-4 py-3.5 pr-10 text-[#0B192C] dark:text-white text-xs sm:text-sm font-normal shadow-2xs hover:shadow-md hover:border-blue-400/50 dark:hover:border-slate-600 focus:outline-none focus:bg-white dark:focus:bg-[#0F172A] focus:border-[#0B192C] dark:focus:border-blue-500 focus:ring-4 focus:ring-[#0B192C]/10 dark:focus:ring-blue-500/20 focus:shadow-lg focus:shadow-[#0B192C]/5 dark:focus:shadow-blue-500/10 cursor-pointer appearance-none"
                     >
+                      <option value="AI Automation">AI Automation</option>
+                      <option value="AI Chatbot">AI Chatbot</option>
+                      <option value="Agentic AI">Agentic AI</option>
                       <option value="Website">Website</option>
                       <option value="Landing Page">Landing Page</option>
                       <option value="E-commerce Store">E-commerce Store</option>
                       <option value="Web Application">Web Application</option>
-                      <option value="AI Automation">AI Automation</option>
-                      <option value="AI Chatbot / Agentic AI">AI Chatbot / Agentic AI</option>
                       <option value="Redesign & Rebuild">Redesign & Rebuild</option>
                       <option value="Maintenance & Support">Maintenance & Support</option>
                       <option value="Other">Other</option>
