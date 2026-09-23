@@ -1316,8 +1316,8 @@ export function Nav({
               {/* Dropdown panel */}
               <div
                 className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 rounded-2xl shadow-xl border transition-all duration-200 origin-top z-50 ${servicesOpen
-                    ? 'opacity-100 scale-100 pointer-events-auto'
-                    : 'opacity-0 scale-95 pointer-events-none'
+                  ? 'opacity-100 scale-100 pointer-events-auto'
+                  : 'opacity-0 scale-95 pointer-events-none'
                   } ${darkMode
                     ? 'bg-slate-900 border-slate-700/80'
                     : 'bg-white border-slate-200'
@@ -1460,8 +1460,8 @@ export function Nav({
               <button
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                 className={`w-full text-lg sm:text-xl font-medium text-left px-4 py-3.5 rounded-xl transition-all cursor-pointer flex items-center justify-between min-h-[48px] ${currentPage === 'services'
-                    ? 'bg-slate-100 dark:bg-slate-800/90 text-[#0B192C] dark:text-white font-semibold shadow-xs'
-                    : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#0B192C] dark:hover:text-white'
+                  ? 'bg-slate-100 dark:bg-slate-800/90 text-[#0B192C] dark:text-white font-semibold shadow-xs'
+                  : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#0B192C] dark:hover:text-white'
                   }`}
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
@@ -1606,6 +1606,36 @@ export function Footer({ navigate, darkMode }: { navigate: (page: Page, id?: num
                     className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white link-underline cursor-pointer font-medium"
                   >
                     Upwork
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/siblingtechnologies/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white link-underline cursor-pointer font-medium"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/siblingtech"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white link-underline cursor-pointer font-medium"
+                  >
+                    Facebook
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/siblingtech"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-xs sm:text-sm text-[#475569] dark:text-slate-400 hover:text-[#0B192C] dark:hover:text-white link-underline cursor-pointer font-medium"
+                  >
+                    Instagram
                   </a>
                 </li>
                 <li>
@@ -2958,7 +2988,7 @@ export function ContactPage() {
                 </div>
 
                 {/* Social Networks Item */}
-                <div className="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-[#F8FAFC] dark:bg-slate-800/50 flex items-center justify-between gap-3">
+                <div className="p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-[#F8FAFC] dark:bg-slate-800/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div className="flex items-center gap-3.5">
                     <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/90 dark:border-slate-700 flex items-center justify-center text-[#0B192C] dark:text-blue-400 shrink-0 shadow-2xs">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2967,12 +2997,21 @@ export function ContactPage() {
                     </div>
                     <div className="text-[11px] font-mono-tech font-semibold text-[#64748B] dark:text-slate-400 uppercase tracking-wider">Social Channels</div>
                   </div>
-                  <div className="flex gap-2 font-mono-tech text-xs">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 font-mono-tech text-xs">
                     <a href="https://github.com/websoultech859-maker" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
                       GitHub
                     </a>
                     <a href="https://www.upwork.com/freelancers/~01ccd2af3f92e93ff4?mp_source=share" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
                       Upwork
+                    </a>
+                    <a href="https://www.linkedin.com/company/siblingtechnologies/" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
+                      LinkedIn
+                    </a>
+                    <a href="https://www.facebook.com/siblingtech" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
+                      Facebook
+                    </a>
+                    <a href="https://www.instagram.com/siblingtech" target="_blank" rel="noreferrer" className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[#0B192C] dark:text-slate-200 hover:border-[#0B192C] dark:hover:border-blue-400 transition-colors">
+                      Instagram
                     </a>
                   </div>
                 </div>
