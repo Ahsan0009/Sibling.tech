@@ -34,10 +34,10 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate, dark
   };
 
   return (
-    <div className="min-h-screen pt-20 pb-16 px-4 flex items-center justify-center bg-slate-50 dark:bg-[#09101E] transition-colors duration-300">
+    <div className="admin-login-shell min-h-screen pt-20 pb-16 px-4 flex items-center justify-center bg-slate-50 dark:bg-[#09101E] transition-colors duration-300">
       <div className="w-full max-w-md">
         {/* Card */}
-        <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 sm:p-10 border border-slate-200 dark:border-slate-700 shadow-2xl relative overflow-hidden">
+        <div className="admin-login-card bg-white dark:bg-slate-800 rounded-3xl p-8 sm:p-10 border border-slate-200 dark:border-slate-700 shadow-2xl relative overflow-hidden">
           {/* Decorative Top Gradient */}
           <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 via-[#0B192C] to-sky-400" />
 

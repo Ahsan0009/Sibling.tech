@@ -59,9 +59,9 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#09101E] text-slate-800 dark:text-slate-200 flex flex-col md:flex-row transition-colors duration-300">
+    <div className="admin-theme min-h-screen bg-slate-50 dark:bg-[#09101E] text-slate-800 dark:text-slate-200 flex flex-col md:flex-row transition-colors duration-300">
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex flex-col w-64 lg:w-72 bg-white dark:bg-[#0B1424] border-r border-slate-200 dark:border-slate-800 p-6 justify-between shrink-0 fixed top-0 bottom-0 left-0 z-30">
+      <aside className="admin-sidebar hidden md:flex flex-col w-64 lg:w-72 bg-white dark:bg-[#0B1424] border-r border-slate-200 dark:border-slate-800 p-6 justify-between shrink-0 fixed top-0 bottom-0 left-0 z-30">
         <div>
           {/* Logo & Brand */}
           <div className="flex items-center gap-3 mb-8 pb-6 border-b border-slate-100 dark:border-slate-800">
@@ -260,7 +260,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
       )}
 
       {/* Main Content Area */}
-      <main className="flex-1 md:ml-64 lg:ml-72 min-h-screen flex flex-col justify-between">
+      <main className="admin-main min-w-0 flex-1 md:ml-64 lg:ml-72 min-h-screen flex flex-col justify-between">
         {/* Top Header Bar for Desktop */}
         <div className="hidden md:flex items-center justify-between px-8 py-5 bg-white dark:bg-[#0B1424] border-b border-slate-200 dark:border-slate-800 sticky top-0 z-20">
           <div>
@@ -292,7 +292,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
         </div>
 
         {/* Content Body */}
-        <div className="p-4 sm:p-6 lg:p-8 flex-1">
+        <div className="min-w-0 p-4 sm:p-6 lg:p-8 flex-1">
           {children}
         </div>
 

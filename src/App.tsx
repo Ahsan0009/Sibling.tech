@@ -3701,7 +3701,7 @@ export default function App() {
   if (isAdminRoute) {
     if (currentPage === 'admin-login') {
       return (
-        <div className="min-h-screen bg-slate-50 dark:bg-[#09101E] text-[#334155] dark:text-slate-300">
+        <div className="admin-theme min-h-screen bg-slate-50 dark:bg-[#09101E] text-[#334155] dark:text-slate-300">
           <AdminLoginPage onNavigate={(p, param) => navigate(p as Page, param)} darkMode={darkMode} />
         </div>
       );
