@@ -39,7 +39,6 @@
   - SPA head manager dynamically updating `<title>`, `<meta name="description">`, OpenGraph, Twitter Cards, robots tags, and canonical links on client route transitions.
   - Injected JSON-LD Schema markup for `Organization`, `ProfessionalService`, `BreadcrumbList`, and `BlogPosting`.
   - Google Analytics 4 (`G-F64N2LC4LV`) client-side pageview tracking.
-  - Customer support integration via **Tawk.to** live chat.
 
 ---
 
@@ -84,7 +83,6 @@ sibling/
 │   ├── App.tsx                         # Core router, page orchestrator, public views & SEO manager
 │   ├── index.css                       # Tailwind v4 theme, fonts, custom scrollbars, keyframes
 │   ├── main.tsx                        # React application DOM entry point
-│   ├── TawkWidget.tsx                  # Tawk.to live chat embed script
 │   └── vite-env.d.ts                   # Vite environment variable type declarations
 ├── firestore.rules                     # Cloud Firestore security policy rules
 ├── index.html                          # Root HTML with SEO tags & Organization schema
@@ -107,7 +105,6 @@ sibling/
 | **Media CDN** | Cloudinary | Fast, unsigned image uploads for article covers |
 | **Authentication** | Serverless / Client fallback | HMAC-SHA256 token verification with local/session storage |
 | **Contact Form** | EmailJS (`@emailjs/browser`) | Client-side email dispatch with service templates |
-| **Live Chat** | Tawk.to | Real-time customer communication widget |
 | **Analytics & SEO** | GA4 + Schema.org JSON-LD | Track user journeys and maximize search visibility |
 | **Hosting** | Vercel | Production hosting with apex redirects and SPA rewrite rules |
 
